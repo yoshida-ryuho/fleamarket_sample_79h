@@ -11,7 +11,7 @@ set :rbenv_ruby, '2.6.5'
 
 # chat-spaceで使ったpemを指定
 set :chatspace, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/xxx.pem']
+                  keys: ['~/.ssh/chatspace.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
