@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'profiles/index'
   root 'items#index'
  
   resources :items do
