@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   end
 
 
-  def comfirm
+  def confirm
   
   end
 end
