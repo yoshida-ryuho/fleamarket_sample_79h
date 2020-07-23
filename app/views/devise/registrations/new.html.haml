@@ -1,21 +1,58 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+-# %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "devise/shared/links"
+
+
+
+//ここから自分のコード
+%header
+  .Header
+    .Header__Logo
+      = link_to "#",class: "Header__Icon" do
+        = image_tag 'logo/logo.png',size: '185x49',alt: 'ロゴです'
+    -# %nav.Header__Nav
+  
+%main.Contents
+  %section.Contents__Wrapper
+    %h2.Contents__Title
+      Log in
+    = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
+      .Contents__Resistration
+        .Contents__Form-Group
+          = f.label :nickname, class:'Contents__Form-Label' do
+            メールアドレス
+          = f.text_field :nickname,class: 'Contents__Form-Text'
+        .Contents__Form-Group
+          = f.label :email, class:'Contents__Form-Label' do
+            パスワード
+          = f.text_field :email,class: 'Contents__Form-Text'
+        
+
+      .Contents__Bottom
+        = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
+          = f.submit '完了', class: 'Contents__SubmitBtn' 
+
+%footer.Footer 
+  = link_to "#", class: "Footer__Logo" do
+    = image_tag 'logo/logo-white.png',size: '185x49',alt: 'ロゴです'
+  %p.Footer__Bottom
+    © FURIMA, Inc.
+
