@@ -70,7 +70,7 @@ Things you may want to cover:
 |destination-first_name_kana|string|null: false|
 |destination-family_name_kana|string|null: false|
 |post_code|integer(7)|null: false|
-|pref（active_hash）|references|null: false, foreign_key: true|
+|pref(active_hash）|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|
@@ -94,13 +94,13 @@ Things you may want to cover:
 -belongs_to :user
 
 
-## evaluationsテーブル
+## user_evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |review|text|null: false|
 |user|references|null: false, foreign_key: true|
 |item|references|null: false, foreign_key: true|
-|evaluation|references|null: false, foreign_key: true|
+|evaluation(active_hash）|integer|null: false|
 
 # Association
 -belongs_to_active_hash :evaluation
@@ -115,16 +115,15 @@ Things you may want to cover:
 |introduction|text|null: false|
 |price|integer|null: false|
 |brand|references|null: false, foreign_key: true|
-|condition|references|null: false, foreign_key: true|
-|delivery|references|null: false, foreign_key: true|
-|origin_pref（active_hash）|references|null: false, foreign_key: true|
-|preparation_day|references|null: false, foreign_key: true|
+|condition(active_hash）|integer|null: false|
+|delivery(active_hash）|integer|null: false|
+|origin_pref(active_hash）|integer|null: false|
+|preparation_day(active_hash）|integer|null: false|
 |category|references|null: false, foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |buyer|references|null: false, foreign_key: true|
 |close_date|timestamp|
-|postage_burden|references|null: false, foreign_key: true|
-
+|postage_burden(active_hash）|integer|null: false|
 # Association
 -has_many :comments, dependent: :destroy-belongs_to :user
 -has_many :favorites
