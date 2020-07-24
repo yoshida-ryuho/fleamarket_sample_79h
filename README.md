@@ -119,7 +119,6 @@ Things you may want to cover:
 |delivery|references|null: false, foreign_key: true|
 |origin_pref|string|null: false|
 |preparation_day|references|null: false, foreign_key: true|
-|image|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |buyer|references|null: false, foreign_key: true|
