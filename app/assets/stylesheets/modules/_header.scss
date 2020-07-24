@@ -104,3 +104,59 @@
     }
   }
 }
+.CommonHeader {
+
+}
+.HeaderInner {
+  height: 100px;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10px;
+  background-color: hotpink;
+  &__Main {
+    height: 50%;
+    display: flex;
+
+    background-color: khaki;
+  }
+  &__Icon {
+    background-color: lavenderblush;
+  }
+  &__SearchBox {
+    width: 100%;
+    background-color: rgb(29, 29, 218);
+  }
+
+  &__Nav {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: lawngreen;
+  }
+  &__Right,&__Left {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+
+  }
+  &__List {
+    list-style: none;
+    font-size: 14px;
+  }
+
+  &__Input {
+    // width: 100%;
+  }
+
+  &__TextField {
+    width: 100%;
+  }
+
+  &__Btn {
+    // width: 60%;
+    background-color:#3CCACE;
+  }
+
+  }

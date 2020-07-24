@@ -1,0 +1,24 @@
+%header.CommonHeader
+  .HeaderInner
+    .HeaderInner__Main
+      %h1.HeaderInner__Icon
+        = link_to "#",class: "HeaderInner__icon" do
+          = image_tag 'logo/logo.png',size:'150x40',alt: 'ロゴです'
+      .HeaderInner__SearchBox
+        = form_with url: '#',class: 'HeaderInner__TextBox' ,local: true do |f|
+          .HeaderInner__Input
+            = f.text_field :keyword, placeholder: 'キーワードから探す',class: '.HeaderInner__TextField ' 
+            %button{type: "submit", class:'HeaderInner__Btn'}
+              = image_tag 'icon/icon-search 1.png',size: '20x20', alt: '虫眼鏡の写真', class: 'HeaderInner__Submit'
+                  
+    .HeaderInner__Nav
+      %ul.HeaderInner__Left
+        %li.HeaderInner__List
+          カテゴリー
+        %li.HeaderInner__List
+          ブランド
+      %ul.HeaderInner__Right
+        %li.HeaderInner__List
+          ログイン
+        %li.HeaderInner__List
+          新規会員登録
