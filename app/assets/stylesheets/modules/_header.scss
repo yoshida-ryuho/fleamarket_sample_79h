@@ -1,130 +1,19 @@
 * {
   box-sizing: border-box;
-
-  .user-top-bar {
-    height: 120px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    &__top-one {
-      height: 40px;
-      width: 100%;
-      display: flex;
-
-      &__title {
-        height: 40px;
-        width: 120px;
-        margin-left: 160px;
-        background-color: blue;
-      }
-
-      &__search {
-        height: 40px;
-        width: calc(100% - 120px);
-        display: flex;
-
-        &__search-zoon {
-          height: 40px;
-          width: calc(100% - 50px);
-          display: flex;
-          margin-left: 60px;
-          background-color: burlywood;
-        }
-
-        &__search-icon {
-          height: 40px;
-          width: 50px;
-          margin-right: 160px;
-          background-color: chartreuse;
-        }
-      }
-    }
-
-    &__top-two {
-      height: 40px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-
-      &__category {
-        height: 40px;
-        width: 100px;
-        margin-left: 160px;
-        background-color: brown;
-      }
-
-      &__brand {
-        height: 40px;
-        width: 100px;
-        background-color: coral;
-      }
-
-      &__like {
-        height: 40px;
-        width: 100px;
-        background-color: cyan;
-      }
-
-      &__notice {
-        height: 40px;
-        width: 100px;
-        background-color: darkgray;
-      }
-
-      &__todo {
-        height: 40px;
-        width: 100px;
-        background-color: darkgreen;
-      }
-
-      &__mypage {
-        height: 40px;
-        width: 100px;
-        margin-right: 160px;
-        background-color: darkred;
-      }
-    }
-
-    &__top-three {
-      height: 40px;
-      width: 100%;
-      display: flex;
-
-      &__mercari {
-        height: 40px;
-        width: 100px;
-        margin-left: 160px;
-      }
-
-      &__dainari {
-        height: 40px;
-        width: 100%;
-      }
-    }
-  }
 }
-.CommonHeader {
 
-}
 .HeaderInner {
   height: 100px;
   width: 80%;
   margin: 0 auto;
   padding-top: 10px;
-  background-color: hotpink;
   &__Main {
     height: 50%;
     display: flex;
+  }
 
-    background-color: khaki;
-  }
-  &__Icon {
-    background-color: lavenderblush;
-  }
   &__SearchBox {
     width: 100%;
-    background-color: rgb(29, 29, 218);
   }
 
   &__Nav {
@@ -132,30 +21,56 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background-color: lawngreen;
   }
-  &__Right,&__Left {
-    display: flex;
-    justify-content: space-around;
+
+  &__Left {
     width: 40%;
-
+    padding-left: 0;
+    display: flex;
+    &--first,&--second {
+      text-decoration: none;
+    }
   }
+
+  &__Right {
+    width: 40%;
+    padding-left: 0;
+    display: flex;
+    justify-content: flex-end;
+    &--first,&--second {
+      text-decoration: none;
+    }
+  }
+
   &__List {
     list-style: none;
     font-size: 14px;
+    &--MarginFix {
+      margin-left: 30px;
+    }
   }
 
   &__Input {
-    // width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+
   }
 
   &__TextField {
-    width: 100%;
+    width: 80%;
+    height: 100%;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 1px 8px;
+    border: solid 1px gray;
   }
 
   &__Btn {
-    // width: 60%;
+    width: 50px;
+    height: 44px;
+    border: none ;
+    border-radius: 2px;
     background-color:#3CCACE;
   }
 
