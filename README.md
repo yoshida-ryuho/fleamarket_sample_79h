@@ -70,24 +70,24 @@ Things you may want to cover:
 |destination-first_name_kana|string|null: false|
 |destination-family_name_kana|string|null: false|
 |post_code|integer(7)|null: false|
-|pref|string|null: false|
+|pref（active_hash）|references|null: false, foreign_key: true|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|
-|phone_number|integer|null:false, unique: true|
+|phone_number|string|null:false, unique: true|
 |user|references|null: false, foreign_key: true|
+
 
 # Association
 -belongs_to :user
+-belongs_to_active_hash :pref
+
 
 
 ## creditsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null:false, unique: true|
-|expiration_year|integer|null:false|
-|expiration_month|integer|null:false|
-|security_code|integer|null:false|
+|token|string|
 |user|references|null: false, foreign_key: true|
 
 # Association
@@ -117,7 +117,7 @@ Things you may want to cover:
 |brand|references|null: false, foreign_key: true|
 |condition|references|null: false, foreign_key: true|
 |delivery|references|null: false, foreign_key: true|
-|origin_pref|string|null: false|
+|origin_pref（active_hash）|references|null: false, foreign_key: true|
 |preparation_day|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |seller|references|null: false, foreign_key: true|
@@ -133,11 +133,13 @@ Things you may want to cover:
 -belongs_to :category
 -belongs_to :brand
 -belongs_to_active_hash :condition
--belongs_to_active_hash :delivery_id
+-belongs_to_active_hash :delivery
 -belongs_to_active_hash :preparation_day
 -belongs_to_active_hash :postage_burden
 -belongs_to :seller, class_name: "User"
 -belongs_to :buyer, class_name: "User"
+-belongs_to_active_hash :pref
+
 
 
 ## brands テーブル
