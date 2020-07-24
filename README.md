@@ -31,6 +31,8 @@ Things you may want to cover:
 |name|string|null: false|
 |password|string|null: false|
 |email|string|null:false, unique: true, index:true|
+|point|integer|
+
 
 # Association
 -has_many :comments, dependent: :destroy
@@ -93,16 +95,6 @@ Things you may want to cover:
 -belongs_to :user
 
 
-## pointsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|point|integer|
-|user|references|null: false, foreign_key: true|
-
-# Association
--belongs_to :user
-
-
 ## evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -138,7 +130,7 @@ Things you may want to cover:
 # Association
 -has_many :comments, dependent: :destroy-belongs_to :user
 -has_many :favorites
--has_many :item_images, dependent: :destroy
+-has_many :images, dependent: :destroy
 -has_one :evaluation
 -belongs_to :category
 -belongs_to :brand
@@ -153,7 +145,7 @@ Things you may want to cover:
 ## brands テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|
+|name|string|null: false|
 
 # Association
 has_many :items
