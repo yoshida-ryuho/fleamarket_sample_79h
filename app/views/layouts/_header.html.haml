@@ -7,18 +7,22 @@
       .HeaderInner__SearchBox
         = form_with url: '#',class: 'HeaderInner__TextBox' ,local: true do |f|
           .HeaderInner__Input
-            = f.text_field :keyword, placeholder: 'キーワードから探す',class: '.HeaderInner__TextField ' 
+            = f.text_field :keyword, placeholder: 'キーワードから探す',class: 'HeaderInner__TextField' 
             %button{type: "submit", class:'HeaderInner__Btn'}
               = image_tag 'icon/icon-search 1.png',size: '20x20', alt: '虫眼鏡の写真', class: 'HeaderInner__Submit'
                   
     .HeaderInner__Nav
       %ul.HeaderInner__Left
         %li.HeaderInner__List
-          カテゴリー
-        %li.HeaderInner__List
-          ブランド
+          = link_to "#",class:"HeaderInner__Left--first" do
+            カテゴリー
+        %li.HeaderInner__List.HeaderInner__List--MarginFix
+          = link_to "#",class:"HeaderInner__Left--second" do
+            ブランド
       %ul.HeaderInner__Right
         %li.HeaderInner__List
-          ログイン
-        %li.HeaderInner__List
-          新規会員登録
+          = link_to "#",class:"HeaderInner__Right--first" do
+            ログイン
+        %li.HeaderInner__List.HeaderInner__List--MarginFix
+          = link_to "#",class:"HeaderInner__Right--second" do
+            新規会員登録

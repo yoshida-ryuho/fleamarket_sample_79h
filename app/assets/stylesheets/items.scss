@@ -1,3 +1,117 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-show-view {
+  height: 650px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__item-name {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__name-zoon {
+      height: 50px;
+      width: 200px;
+      font-size: 40px;
+    }
+  }
+
+  &__image-information {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    &__image {
+      height: 300px;
+      width: 400px;
+    }
+
+    &__information {
+      height: 300px;
+      width: 400px;
+
+      &__seller {
+        height: 37.5px;
+        width: 400px;
+      }
+
+      &__category {
+        height: 37.5px;
+        width: 400px;
+      }
+
+      &__brand {
+        height: 37.5px;
+        width: 400px;
+      }
+
+      &__ststus {
+        height: 37.5px;
+        width: 400px;
+      }
+
+      &__delivery-burden {
+        height: 37.5px;
+        width: 400px;
+      }
+
+      &__delivery-method {
+        height: 37.5px;
+        width: 400px;
+      }
+
+      &__area {
+        height: 37.5px;
+        width: 400px;
+      }
+
+      &__standard {
+        height: 37.5px;
+        width: 400px;
+      }
+    }
+  }
+
+  &__comment-exc {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__price-tax {
+      height: 100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__price {
+        height: 80px;
+        width: 100px;
+        margin-top: 50px;
+        font-size: 25px;
+      }
+
+      &__tax {
+        height: 40px;
+        width: 80px;
+        font-size: 6px;
+        margin-top: 40px;
+      }
+    }
+
+    &__button {
+      height: 100px;
+      width: 400px;
+      font-size: 50px;
+    }
+
+    &__comment {
+      height: 100px;
+      width: 200px;
+    }
+  }
+}
