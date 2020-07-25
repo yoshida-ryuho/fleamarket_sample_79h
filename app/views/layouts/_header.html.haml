@@ -1,3 +1,5 @@
+//ここからヘッダー
+
 %header.CommonHeader
   .HeaderInner
     .HeaderInner__Main
@@ -21,8 +23,8 @@
             ブランド
       %ul.HeaderInner__Right
         %li.HeaderInner__List
-          = link_to "#",class:"HeaderInner__Right--first" do
+          = link_to  "/users/sign_up",class:"HeaderInner__Right--first" do
             ログイン
         %li.HeaderInner__List.HeaderInner__List--MarginFix
-          = link_to "#",class:"HeaderInner__Right--second" do
+          = link_to "/users/sign_in",class:"HeaderInner__Right--second" do
             新規会員登録
