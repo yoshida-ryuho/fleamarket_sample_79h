@@ -1,0 +1,13 @@
+//ここからアサイド
+
+%aside.AppBanner
+  .ABInner
+    %h2.ABInner__Title
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.ABInner__Text
+      今すぐ無料ダウンロード！
+    .ABInner__Icon
+      = link_to "https://www.apple.com/jp/ios/app-store/",class:'ABInner__Icon--aBtn' do
+        = image_tag 'icon/AppStore.png',size: '180x54', alt: 'AppStoreのアイコン'
+      = link_to "https://play.google.com/store?hl=ja",class:'ABInner__Icon--gBtn' do
+        = image_tag 'icon/GooglePlay.png',size: '200x82', alt: 'GooglePlayのアイコン'
