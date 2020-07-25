@@ -1,4 +1,4 @@
-= render 'layouts/header'
+= render 'layouts/header' 
 .main
   %section.description
     .description__info
@@ -8,9 +8,11 @@
         FURIMAはだれでもかんたんに出品・購入できる
         %br/
         フリマアプリです
-      .description__info__btn
-        %a.app{href: "#"}
-          %img{src: ""}/
+      .description__info__btns
+        = link_to "#", class:"app-store" do
+          = image_tag 'icon/AppStore.png', size:'180x54'
+        = link_to "#", class:"google-play" do
+          = image_tag 'icon/GooglePlay.png', size:'200x82'
 
   %section.reason-area
     %h2.reason-area__title
@@ -52,11 +54,11 @@
         出品・購入回数も業界最多です！
         %br/
         欲しかったあの商品に出会えるかもしれません。
-      .popularity__info__btn
-        %a{href: "#"}
-          %img.aBtn{src: "/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}/
-        %a{href: "#"}
-          %img.gBtn{src: "/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}/
+      .popularity__info__btns
+        = link_to "#", class:"app-store" do
+          = image_tag 'icon/AppStore.png', size:'180x54'
+        = link_to "#", class:"google-play" do
+          = image_tag 'icon/GooglePlay.png', size:'200x82'
   %section.charactrristic
     %h2.charactrristic__title FURIMAの特徴
     .charactrristic__info
@@ -81,57 +83,11 @@
           様々な支払いに対応
         %p.feature__text
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-  %section.pickup-menu
-    %h2.pickup-menu__title ピックアップカテゴリー
-    .pickup-menu__info
-      .list-title
-        = link_to "#" do
-          %h3.list-title__name 新規投稿商品
-      .post-list
-        .post-list__items
-          = link_to "#" do
-            %figure.post-list__items__picture
-            .post-list__items__texts
-              %h3.pict-name 1
-              .pict-detail
-                %ul
-                  %li 1000円
-                  %li
-                    %i.fa fa-star likeIcon
-                %p (税込)
-        .post-list__items
-          = link_to "#" do
-            %figure.post-list__items__picture
-            .post-list__items__texts
-              %h3.pict-name 2
-              .pict-detail
-                %ul
-                  %li 1000円
-                  %li
-                    %i.fa fa-star likeIcon
-                %p (税込)
-        .post-list__items
-          = link_to "#" do
-            %figure.post-list__items__picture
-            .post-list__items__texts
-              %h3.pict-name 3
-              .pict-detail
-                %ul
-                  %li 1000円
-                  %li
-                    %i.fa fa-star likeIcon
-                %p (税込)
-        .post-list__items
-          = link_to "#" do
-            %figure.post-list__items__picture
-            .post-list__items__texts
-              %h3.pict-name 4
-              .pict-detail
-                %ul
-                  %li 1000円
-                  %li
-                    %i.fa fa-star likeIcon
-                %p (税込)
 
-%aside.download-emphasis
+  = render 'pickup'
 
+  = render 'pickup'
+
+= render 'layouts/footer'
+
+= render 'layouts/exhibition'
