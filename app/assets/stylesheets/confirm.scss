@@ -1,0 +1,151 @@
+.Around {
+  box-sizing: border-box;
+  overflow: scroll;
+  background-color: rgb(245, 245 ,245);
+  height: 100vh;
+  width: 100%;
+  padding-bottom: 25vh;
+  &__logo {
+    text-align: center;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+  }
+  &__contents {
+    color: rgb(51, 51, 51);
+    border: 1px solid white;
+    background-color: white;
+    width: 700px;
+    height: 720px;
+    margin: auto;
+    padding: 32px 16px;
+    &__string {
+      margin: auto;
+      width: 350px;
+      font-size: 1.8vw;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgb(245, 245, 245);
+    }
+    &__goods {
+      margin: auto;
+      width: 350px;
+      padding: 32px 16px;
+      border-bottom: 1px solid rgb(245, 245, 245);
+      display: flex;
+      &__item-name {
+        padding-left: 1vw;
+        &__details {
+          width: 25vw;
+          text-align: right;
+          &--string {
+            font-size: 12px;
+            line-height: 2em;
+          }
+          &--price {
+            font-weight: bold;
+            font-size: 15px;
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+    &__price {
+      margin: auto;
+      width: 350px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      padding: 32px 16px;
+      border-bottom: 1px solid rgb(245, 245, 245);
+      &__string {
+        font-size: 18px;
+        &--point {
+          color: #CCC;
+        }
+      }
+      &--amount {
+        font-size: 24px;
+      }
+    }
+    &__method-payment {
+      margin: auto;
+      width: 350px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: left;
+      padding: 32px 16px;
+      border-bottom: 1px solid rgb(245, 245, 245);
+      &--add {
+        padding-top: 3%;
+        color: rgb(0, 149, 238);
+        font-weight: normal;
+      }
+    }
+    &__delivery-address {
+      margin: auto;
+      width: 350px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: left;
+      padding: 32px 16px;
+      border-bottom: 1px solid rgb(245, 245, 245);
+      &--add {
+        padding-top: 3%;
+        color: rgb(0, 149, 238);
+        font-weight: normal;
+      }
+    }
+    &__buy-botton {
+      margin: auto;
+      width: 350px;
+      text-align: center;
+      padding: 32px 16px;
+    }
+  }
+  &__footer-logo {
+    text-align: center;
+    padding-top: 50px;
+  }
+}
+
+.buy-btn {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3% 3% 3% 3%;
+  border: 1px solid #ccc;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background-color: #3CCACE;
+}
+
+.image_tag1 {
+  box-sizing: border-box;
+  width: 17%;
+}
+
+.details-string {
+  font-size: 12px;
+  line-height: 2em;
+  text-align: right;
+  width: 25vw;
+}
+
+.details-price {
+  font-weight: bold;
+  font-size: 15px;
+  text-align: right;
+  width: 25vw;
+}
+
+.point-string-left {
+  color: rgb(51, 51, 51);
+  font-size: 14px;
+}
+
+.point-string-right {
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+  font-weight: normal;
+}
