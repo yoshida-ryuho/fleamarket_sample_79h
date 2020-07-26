@@ -1,0 +1,121 @@
+.new{
+  height: 100vh;
+  width: 100vw;
+  background-color:#f8f8f8;
+  padding: 5% 0 10% 15%;
+  overflow: scroll;
+
+  
+  
+}
+
+.title{
+  height:4%;
+  width:80%;
+  text-align: center;
+
+  
+
+}
+
+.new-inputs{
+  background-color:white;
+  height: 100%;
+  width: 80%;
+  overflow: scroll;
+
+
+  
+  &__images{
+    height: 20%;
+    border-bottom:#f8f8f8 2px solid;
+    padding: 3%;
+
+  }
+  &__name{
+    height: 20%;
+    border-bottom:#f8f8f8 2px solid;
+
+  }
+  &__introduction{
+    height: 25%;
+    border-bottom:#f8f8f8 2px solid;
+
+  }
+  &__details{
+    height: 25%;
+    border-bottom:#f8f8f8 2px solid;
+
+  }
+  &__delivery{
+    height: 25%;
+    border-bottom:#f8f8f8 2px solid;
+
+  }
+  &__price{
+    height: 20%;
+    border-bottom:#f8f8f8 2px solid;
+
+  }
+  &__btns{
+    height: 15%;
+    border-bottom:#f8f8f8 2px solid;
+
+  }
+  &__warning{
+    height: 5%;
+    border-bottom:#f8f8f8 2px solid;
+
+  }
+
+}
+
+label{
+  font-size: 10px;
+
+}
+
+span{
+  background-color: red;
+  color: white;
+  font-size: 10px;
+
+}
+
+#previews{
+  height: 150px;
+  width: 100%;
+  background-color: rgb(231, 230, 230);
+  border: dashed 1px ;
+}
+
+.upload-label{
+  height: 500px;
+  width: 100%;
+}
+
+
+.input-default{
+  height: 100%;
+  width: 100%;
+  display: none;
+
+}
+
+.boxFileSelect {
+  width: 100%;
+  height: 148px;
+  margin: auto;
+  padding: 10px 16px 8px;
+  border-radius:4px;
+  border: 1px solid #d3d3d3;
+  background: rgb(231, 230, 230);
+  line-height: 1.5;
+  cursor: pointer;
+  outline-width: 2px;
+}
+.upload.image{
+  font-size: 15px;
+  color: red;
+  margin: 5px 0;
+}

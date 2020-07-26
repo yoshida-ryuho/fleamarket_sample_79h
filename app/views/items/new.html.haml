@@ -1,1 +1,34 @@
-商品出品ページ
+.new
+  .title furimaアイコン
+  .new-inputs
+    .new-inputs__images
+      = form_with model: @product, class: "form", id: "product-form" do |f|
+        %label 出品画像
+        %span 必須 
+        %p 最大10枚までアップロードできます。   
+        = f.fields_for :images do |image|
+          .clearfix
+            // 写真のプレビューとインプットボタンのul
+            %ul#previews
+              %li.input
+                // 画像を取り込むインプットボタン
+                %label.upload-label
+                  .input-area
+                    %input.input-default{:type => "file"}/
+                    .boxFileSelect
+        .upload.image 画像がありません。
+
+                 
+                 
+    .new-inputs__name
+    .new-inputs__introduction
+    .new-inputs__details
+    .new-inputs__delivery
+    .new-inputs__price
+    .new-inputs__btns
+    .new-inputs__warning
+
+
+
+
+    
