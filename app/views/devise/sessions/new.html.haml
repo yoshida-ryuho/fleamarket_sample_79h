@@ -1,17 +1,8 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title FleamarketSample79h
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag 'bodygray', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    %header.SignupHeader
-      .SignupHeader__Logo
-        = link_to "#",class: "SignupHeader__Icon" do
-          = image_tag 'logo/logo.png',size: '185x49',alt: 'ロゴです'
+.RasistrationWrapper
+  %header.SignupHeader
+    .SignupHeader__Logo
+      = link_to "#",class: "SignupHeader__Icon" do
+        = image_tag 'logo/logo.png',size: '185x49',alt: 'ロゴです'
   
   %main.Contents
     %section.Contents__Wrapper
