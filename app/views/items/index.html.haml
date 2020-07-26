@@ -1,0 +1,89 @@
+= render 'layouts/header' 
+.main
+  %section.description
+    .description__info
+      %h2.description__info__title
+        人生を変えるフリマアプリ
+      %p.description__info__text
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br/
+        フリマアプリです
+      .description__info__btns
+        = link_to "#", class:"app-store" do
+          = image_tag 'icon/AppStore.png', size:'180x54'
+        = link_to "#", class:"google-play" do
+          = image_tag 'icon/GooglePlay.png', size:'200x82'
+  %section.reason-area
+    %h2.reason-area__title
+      FURIMAが選ばれる3つの理由
+    %ul.point-list
+      %li.point-list__box
+        .point-list__box__picture
+          %span.nunber 1
+          = image_tag 'pict/pict-reason-01.jpg'
+        %h3.point-list__box__subtitle
+          %span 3分
+          ですぐに出品
+        %p.point-list__box__text
+          スマホで入力するだけで簡単に出品できる
+      %li.point-list__box
+        .point-list__box__picture
+          %span.nunber 2
+          = image_tag 'pict/pict-reason-02.jpg'
+        %h3.point-list__box__subtitle
+          %span シンプル
+          で使いやすい
+        %p.point-list__box__text
+          めんとくさい入力は必要なく、検索も購入もスムーズ！
+      %li.point-list__box
+        .point-list__box__picture
+          %span.nunber 3
+          = image_tag 'pict/pict-reason-03.jpg'
+        %h3.point-list__box__subtitle
+          手数料
+          %span 業界最安値
+        %p.point-list__box__text
+          最大3%でお得に出品&購入！
+  %section.popularity
+    .popularity__info
+      %h2.popularity__info__title 会員数日本一位
+      %p.popularity__info__text
+        FURIMAは、フリマアプリで最も人気。
+        %br/
+        出品・購入回数も業界最多です！
+        %br/
+        欲しかったあの商品に出会えるかもしれません。
+      .popularity__info__btns
+        = link_to "#", class:"app-store" do
+          = image_tag 'icon/AppStore.png', size:'180x54'
+        = link_to "#", class:"google-play" do
+          = image_tag 'icon/GooglePlay.png', size:'200x82'
+  %section.charactrristic
+    %h2.charactrristic__title FURIMAの特徴
+    .charactrristic__info
+      %section.feature
+        %figure.feature__image
+          = image_tag 'icon/icon-01.png'
+        %h3.feature__subtitle
+          簡単に売り買いできる
+        %p.feature__text
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %section.feature
+        %figure.feature__image
+          = image_tag 'icon/icon-03.png'
+        %h3.feature__subtitle
+          売上金は即日振込みに対応
+        %p.feature__text
+          午前9時までに振り込みを依頼いただければ、翌日に指定の口座に入金いたします！
+      %section.feature
+        %figure.feature__image
+          = image_tag 'icon/icon-04.png'
+        %h3.feature__subtitle
+          様々な支払いに対応
+        %p.feature__text
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  = render 'pickup'
+  = render 'pickup'
+= render 'layouts/aside'
+= render 'layouts/footer'
+= render 'layouts/exhibition'
