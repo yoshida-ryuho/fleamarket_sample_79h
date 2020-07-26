@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  // background: rgb(238, 235, 235);
+}
+.Header {
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  &__Logo {
+    height: 100px;
+    width: 193px;
+    padding-top: 40px;
+  }
+  &__Nav {
+    height: 100px;
+    width: 193px;
+  }
+}
+
+.Contents {
+  &__Wrapper {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+  } 
+  &__Title {
+    height: 97px;
+    width: 700px;
+    padding: 32px;
+    font-size: 23px;
+    font-weight: 600;
+    border-bottom: solid 1px rgb(238, 235, 235);;
+    text-align: center;
+  } 
+  &__Form {
+    width: 700px; 
+    padding: 24px 16px 40px;
+  }
+  &__Resistration {
+    width: 343px; 
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  &__Form-Group {
+    height: 100px;
+    width: 343px; 
+    &--Coution {
+      margin-bottom: 15px;
+    }
+    // 新規のみ
+    &--Send {
+      height: 40px;
+    }
+ 
+  }
+  //新規のみ
+  &__Text-Left {
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 50px;
+  }
+  &__Form-Text {
+    height: 48px;
+    width: 343px; 
+    border-radius: 5px;
+    box-shadow: none;
+    padding: 1px 8px;
+    border: solid 1px gray;
+   
+    // 新規のみ
+    &--Min {
+      height: 48px;
+      width: 165px; 
+      border-radius: 5px;
+      box-shadow: none;
+      padding: 1px 8px;
+      border: solid 1px gray; 
+      margin-left: 2px;
+    }
+
+  }
+  // 新規のみ
+  &__Form-Require {
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    background-color:#ea352d;
+    &--Non {
+      margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    background-color:gray;
+    }
+    
+  }
+  &__Form-Label {
+    font-weight: 600;
+  }
+  &__Bottom {
+    height: 100px;
+    width: 343px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  // 新規のみ
+  &__Password-Message {
+    color: gray;
+  }
+  &__Text-Info1 {
+ font-size: 15px;
+ color: gray;
+  }
+  //
+  &__SubmitBtn {
+    height: 50px;
+    width: 343px; 
+    padding: 2px 4px;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    color: #fff;
+    background-color: #3CCACE;
+
+  }
+} 
+
+
+.Footer {
+  height: 150px;
+  width: 700px; 
+  background-color: #3CCACE;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 40px;
+  &__Bottom {
+    font-size: 14px;
+  }
+  &__Logo {
+    margin-right: 20px;
+  }
+}
+
+//新規のみ
+#birthday_birthday_1i ,#birthday_birthday_2i ,#birthday_birthday_3i {
+  height: 48px;
+  width: 25%;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 1px 8px;
+  border: solid 1px gray; 
+  margin-left: 7px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .Contents {
+    &__Wrapper {
+      width: 80%;
+    } 
+    &__Title {
+      width: 100%;
+    } 
+    &__Form {
+      width: 100%; 
+    }
+    &__Resistration {
+      width: 60%; 
+    }
+    &__Form-Group {
+      width: 90%; 
+      margin: auto;
+
+    }
+
+    &__Form-Text {
+      width: 100%;
+      &--Min {
+        width: 45%; 
+      }
+    }
+
+    &__Bottom {
+      width: 100%; 
+      display: flex;
+      align-items: center;
+    }
+    &__SubmitBtn {
+      width: 55%; 
+    }
+  } 
+  
+  .Footer {
+    width: 80%; 
+  }
+  
+  // 新規のみ
+  #birthday_birthday_1i ,#birthday_birthday_2i ,#birthday_birthday_3i {
+    width: 20%;
+  }
+}

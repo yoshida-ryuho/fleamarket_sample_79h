@@ -1,0 +1,48 @@
+//ここからフッター
+
+%footer.CommonFooter
+  %ul.CommonFooter__Contents
+    %li.CommonFooter__Content
+      %h2.CommonFooter__ContentHead
+        FURIMAについて
+      %ul.CommonFooter__Lists
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            会社概要(運営会社)
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            プライバシーポリシー
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            FURIMA利用規約
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            ポイントに関する特約
+    %li.CommonFooter__Content
+      %h2.CommonFooter__ContentHead
+        FURIMAを見る
+      %ul.CommonFooter__Lists
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            カテゴリー一覧
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            ブランド一覧
+    %li.CommonFooter__Content
+      %h2.CommonFooter__ContentHead
+        ヘルプ & ガイド
+      %ul.CommonFooter__Lists
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            FURIMAガイド
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            FURIMAロゴ利用ガイドライン
+        %li.CommonFooter__List
+          = link_to "#" , class:"CommonFooter__list" do
+            お知らせ
+  .CommonFooter__Logo
+    = link_to "#", class: "CommonFooter__logo" do
+      = image_tag 'logo/logo-white.png',size: '160x46',alt: 'ロゴです'
+    %p.CommonFooter__Copyright
+      © FURIMA
