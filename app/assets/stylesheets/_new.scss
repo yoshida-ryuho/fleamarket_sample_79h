@@ -33,38 +33,52 @@
 
   }
   &__name{
-    height: 20%;
+    height: 10%;
     border-bottom:#f8f8f8 2px solid;
+    padding: 3%;
+
 
   }
   &__introduction{
     height: 25%;
     border-bottom:#f8f8f8 2px solid;
+    padding: 3%;
+
 
   }
   &__details{
-    height: 25%;
+    height: 23%;
     border-bottom:#f8f8f8 2px solid;
+    padding: 3%;
+
 
   }
   &__delivery{
-    height: 25%;
+    height: 23%;
     border-bottom:#f8f8f8 2px solid;
+    padding: 3%;
+
 
   }
   &__price{
-    height: 20%;
+    height: 17%;
     border-bottom:#f8f8f8 2px solid;
+    padding: 3%;
+
 
   }
   &__btns{
-    height: 15%;
+    height: 10%;
     border-bottom:#f8f8f8 2px solid;
+    padding: 3%;
+
 
   }
   &__warning{
     height: 5%;
     border-bottom:#f8f8f8 2px solid;
+    padding: 3%;
+
 
   }
 
@@ -75,12 +89,12 @@ label{
 
 }
 
-span{
-  background-color: red;
-  color: white;
-  font-size: 10px;
+// span{
+//   background-color: red;
+//   color: white;
+//   font-size: 10px;
 
-}
+// }
 
 #previews{
   height: 150px;
@@ -118,4 +132,85 @@ span{
   font-size: 15px;
   color: red;
   margin: 5px 0;
+}
+
+p{
+  font-size: 15px;
+  color: gray;
+}
+.input-form{
+  margin: 10px 0;
+}
+.smallform{
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+
+.bicform{
+  height: 300px;
+  width: 100%;
+
+}
+.instruction{
+  font-size: 15px;
+  color: red;
+  margin: 10px 0;
+
+}
+.required{
+  background-color: red;
+  color: white;
+  font-size: 10px;
+
+}
+.any{
+  background-color:gray;
+  color: white;
+  font-size: 10px;
+
+}
+.yen{
+  font-size: 15px;
+
+}
+.counter{
+  font-size: 10px;
+
+}
+.select{
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.price{
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+
+}
+
+.price-calculation{
+  
+  &__fee{
+
+  }
+  
+  &__profit{
+
+  }
+  &__auto{
+
+  }
+}
+.btn-exhibtion{ 
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: lightskyblue;
+  cursor: pointer;
+
+
 }
