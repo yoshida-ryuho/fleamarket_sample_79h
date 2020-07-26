@@ -36,6 +36,7 @@
       %label カテゴリー
       %span.required 必須 
       .select
+        -# = f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "---"}, {class: "select"} )
         %select.select{:name => "categoryId"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
           %option{"aria-selected" => "false", :label => "レディース", :value => "1"} レディース
@@ -58,6 +59,7 @@
       %label 状態
       %span.required 必須 
       .select
+        -# = f.collection_select(:condition_id, Condition.all, :id, :condition, {include_blank: "---"}, {class: "select"} )
         %select.select{:name => "itemCondition"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
           %option{"aria-selected" => "false", :label => "新品、未使用", :value => "1"} 新品、未使用
@@ -72,6 +74,7 @@
       %label 状態
       %span.required 必須 
       .select
+        -# = f.collection_select(:postage_burden_id, Postage_burden.all, :id, :burden, {include_blank: "---"}, {class: "select"} )
         %select.select{:name => "shippingPayer"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
           %option{"aria-selected" => "false", :label => "送料込み(出品者負担)", :value => "2"} 送料込み(出品者負担)
@@ -80,6 +83,7 @@
       %label 発送元地域
       %span.required 必須 
       .select
+        -# = f.collection_select(:origin_pref_id, Origin_pref.all, :id, :pref, {include_blank: "---"}, {class: "select"} )
         %select.select{:name => "shippingFromArea"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
           %option{"aria-selected" => "false", :label => "北海道", :value => "1"} 北海道
@@ -134,15 +138,13 @@
       %label 発送までの日数
       %span.required 必須 
       .select
+        -# = f.collection_select(:preparation_day_id, Preparation_day.all, :id, :day, {include_blank: "---"}, {class: "select"} )
         %select.select{:name => "shippingDuration"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
           %option{"aria-selected" => "false", :label => "1~2日で発送", :value => "1"} 1~2日で発送
           %option{"aria-selected" => "false", :label => "2~3日で発送", :value => "2"} 2~3日で発送
           %option{"aria-selected" => "false", :label => "4~7日で発送", :value => "3"} 4~7日で発送
       .instruction 選択してください
-
-
-
     .new-inputs__price
       %p 価格（¥300〜9,999,999）
       %label 販売価格
@@ -163,16 +165,6 @@
         %button.btn-exhibtion{:tabindex => "0", :type => "submit"} 出品する
       .btn-top
         %a{:href => "/items"} もどる
-
-
     .new-inputs__warning
       %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-
 = render 'layouts/footer'
-
-
-
-
-
-
-    
