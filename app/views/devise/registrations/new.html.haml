@@ -1,32 +1,41 @@
-%header
-  .Header
-    .Header__Logo
-      = link_to "#",class: "Header__Icon" do
-        = image_tag 'logo/logo.png',size: '185x49',alt: 'ロゴです'
-  
-%main.Contents
-  %section.Contents__Wrapper
-    %h2.Contents__Title
-      Log in
-    = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
-      .Contents__Resistration
-        .Contents__Form-Group
-          = f.label :nickname, class:'Contents__Form-Label' do
-            メールアドレス
-          = f.text_field :nickname,class: 'Contents__Form-Text'
-        .Contents__Form-Group
-          = f.label :email, class:'Contents__Form-Label' do
-            パスワード
-          = f.text_field :email,class: 'Contents__Form-Text'
-        
-
-      .Contents__Bottom
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FleamarketSample79h
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'bodygray', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body.LoginBody
+    %header.SignupHeader
+      .SignupHeader__Logo
+        = link_to "#",class: "SignupHeader__Icon" do
+          = image_tag 'logo/logo.png',size: '185x49',alt: 'ロゴです'
+    
+    %main.Contents
+      %section.Contents__Wrapper
+        %h2.Contents__Title
+          Log in
         = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
-          = f.submit '完了', class: 'Contents__SubmitBtn' 
+          .Contents__Resistration.Contents__Resistration--Login
+            .Contents__Form-Group
+              = f.label :nickname, class:'Contents__Form-Label' do
+                メールアドレス
+              = f.text_field :nickname,class: 'Contents__Form-Text'
+            .Contents__Form-Group.Contents__Form-Group--SetMargin
+              = f.label :email, class:'Contents__Form-Label' do
+                パスワード
+              = f.text_field :email,class: 'Contents__Form-Text'
+            
 
-%footer.Footer 
-  = link_to "#", class: "Footer__Logo" do
-    = image_tag 'logo/logo-white.png',size: '185x49',alt: 'ロゴです'
-  %p.Footer__Bottom
-    © FURIMA, Inc.
+          .Contents__Bottom
+            = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
+              = f.submit '完了', class: 'Contents__SubmitBtn' 
+
+    %footer.Footer 
+      = link_to "#", class: "Footer__Logo" do
+        = image_tag 'logo/logo-white.png',size: '185x49',alt: 'ロゴです'
+      %p.Footer__Bottom
+        © FURIMA, Inc.
 

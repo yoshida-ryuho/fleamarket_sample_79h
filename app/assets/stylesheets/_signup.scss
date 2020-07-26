@@ -1,10 +1,12 @@
 * {
   box-sizing: border-box;
 }
-body {
-  // background: rgb(238, 235, 235);
+
+.LoginBody {
+  height:100%;
 }
-.Header {
+
+.SignupHeader {
   height: 128px;
   display: flex;
   justify-content: center;
@@ -12,10 +14,6 @@ body {
     height: 100px;
     width: 193px;
     padding-top: 40px;
-  }
-  &__Nav {
-    height: 100px;
-    width: 193px;
   }
 }
 
@@ -41,13 +39,21 @@ body {
   &__Resistration {
     width: 343px; 
     margin: 0 auto;
-    margin-bottom: 20px;
+    &--Login {
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   &__Form-Group {
     height: 100px;
     width: 343px; 
     &--Coution {
       margin-bottom: 15px;
+    }
+    &--SetMargin {
+      margin-top: 50px;
     }
     // 新規のみ
     &--Send {
