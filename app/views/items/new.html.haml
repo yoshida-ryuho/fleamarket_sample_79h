@@ -1,6 +1,6 @@
 .new
   .title 
-    %a{:href => "/"}
+    = link_to "/" do
       = image_tag 'logo/logo.png',size:'150x40',alt: 'ロゴです'
   = form_with model: @item, class: "new-inputs" do |f|
     .new-inputs__images
@@ -164,7 +164,8 @@
       .btn-exhibtion
         %button.btn-exhibtion{:tabindex => "0", :type => "submit"} 出品する
       .btn-top
-        %a{:href => "/items"} もどる
+        = link_to "/" do 
+          もどる
     .new-inputs__warning
       %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 = render 'layouts/footer'
