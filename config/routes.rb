@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     end
   end
   resources :profiles
- 
+  resources :brands
+  resources :comments
+  resources :credits
+  resources :destinations
+  resources :images
 end
