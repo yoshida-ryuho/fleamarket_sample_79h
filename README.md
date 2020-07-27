@@ -37,7 +37,7 @@ Things you may want to cover:
 # Association
 -has_many :comments, dependent: :destroy
 -has_many :favorites, dependent: :destroy
--has_many :user_evaluations
+-has_many :evaluations
 -has_many :seller_items, foreign_key: "seller_id", class_name: "items"
 -has_many :buyer_items, foreign_key: "buyer_id", class_name: "items"
 -has_one :profile, dependent: :destroy
@@ -89,21 +89,22 @@ Things you may want to cover:
 |------|----|-------|
 |token|string|
 |user|references|null: false, foreign_key: true|
+|customer_id|integer|
+
 
 # Association
 -belongs_to :user
 
 
-## user_evaluationsテーブル
+## evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |review|text|null: false|
 |user|references|null: false, foreign_key: true|
 |item|references|null: false, foreign_key: true|
-|evaluation(active_hash）|integer|null: false|
+|evaluation|string|null: false|
 
 # Association
--belongs_to_active_hash :evaluation
 -belongs_to :user
 -belongs_to :item
 
@@ -115,26 +116,20 @@ Things you may want to cover:
 |introduction|text|null: false|
 |price|integer|null: false|
 |brand|references|null: false, foreign_key: true|
-|condition(active_hash）|integer|null: false|
-|delivery(active_hash）|integer|null: false|
-|origin_pref(active_hash）|integer|null: false|
-|preparation_day(active_hash）|integer|null: false|
-|category|references|null: false, foreign_key: true|
+|condition|string|null: false|
+|delivery|string|null: false|
+|pref(active_hash）|integer|null: false|
+|preparation_day|string|null: false|
+|category|string|null: false|
 |seller|references|null: false, foreign_key: true|
 |buyer|references|null: false, foreign_key: true|
 |close_date|timestamp|
-|postage_burden(active_hash）|integer|null: false|
+|postage_burden|string|null: false|
 # Association
 -has_many :comments, dependent: :destroy-belongs_to :user
 -has_many :favorites
 -has_many :images, dependent: :destroy
 -has_one :evaluation
--belongs_to :category
--belongs_to :brand
--belongs_to_active_hash :condition
--belongs_to_active_hash :delivery
--belongs_to_active_hash :preparation_day
--belongs_to_active_hash :postage_burden
 -belongs_to :seller, class_name: "User"
 -belongs_to :buyer, class_name: "User"
 -belongs_to_active_hash :pref
@@ -184,13 +179,3 @@ has_many :items
 # Association
 -belongs_to :user
 -belongs_to :item
-
-
-## categorys テーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|ancestry|string|null: false|
-
-# Association
--has_many :items
