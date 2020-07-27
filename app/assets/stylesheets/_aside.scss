@@ -1,14 +1,15 @@
- //ここからアサイド
- * {
+//ここからアサイド
+* {
   box-sizing: border-box;
-  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic",
+    "メイリオ", "Meiryo", sans-serif;
 }
 
 .AppBanner {
   height: 360px;
   padding: 100px 50px;
-  background-image: url("pict/bg-appBanner-pict");
-  background-size: cover; 
+  background-image: image-url("pict/bg-appBanner-pict");
+  background-size: cover;
 }
 
 .ABInner {
@@ -18,7 +19,7 @@
     line-height: 1.4;
     text-align: center;
     color: #fff;
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   }
   &__Text {
     // font-weight: bold;
@@ -26,28 +27,27 @@
     line-height: 1.4;
     text-align: center;
     color: #fff;
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   }
 
-
-
-&__Icon {
-  height: 54px;
-  margin-top: 20px;
-  display: flex;
-  justify-content:center;
-  &--gBtn {
-    margin-top: -14px;
-  }
-  &--aBtn:hover,&--gBtn:hover {
+  &__Icon {
+    height: 54px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    &--gBtn {
+      margin-top: -14px;
+    }
+    &--aBtn:hover,
+    &--gBtn:hover {
       opacity: 0.6;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
+    }
   }
-}
 }
 
 @media screen and (max-width: 767px) {
-.AppBanner {
-  padding: 100px 0;
-}
+  .AppBanner {
+    padding: 100px 0;
+  }
 }
