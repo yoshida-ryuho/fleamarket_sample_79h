@@ -65,10 +65,10 @@ Things you may want to cover:
 ## destinationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|destination-first_name|string|null: false|
-|destination-family_name|string|null: false|
-|destination-first_name_kana|string|null: false|
-|destination-family_name_kana|string|null: false|
+|destination_first_name|string|null: false|
+|destination_family_name|string|null: false|
+|destination_first_name_kana|string|null: false|
+|destination_family_name_kana|string|null: false|
 |post_code|integer(7)|null: false|
 |pref(active_hash）|integer|null: false|
 |city|string|null: false|
@@ -123,10 +123,10 @@ Things you may want to cover:
 |category|string|null: false|
 |seller|references|null: false, foreign_key: true|
 |buyer|references|null: false, foreign_key: true|
-|close_date|timestamp|
 |postage_burden|string|null: false|
+
 # Association
--has_many :comments, dependent: :destroy-belongs_to :user
+-has_many :comments, dependent: -destroy-belongs_to :user
 -has_many :favorites
 -has_many :images, dependent: :destroy
 -has_one :evaluation
