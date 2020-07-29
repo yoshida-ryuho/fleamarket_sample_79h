@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_one :destination, dependent: :destroy
   has_one :credit, dependent: :destroy  
   
-  accepts_nested_attributes_for :profiles, :destination
+  accepts_nested_attributes_for :profile, :destination
 
   validates :nickname, presence: true
   validates :email, presence: true, uniqueness: true
