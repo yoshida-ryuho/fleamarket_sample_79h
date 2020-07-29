@@ -42,9 +42,17 @@
               %option{"aria-selected" => "false", :label => "プーマ", :value => "4"} プーマ
               %option{"aria-selected" => "false", :label => "ルイ ビトン", :value => "5"} ルイ ビトン
       %ul.HeaderInner__Right
-        %li.HeaderInner__List
-          = link_to  "/users/sign_up",class:"HeaderInner__Right--first" do
-            ログイン
-        %li.HeaderInner__List.HeaderInner__List--MarginFix
-          = link_to "/users/sign_in",class:"HeaderInner__Right--second" do
-            新規会員登録
+        - if user_signed_in?
+          %li.HeaderInner__List
+            = link_to   destroy_user_session_path,method: :delete do
+              ログアウト
+            = link_to   profiles_path,method: :index do
+              マイページ
+        - else
+          %li.HeaderInner__List
+            = link_to  "/users/sign_in",class:"HeaderInner__Right--first" do
+              ログイン
+          %li.HeaderInner__List.HeaderInner__List--MarginFix
+            = link_to "/users/sign_up",class:"HeaderInner__Right--second" do
+              新規会員登録
+      
