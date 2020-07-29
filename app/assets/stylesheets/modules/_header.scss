@@ -33,6 +33,22 @@
     &--first,&--second {
       text-decoration: none;
       color:#333;
+      select {
+        width: 100%;
+        padding-right: 1em;
+        padding-left: 10px;
+        cursor: pointer;
+        text-indent: 0.01px;
+        text-overflow: ellipsis;
+        border: none;
+        height: 50px;
+        border-radius: 4px;
+        outline: none;
+        background: transparent;
+        box-shadow: none;
+        -webkit-appearance: none;
+        appearance: none;
+      }
     }
     &--first:hover,&--second:hover {
       color: orange;
