@@ -13,14 +13,14 @@ class User < ApplicationRecord
   has_one :destination, dependent: :destroy
   has_one :credit, dependent: :destroy  
   
-  accepts_nested_attributes_for :destination
+  # accepts_nested_attributes_for :destination
 
-  validates :nickname, presence: true,uniqueness: { case_sensitive: true }
+  validates :nickname, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: true }
   validates :password, presence: true
-  # validates :family_name, presence: true
-  # validates :first_name, presence: true
-  # validates :family_name_kana, presence: true
-  # validates :first_name_kana, presence: true
-  # validates :birth_date, presence: true
+  validates :family_name, presence: true
+  validates :first_name, presence: true
+  validates :family_name_kana, presence: true
+  validates :first_name_kana, presence: true
+  validates :birth_date, presence: true
 end
