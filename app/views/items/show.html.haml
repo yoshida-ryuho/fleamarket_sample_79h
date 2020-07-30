@@ -1,37 +1,79 @@
 .top-bar
   = render 'layouts/header'
+.Main
+  .main-show-view
+    .main-show-view__item-name
+      .main-show-view__item-name__name-zoon
+        商品名
+    .main-show-view__image-information
+      .main-show-view__image-information__image
+      .main-show-view__image-information__information
+        %table{:border => "1"}
+          %tbody
+            %tr
+              %th 出品者
+              %td= link_to '出品者名', '/'
+            %tr
+              %th カテゴリー
+              %td= link_to 'メンズ', '/'
+            %tr
+              %th ブランド
+              %td シャネル
+            %tr
+              %th 商品の状態
+              %td 新品、未使用
+            %tr
+              %th 配送料の負担
+              %td 送料込み(出品者負担)
+            %tr
+              %th 配送日元地域
+              %td 東京都
+            %tr
+              %th 配送日の目安
+              %td 1~2日で発送
+        -# .main-show-view__image-information__information__category
+        -#   カテゴリー
+        -# .main-show-view__image-information__information__brand
+        -#   ブランド
+        -# .main-show-view__image-information__information__status
+        -#   状態
+        -# .main-show-view__image-information__information__delivery-burden
+        -#   配送料の負担
+        -# .main-show-view__image-information__information__delivery-method
+        -#   配送の方法
+        -# .main-show-view__image-information__information__area
+        -#   配送元地域
+        -# .main-show-view__image-information__information__standard
+        -#   配送日の目安
+    .main-show-view__comment-exc
+      .main-show-view__comment-exc__price-tax
+        .main-show-view__comment-exc__price-tax__price
+          1,200円
+        .main-show-view__comment-exc__price-tax__tax
+          (税込)　送料込み
+      .main-show-view__comment-exc__comment
+        商品説明文
+    -# .main-show-view__comment-exc__button
+    -#   購入画面に進む
+    -# .main-show-view__comment-exc__comment
+    -#   商品説明
 
-.main-show-view
-  .main-show-view__item-name
-    .main-show-view__item-name__name-zoon
-      商品名
-  .main-show-view__image-information
-    .main-show-view__image-information__image
-    .main-show-view__image-information__information
-      .main-show-view__image-information__information__seller
-        売人
-      .main-show-view__image-information__information__category
-        カテゴリー
-      .main-show-view__image-information__information__brand
-        ブランド
-      .main-show-view__image-information__information__status
-        状態
-      .main-show-view__image-information__information__delivery-burden
-        配送料の負担
-      .main-show-view__image-information__information__delivery-method
-        配送の方法
-      .main-show-view__image-information__information__area
-        配送元地域
-      .main-show-view__image-information__information__standard
-        配送日の目安
-  .main-show-view__comment-exc
-    .main-show-view__comment-exc__price-tax
-      .main-show-view__comment-exc__price-tax__price
-        1,200円
-      .main-show-view__comment-exc__price-tax__tax
-        税込み、送料込み
-    .main-show-view__comment-exc__button
-      購入画面に進む
-    .main-show-view__comment-exc__comment
-      いい商品ですね！
-= render 'layouts/exhibition'
+-# ログインしていてかつ、自分が出品した商品の場合
+%if = usr
+.Change
+  .Change__button
+    .Change__button__edit
+      = form_with url: "#" do |form|
+        = form.submit '商品の編集', class:"edit-btn"
+    .Chage__button__destroy
+      = form_with url: "#" do |form|
+        = form.submit 'この商品を削除する', class:"destroy-btn"
+  .Change__under-bar
+    =render 'layouts/footer'
+
+-# ログインしていない、または他人が出品している商品の場合
+-# = render 'layouts/exhibition'
+-# .main-show-view__comment-exc__button
+-#   購入画面に進む
+-# .main-show-view__comment-exc__comment
+-#   商品説明

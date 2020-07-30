@@ -1,36 +1,54 @@
+.Main {
+  box-sizing: border-box;
+  overflow: scroll;
+  background-color: rgb(245, 245, 245);
+  padding-top: 40px;
+}
+
 .main-show-view {
-  height: 650px;
-  width: 100%;
+  box-sizing: border-box;
+  // height: 650px;
+  background-color: #fff;
+  margin: auto;
+  width: 700px;
   display: flex;
   flex-direction: column;
-
+  border: 1px solid #fff;
+  padding: 24px 40px 40px;
+  margin-bottom: 24px;
   &__item-name {
     height: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
-
     &__name-zoon {
       height: 50px;
       width: 200px;
-      font-size: 40px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
     }
   }
 
   &__image-information {
-    height: 300px;
+    // height: 300px;
     width: 100%;
     display: flex;
     justify-content: space-around;
 
     &__image {
       height: 300px;
-      width: 400px;
+      width: 300px;
+      background-color: #fafafa;
     }
 
     &__information {
-      height: 300px;
-      width: 400px;
+      height: 420px;
+      max-width: 300px;
+      float: right;
+      margin: 0 auto;
+      border: 1px solid #f5f5f5;
+      border-collapse: collapse;
 
       &__seller {
         height: 37.5px;
@@ -69,37 +87,37 @@
 
       &__standard {
         height: 37.5px;
-        width: 400px;
+        // width: 400px;
       }
     }
   }
 
   &__comment-exc {
-    height: 300px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
+    // height: 300px;
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
     &__price-tax {
-      height: 100px;
+      // height: 50px;
       width: 100%;
       display: flex;
-      align-items: center;
       justify-content: center;
-
+      align-items: center;
       &__price {
-        height: 80px;
-        width: 100px;
-        margin-top: 50px;
-        font-size: 25px;
+        // height: 80px;
+        // width: 100px;
+        margin-top: 24px;
+        font-size: 50px;
+        font-weight: bold;
       }
 
       &__tax {
-        height: 40px;
-        width: 80px;
-        font-size: 6px;
-        margin-top: 40px;
+        // height: 40px;
+        // width: 80px;
+        font-size: 16px;
+        margin-top: 44px;
+        margin-left: 5%;
       }
     }
 
@@ -110,8 +128,77 @@
     }
 
     &__comment {
-      height: 100px;
-      width: 200px;
+      // height: 100px;
+      // width: 200px;
     }
   }
+}
+
+.Change {
+  box-sizing: border-box;
+  width: 100vw;
+  background-color: rgb(245, 245, 245);
+  &__button {
+    overflow: scroll;
+    width: 700px;
+    padding: 30px 8px 30px 8px;
+    text-align: center;
+    background-color: #fff;
+    margin: auto;
+  }
+  &__under-bar {
+    margin-top: 10px;
+    &__edit {
+      padding-bottom: 50px;
+      margin: auto;
+    }
+    &__destroy {
+      margin: auto;
+    }
+  }
+}
+
+.edit-btn {
+  border: 1px solid #3CCACE;
+  background-color: #3CCACE;
+  color: #fff;
+  font-size: 14px;
+  width: 670px;
+  height: 60px;
+  border-radius: 4px;
+}
+
+.destroy-btn {
+  border: 1px solid #aaa;
+  background-color: #aaa;
+  color: #fff;
+  font-size: 14px;
+  width: 670px;
+  height: 60px;
+  border-radius: 4px;
+}
+
+th {
+  width: 39%;
+  text-align: left;
+  background: #fafafa;
+}
+
+td {
+  width: 61%;
+  background: #fff;
+}
+
+table {
+  height: 420px;
+  max-width: 300px;
+  float: right;
+  margin: 0 auto;
+  border: 1px solid #f5f5f5;
+  border-collapse: collapse;
+}
+
+a {
+  text-decoration: none;
+  color: #0099e8;
 }
