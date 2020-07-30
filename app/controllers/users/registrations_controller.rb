@@ -7,12 +7,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
+  # def birthday_join
+  #   date = params[:user][:birth_date]
+  #   binding.pry
+  # end
+  # require "date"
   def create
+    date = params[:birth_date]
+    params[:user][:birth_date] = birth_date_join(date)
+    # binding.pry
+    # session["devise.regist_data"][:user][:birth_date] = params[:user][:birth_date]
+    # binding.pry
     @user = User.new(sign_up_params) #登録1ページ目から送られてきたパラメータを@userに代入
     unless @user.valid? #validメソッドを使ってバリデーションチェック
       flash.now[:alert] = @user.errors.full_messages
       render :new and return #and returnを使って条件分岐を明示的に終了させている。
     end
+
    
     session["devise.regist_data"] = {user: @user.attributes} 
     #sessionにハッシュオブジェクトで情報保持させるため、attributesメソッドでデータ整形。
@@ -53,6 +64,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   protected
+
+  # def user_params
+  #   params.require(:user).permit(:birth_date)
+  # end
+
+  def birth_date_join(date)
+    require "date"
+    # date = params[:user][:birth_date]
+    Date.new date["birth_date(1i)"].to_i,date["birth_date(2i)"].to_i,date["birth_date(3i)"].to_i
+  end
    
   def destination_params
     params.require(:destination).permit(:destination_family_name, :destination_first_name, :destination_family_name_kana,:destination_first_name_kana, :post_code, :pref_id, :city, :house_number,:building_name,:phone_number)
