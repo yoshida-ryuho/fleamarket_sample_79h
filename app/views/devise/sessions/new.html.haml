@@ -8,21 +8,20 @@
     %section.Contents__Wrapper
       %h2.Contents__Title
         Log in
-      = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
+      = form_with model:@user ,url: user_session_path, class: 'Contents__Form', local: true do |f|
         .Contents__Resistration.Contents__Resistration--Login
           .Contents__Form-Group
-            = f.label :nickname, class:'Contents__Form-Label' do
-              メールアドレス
-            = f.text_field :nickname,class: 'Contents__Form-Text'
-          .Contents__Form-Group.Contents__Form-Group--SetMargin
             = f.label :email, class:'Contents__Form-Label' do
+              メールアドレス
+            = f.email_field :email,class: 'Contents__Form-Text'
+          .Contents__Form-Group.Contents__Form-Group--SetMargin
+            = f.label :password, class:'Contents__Form-Label' do
               パスワード
-            = f.text_field :email,class: 'Contents__Form-Text'
+            = f.password_field :password,class: 'Contents__Form-Text'
           
 
         .Contents__Bottom
-          = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
-            = f.submit '完了', class: 'Contents__SubmitBtn' 
+          = f.submit '完了', class: 'Contents__SubmitBtn' 
 
   %footer.Footer 
     = link_to "#", class: "Footer__Logo" do
