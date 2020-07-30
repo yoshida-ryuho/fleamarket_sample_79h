@@ -9,7 +9,7 @@
       %h2.Contents__Title
         お届け先住所
       = form_for @destination do |f|
-        -# = render "devise/shared/error_messages", resource: @destination
+        = render "devise/shared/error_messages", resource: @destination
         .Contents__Resistration
           .Contents__Form-Group
             %div
@@ -38,8 +38,8 @@
               都道府県
             %span.Contents__Form-Require
               必須
-            = f.collection_select :pref_id, Pref.all, :id, :name
-            -# = f.collection_select(:pref, Pref.all, :id, :name, {include_blank: '---'}, {class: 'Contents__Form-Text'} )
+            -# = f.collection_select :pref_id, Pref.all, :id, :name
+            = f.collection_select(:pref_id, Pref.all, :id, :name, {include_blank: '---'}, {class: 'Contents__Form-Text'} )
           .Contents__Form-Group
             = f.label :city, class:'Contents__Form-Label' do
               市区町村
