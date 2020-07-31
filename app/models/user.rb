@@ -18,8 +18,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: true }
   validates :password, presence: true
-  validates :family_name, presence: true, format: { with:/\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: 'は全角で入力して下さい。'}
-  validates :first_name, presence: true, format: { with:/\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: 'は全角で入力して下さい。'}
+  validates :family_name,:first_name, presence: true, format: { with:/\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々]|[a-zA-Z]|[ａ-ｚＡ-Ｚ])+\z/, message: 'は全角で入力して下さい。'}
   validates :family_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'は全角カタカナで入力して下さい。'}
   validates :first_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'は全角カタカナで入力して下さい。'}
   validates :birth_date, presence: true

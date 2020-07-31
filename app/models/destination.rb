@@ -3,7 +3,7 @@ class Destination < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :pref
 
-  validates :destination_family_name,:destination_first_name, presence: true, format: { with:/\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: 'は全角で入力して下さい。'}
+  validates :destination_family_name,:destination_first_name, presence: true, format: { with:/\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々]|[a-zA-Z]|[ａ-ｚＡ-Ｚ])+\z/, message: 'は全角で入力して下さい。'}
   
   validates :destination_family_name_kana,:destination_first_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'は全角カタカナで入力して下さい。'}
   
