@@ -83,8 +83,8 @@
       %label 発送元地域
       %span.required 必須 
       .select
-        -# = f.collection_select(:origin_pref_id, Origin_pref.all, :id, :pref, {include_blank: "---"}, {class: "select"} )
-        %select.select{:name => "shippingFromArea"}
+        = f.collection_select(:pref, Pref.all, :id, :name, {include_blank: "---"}, {class: "select"} )
+        -# %select.select{:name => "shippingFromArea"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
           %option{"aria-selected" => "false", :label => "北海道", :value => "1"} 北海道
           %option{"aria-selected" => "false", :label => "青森県", :value => "2"} 青森県
