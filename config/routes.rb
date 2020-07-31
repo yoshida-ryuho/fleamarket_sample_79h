@@ -17,6 +17,5 @@ Rails.application.routes.draw do
   resources :brands
   resources :comments
   resources :credits
-  # resources :destinations
-  resources :images
+  resources :destinations
 end
