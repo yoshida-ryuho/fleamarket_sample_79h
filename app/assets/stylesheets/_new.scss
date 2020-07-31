@@ -97,8 +97,10 @@ label{
   line-height: 1.5;
   cursor: pointer;
   outline-width: 2px;
+  opacity: 0; 
+  position: relative;
 }
-.upload.image{
+.upload_image{
   font-size: 15px;
   color: red;
   margin: 5px 0;
@@ -127,7 +129,7 @@ p{
 .instruction{
   font-size: 15px;
   color: red;
-  margin: 10px 0;
+  margin-bottom: 10px;
 
 }
 .required{
@@ -151,9 +153,9 @@ p{
 
 }
 .select{
-  height: 50px;
+  height: 30px;
   width: 100%;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 .price{
   height: 50px;
@@ -182,4 +184,61 @@ p{
   background-color: lightskyblue;
   cursor: pointer;
 
+}
+.item-image__operetion--delete{
+  cursor: pointer;
+  color: red;
+}
+
+.item-num-0{
+  width: 10%;
+  height: 10%;
+
+}
+.item-num-1{
+  width: 100px;
+}
+.item-num-2{
+  width: 363px;
+}
+.item-num-3{
+  width: 234px;
+}
+.item-num-4{
+  width: 106px;
+}
+//下段のfile_field
+.item-num-5{
+  width: 100%;
+}
+.item-num-6{
+  width: 491px;
+}
+.item-num-7{
+  width: 363px;
+}
+.item-num-8{
+  width: 234px;
+}
+.item-num-9{
+  width: 106px;
+}
+.input-area{
+  width: 100%;
+}
+.item-image{
+  width: 10%;
+}
+.item-num-0#image-box__container{
+  height: 50px;
+
+}
+
+.boxFileSelect{
+}
+.item-image__content{
+  width: 50%;
+}
+.box{
+  display: flex;
 }

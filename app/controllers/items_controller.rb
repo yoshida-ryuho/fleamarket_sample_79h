@@ -4,8 +4,19 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @item.images.new
 
   end
+  
+  def create
+    # @item = Items.(item_params)
+    # # @item = current_user.items.build(item_params)
+    # @item.save
+    Item.create(item_params)
+
+    redirect_to "/items"
+  end   
 
   def show
 
@@ -15,4 +26,10 @@ class ItemsController < ApplicationController
   def confirm
   
   end
+
+  def item_params
+    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category, :postage_burden, images_attributes: [:url])
+  end
+  
+
 end
