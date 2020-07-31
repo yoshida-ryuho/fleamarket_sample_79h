@@ -1,32 +1,81 @@
-.LoginWrapper
+.RasistrationWrapper
   %header.SignupHeader
     .SignupHeader__Logo
-      = link_to "#",class: "SignupHeader__Icon" do
+      = link_to root_path,class: "SignupHeader__Icon" do
         = image_tag 'logo/logo.png',size: '185x49',alt: 'ロゴです'
   
   %main.Contents
     %section.Contents__Wrapper
       %h2.Contents__Title
-        Log in
-      = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
-        .Contents__Resistration.Contents__Resistration--Login
+        会員情報入力
+      = form_for(@user, url: user_registration_path) do |f|
+        = render "devise/shared/error_messages", resource: @user
+        .Contents__Resistration
           .Contents__Form-Group
             = f.label :nickname, class:'Contents__Form-Label' do
-              メールアドレス
-            = f.text_field :nickname,class: 'Contents__Form-Text'
-          .Contents__Form-Group.Contents__Form-Group--SetMargin
+              ニックネーム
+            %span.Contents__Form-Require
+              必須
+            = f.text_field :nickname, autofocus: true, autocomplete: "off", placeholder: '例）HURIMA太郎',class: 'Contents__Form-Text'
+          .Contents__Form-Group
             = f.label :email, class:'Contents__Form-Label' do
+              メールアドレス
+            %span.Contents__Form-Require
+              必須
+            = f.email_field :email, placeholder: 'PC、携帯どちらでも可',class: 'Contents__Form-Text'
+          .Contents__Form-Group
+            = f.label :password, class:'Contents__Form-Label' do
               パスワード
-            = f.text_field :email,class: 'Contents__Form-Text'
+            %span.Contents__Form-Require
+              必須
+            = f.password_field :password, autocomplete: "off", placeholder: '7文字以上の半角英数字',class: 'Contents__Form-Text'
+          .Contents__Form-Group
+            = f.label :password_confirmation, autocomplete: "off",class:'Contents__Form-Label' do
+              パスワード確認用
+            %span.Contents__Form-Require
+              必須
+            = f.password_field :password_confirmation,autocomplete: "off", placeholder: '確認のためもう一度入力',class: 'Contents__Form-Text'
+            %p.Contents__Password-Message
+              ※ 7文字以上で設定してください     
+          .Contents__Form-Group--Coution
+            %h3.Contents__Text-Left
+              本人確認 
+            %p.Contents__Text-Info
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .Contents__Form-Group
+            .Contents_Form
+              = f.label :name, class:'Contents__Form-Label' do
+                お名前(全角)
+              %span.Contents__Form-Require
+                必須
+            = f.text_field :family_name, placeholder: '例）山田',class: 'Contents__Form-Text--Min'
+            = f.text_field :first_name, placeholder: '例）彩',class: 'Contents__Form-Text--Min'
+          .Contents__Form-Group
+            %div
+              = f.label :name_kana, class:'Contents__Form-Label' do
+                お名前カナ(全角)
+              %span.Contents__Form-Require
+                必須
+            = f.text_field :family_name_kana, placeholder: '例）ヤマダ',class: 'Contents__Form-Text--Min'
+            = f.text_field :first_name_kana, placeholder: '例）アヤ',class: 'Contents__Form-Text--Min'
+          .Contents__Form-Group
+            %div
+              = f.label :birth_date, class:'Contents__Form-Label' do
+                生年月日
+              %span.Contents__Form-Require
+                必須  
+            = raw  sprintf(f.date_select(:birth_date, prefix:'birth_date',with_css_classes:'Contents__Form-Text--Birth',  use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
           
-
         .Contents__Bottom
-          = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
-            = f.submit '完了', class: 'Contents__SubmitBtn' 
+          = f.submit 'お届け先の入力へ', class: 'Contents__SubmitBtn' 
+      -# = render "devise/shared/links"    
+      -#   = form_with url: '#', html:{class: 'Contents__Form'}, local: true do |f|
+      -#     = f.submit '完了', class: 'Contents__SubmitBtn' 
 
   %footer.Footer 
-    = link_to "#", class: "Footer__Logo" do
+    = link_to root_path, class: "Footer__Logo" do
       = image_tag 'logo/logo-white.png',size: '185x49',alt: 'ロゴです'
     %p.Footer__Bottom
-      © FURIMA, Inc.
+      © FURIMA, Inc. 
 
+  -# = render "devise/shared/links"
