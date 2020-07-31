@@ -10,129 +10,66 @@
       = f.fields_for :images do |i|
         .box
           .item-num-0#image-box__container 
-
-
         %ul#previews
-
           %li.input
-            // 画像を取り込むインプットボタン
             %label.upload-label
               .input-area
-                = i.file_field :url, name: "item[images_attributes][][url]", value:"", style: "display:none", id:"img-file"
+                = i.file_field :url, name: "%item(images_attributes="" 0="")[url]", value:"", style: "display:none", id:"img-file"
                 %label{for: "img-file"}
-                .boxFileSelect
-                
+                .boxFileSelect                
       .upload_image
-
-
     .new-inputs__name
       %label 商品名
       %span.required 必須 
       .input-form
         = f.text_field :name, placeholder:  "40文字まで",class:  "smallform",autocomplete:"off"
       .instruction 入力してください  
-
     .new-inputs__introduction
       %label 商品の説明
       %span.required 必須 
       .input-form
         = f.text_area :introduction, placeholder:  "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）",class:  "bicform",autocomplete:"off",rows:"7"
-
-      -# %span.counter 0/1000
     .new-inputs__details
       %p 商品の詳細
       %label カテゴリー
       %span.required 必須 
       .select
-        -# = f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "---"}, {class: "select"} )
         = f.select :category, [["選択してください。", 0],["レディース", "レディース"],["メンズ", "メンズ"],["ベビー・キッズ","ベビー・キッズ"],["インテリア・住まい・小物","インテリア・住まい・小物"],["本・音楽・ゲーム","本・音楽・ゲーム"],["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],["コスメ・香水・美容","コスメ・香水・美容"],["家電・スマホ・カメラ","家電・スマホ・カメラ"],["スポーツ・レジャー","スポーツ・レジャー"],["ハンドメイド","ハンドメイド"],["チケット","チケット"],["自動車・オートバイ","自動車・オートバイ"],["その他","その他"]]
-
-        -# %select.select{:name => "categoryId"}
-        -#   %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-        -#   %option{"aria-selected" => "false", :label => "レディース", :value => "1"} レディース
-        -#   %option{"aria-selected" => "false", :label => "メンズ", :value => "2"} メンズ
-        -#   %option{"aria-selected" => "false", :label => "ベビー・キッズ", :value => "3"} ベビー・キッズ
-        -#   %option{"aria-selected" => "false", :label => "インテリア・住まい・小物", :value => "4"} インテリア・住まい・小物
-        -#   %option{"aria-selected" => "false", :label => "本・音楽・ゲーム", :value => "5"} 本・音楽・ゲーム
-        -#   %option{"aria-selected" => "false", :label => "おもちゃ・ホビー・グッズ", :value => "1328"} おもちゃ・ホビー・グッズ
-        -#   %option{"aria-selected" => "false", :label => "コスメ・香水・美容", :value => "6"} コスメ・香水・美容
-        -#   %option{"aria-selected" => "false", :label => "家電・スマホ・カメラ", :value => "7"} 家電・スマホ・カメラ
-        -#   %option{"aria-selected" => "false", :label => "スポーツ・レジャー", :value => "8"} スポーツ・レジャー
-        -#   %option{"aria-selected" => "false", :label => "ハンドメイド", :value => "9"} ハンドメイド
-        -#   %option{"aria-selected" => "false", :label => "チケット", :value => "1027"} チケット
-        -#   %option{"aria-selected" => "false", :label => "自動車・オートバイ", :value => "1318"} 自動車・オートバイ
-        -#   %option{"aria-selected" => "false", :label => "その他", :value => "10"} その他
       .instruction 選択してください  
       %label ブランド
       %span.any 任意
       = f.text_field :brand, placeholder:  "例：シャネル",class:  "smallform",autocomplete:"off"
-
       %label 状態
       %span.required 必須 
       .select
-        -# = f.collection_select(:condition_id, Condition.all, :id, :condition, {include_blank: "---"}, {class: "select"} )
         = f.select :condition, [["選択してください。", 0],["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]]
-
-        -# %select.select{:name => "itemCondition"}
-        -#   %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-        -#   %option{"aria-selected" => "false", :label => "新品、未使用", :value => "1"} 新品、未使用
-        -#   %option{"aria-selected" => "false", :label => "未使用に近い", :value => "2"} 未使用に近い
-        -#   %option{"aria-selected" => "false", :label => "目立った傷や汚れなし", :value => "3"} 目立った傷や汚れなし
-        -#   %option{"aria-selected" => "false", :label => "やや傷や汚れあり", :value => "4"} やや傷や汚れあり
-        -#   %option{"aria-selected" => "false", :label => "傷や汚れあり", :value => "5"} 傷や汚れあり
-        -#   %option{"aria-selected" => "false", :label => "全体的に状態が悪い", :value => "6"} 全体的に状態が悪い
       .instruction 選択してください  
     .new-inputs__delivery
       %p 配送について 
       %label 状態
       %span.required 必須 
       .select
-        -# = f.collection_select(:postage_burden_id, Postage_burden.all, :id, :burden, {include_blank: "---"}, {class: "select"} )
         = f.select :postage_burden, [["選択してください。", 0],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]]
-
-        -# %select.select{:name => "shippingPayer"}
-        -#   %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-        -#   %option{"aria-selected" => "false", :label => "送料込み(出品者負担)", :value => "2"} 送料込み(出品者負担)
-        -#   %option{"aria-selected" => "false", :label => "着払い(購入者負担)", :value => "1"} 着払い(購入者負担)
       .instruction 選択してください  
       %label 発送元地域
       %span.required 必須 
       .select
-        = f.collection_select(:pref_id, Pref.all, :id, :name, {include_blank: "---"}, {class: "select"} )
-      
+        = f.collection_select(:pref_id, Pref.all, :id, :name, {include_blank: "---"}, {class: "select"} ) 
       .instruction 選択してください  
       %label 発送までの日数
       %span.required 必須 
       .select
-        = f.select :preparation_day, [["選択してください。", 0],["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]]
-
-        -# = f.collection_select(:preparation_day_id, Preparation_day.all, :id, :day, {include_blank: "---"}, {class: "select"} )
-        -# %select.select{:name => "shippingDuration"}
-        -#   %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-        -#   %option{"aria-selected" => "false", :label => "1~2日で発送", :value => "1"} 1~2日で発送
-        -#   %option{"aria-selected" => "false", :label => "2~3日で発送", :value => "2"} 2~3日で発送
-        -#   %option{"aria-selected" => "false", :label => "4~7日で発送", :value => "3"} 4~7日で発送
+        = f.select :preparation_day, [["選択してください。", 0],["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]]  
       .instruction 選択してください
     .new-inputs__price
       %p 価格（¥300〜9,999,999）
       %label 販売価格
       %span.required 必須
       %span.yen ¥
-      -# %input{:autocomplete => "off", :name => "price", :placeholder => "0", :type => "number", :value => "", :class => "price"}/
       = f.text_field :price, placeholder:  "0",class:  "smallform",autocomplete:"off"
-
       .instruction 300以上9999999以下で入力してください
-      -# .price-calculation
-      -#   .price-calculation__fee{"data-test" => "fee-label"}
-      -#     %div 販売手数料（10%）
-      -#   %span.price-calculation__auto{"data-test" => "fee-value"} —
-      -# .price-calculation
-      -#   .price-calculation__profit 販売利益
-      -#   %span.price-calculation__auto{"data-test" => "total-value"} —
-
     .new-inputs__btns
       .btn-exhibtion
-        -# %button.btn-exhibtion{:tabindex => "0", :type => "submit"} 出品する
         = f.submit "出品する", {class:"btn-exhibtion", tabindex:"0"}
       .btn-top
         = link_to root_path do 
