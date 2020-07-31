@@ -59,7 +59,7 @@
     -#   商品説明
 
 -# ログインしていてかつ、自分が出品した商品の場合
-%if = usr
+-# - if user_signed_in? && current_user.id == item.user_id
 .Change
   .Change__button
     .Change__button__edit
@@ -71,9 +71,29 @@
   .Change__under-bar
     =render 'layouts/footer'
 
--# ログインしていない、または他人が出品している商品の場合
+-# - elsif user_signed_in? && current_user.id != item.user_id
+-#   .Buy
+-#     .Buy__button
+-#       = form_with url: "#" do |form|
+-#         = form.submit '購入画面に進む', class:"Buy-btn"
+-#     .Buy__under-bar
+-#       =render 'layouts/footer'
+
+-# - else
+-#   .Login
+-#     .Login__sign
+-#       .Login__sign--up
+-#         = form_with url: "/users/sign_in" do |form|
+-#           = form.submit '新規会員登録をして購入画面に進む', class:"Sign-up-btn"
+-#       .Login__sign--in
+-#         = form_with url: "/users/sign_up" do |form|
+-#           = form.submit 'ログインをして購入画面に進む', class:"Sign-in-btn"
+-#     .Login__under-bar
+-#       =render 'layouts/footer'
+
+-# 自分の商品でもログインしていない、または他人が出品している商品の場合
 -# = render 'layouts/exhibition'
 -# .main-show-view__comment-exc__button
--#   購入画面に進む
+  購入画面に進む
 -# .main-show-view__comment-exc__comment
--#   商品説明
+  商品説明
