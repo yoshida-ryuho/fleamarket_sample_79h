@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  # 他のメンバーが作業中なのでトップページに飛ばされないようにコメントアウトしてます。
   # before_action :move_to_index, except: [:index, :show]
   
   def index
