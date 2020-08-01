@@ -22,7 +22,7 @@
               メールアドレス
             %span.Contents__Form-Require
               必須
-            = f.email_field :email, placeholder: 'PC、携帯どちらでも可',class: 'Contents__Form-Text'
+            = f.text_field :email, placeholder: 'PC、携帯どちらでも可',class: 'Contents__Form-Text'
           .Contents__Form-Group
             = f.label :password, class:'Contents__Form-Label' do
               パスワード
@@ -53,7 +53,7 @@
           .Contents__Form-Group
             %div
               = f.label :name_kana, class:'Contents__Form-Label' do
-                お名前カナ(全角)
+                お名前 かな(全角)
               %span.Contents__Form-Require
                 必須
             = f.text_field :family_name_kana, placeholder: '例）ヤマダ',class: 'Contents__Form-Text--Min'
