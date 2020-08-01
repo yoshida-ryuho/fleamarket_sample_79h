@@ -16,7 +16,7 @@ class User < ApplicationRecord
   # accepts_nested_attributes_for :destination
 
   validates :nickname, presence: true
-  validates :email, presence: true, uniqueness: { case_sensitive: true } , format: {with: /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: 'メールアドレスに@とドメインを含めて下さい'}
+  validates :email, presence: true, uniqueness: { case_sensitive: true } , format: {with: /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: 'には@とドメインを含めて下さい'}
 
   validates :password, presence: true
   

@@ -75,7 +75,7 @@ describe User do
     it "メールアドレスは@があってもドメインがなければ登録できないこと" do
       user = build(:user, email: "aaaa@aaa")
       user.valid?
-      expect(user.errors[:email]).to include("メールアドレスに@とドメインを含めて下さい")
+      expect(user.errors[:email]).to include("には@とドメインを含めて下さい")
     end
     
     
