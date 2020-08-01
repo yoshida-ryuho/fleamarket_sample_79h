@@ -13,29 +13,46 @@
     font-size: 50px;
   }
 
+  &__payment-privacy {
+    height: 400px;
+    margin-right: 500px;
+
+    &__payment {
+      font-size: 20px;
+      text-decoration: underline;
+    }
+
+    &__privacy {
+      font-size: 20px;
+      text-decoration: underline;
+    }
+  }
+
   &__icon {
     height: 200px;
     width: 200px;
-    margin-top: 30px;
+    margin-bottom: 50px;
   }
 
   &__evaluation-exhibition {
     height: 15px;
     width: 100px;
-    margin-top: 30px;
     display: flex;
+    margin-bottom: 30px;
     justify-content: space-between;
 
     &__evalustion {
       height: 15px;
       width: 40px;
-      font-size: 12px;
+      font-size: 15px;
     }
 
     &__exhibition {
       height: 15px;
-      width: 40px;
-      font-size: 12px;
+      width: 60px;
+      font-size: 15px;
+      margin-left: 20px;
     }
   }
 }
+
