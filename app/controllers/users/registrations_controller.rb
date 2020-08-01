@@ -7,29 +7,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
-  # def birthday_join
-  #   date = params[:user][:birth_date]
-  #   binding.pry
-  # end
-  # require "date"
   def create
     date = params[:birth_date]
     params[:user][:birth_date] = birth_date_join(date)
-    # @date = birth_date_join(date)
-    # binding.pry
 
-    # unless params[:user][:birth_date].valid?
-    #   flash.now[:alert] = @date.errors.full_messages
-    #   render :new and return 
-    # end
-    # # binding.pry
-    # session["devise.regist_data"][:user][:birth_date] = params[:user][:birth_date]
-    # binding.pry
-    @user = User.new(sign_up_params) #登録1ページ目から送られてきたパラメータを@userに代入
-    unless @user.valid? #validメソッドを使ってバリデーションチェック
+    #登録1ページ目から送られてきたパラメータを@userに代入
+    @user = User.new(sign_up_params) 
+    
+    #validメソッドを使ってバリデーションチェック。これを書かないとモデルでかけたバリデーションが効かない
+    unless @user.valid? 
       flash.now[:alert] = @user.errors.full_messages
       render :new and return #and returnを使って条件分岐を明示的に終了させている。
     end
+    
 
    
     session["devise.regist_data"] = {user: @user.attributes} 
@@ -37,15 +27,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     session["devise.regist_data"][:user][:password] = params[:user][:password] 
     #前述で含まれなかった情報を代入。
-    #[:user]["password"]となっていたのを[:user][:password]に書き換えました。
-    #ネットでは、sessionに関して、ネスト構造になっている場合は、2階層目以降を文字列表記にする必要があるとの噂がありましたが、両方ともシンボル型でOKとのこと。
-    #要は、前述のコードがシンボル型ならこの箇所もシンボル型に、文字列ならこの箇所も文字列に、合わせる必要がある。
+
 
     @destination = @user.build_destination 
     #build_destinationメソッドはhas_one :destinationのアソシエーションを設定すると使用可。関連づけのあるnewメソッドのようなもの。
     render :new_destination #登録2ページ目に遷移
   end
 
+  
+  
   def create_destination
     @user = User.new(session["devise.regist_data"]["user"])
     #session["devise.regist_data”]の中の["user”]というハッシュの情報を@userに代入している。
@@ -62,20 +52,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to root_path
   end
 
+  
   protected
-
-  # def user_params
-  #   params.require(:user).permit(:birth_date)
-  # end
 
   def birth_date_join(date)
     require "date"
     # date = params[:user][:birth_date]
     Date.new date["birth_date(1i)"].to_i,date["birth_date(2i)"].to_i,date["birth_date(3i)"].to_i
-
-    # unless date["birth_date(1i)"] != (invalid date) || date["birth_date(2i)"] != (invalid date) || date["birth_date(1i)"] != (invalid date)
-    #   render new and return
-    # end
   end
    
   def destination_params
