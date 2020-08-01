@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_07_30_153513) do
     t.string "destination_first_name_kana", null: false
     t.string "destination_family_name_kana", null: false
     t.integer "post_code", null: false
-    t.integer "pref_id", null: false
+    t.integer "pref", null: false
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
@@ -54,21 +54,21 @@ ActiveRecord::Schema.define(version: 2020_07_30_153513) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "url", null: false
-    t.integer "item_id", null: false
+    t.integer "item", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "brand", null: false
-    t.integer "seller_id", null: false
-    t.integer "buyer_id"
+    t.integer "seller", null: false
+    t.integer "buyer", null: false
     t.string "name", null: false
     t.text "introduction", null: false
     t.integer "price", null: false
     t.string "condition", null: false
     t.string "delivery", null: false
-    t.integer "pref_id", null: false
+    t.integer "pref", null: false
     t.string "preparation_day", null: false
     t.string "category", null: false
     t.string "postage_burden", null: false
