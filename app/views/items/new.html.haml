@@ -14,7 +14,7 @@
           %li.input
             %label.upload-label
               .input-area
-                = i.file_field :url, name: "%item(images_attributes="" 0="")[url]", value:"", style: "display:none", id:"img-file"
+                = i.file_field :url, name: "item[images_attributes[0]url]", value:"", style: "display:none", id:"img-file"
                 %label{for: "img-file"}
                 .boxFileSelect                
       .upload_image
