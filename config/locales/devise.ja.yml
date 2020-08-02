@@ -26,21 +26,21 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
-        family_name: 苗字
-        first_name: 名前
-        family_name_kana: 苗字(カナ)
-        first_name_kana: 名前(カナ)
+        family_name: 名前（姓）
+        first_name: 名前（名）
+        family_name_kana: 名前 カナ（姓）
+        first_name_kana: 名前 カナ（名）
       destination:
-        destination_family_name: 苗字
-        destination_first_name: 名前
-        destination_family_name_kana: 苗字(カナ)
-        destination_first_name_kana: 名前(カナ)
+        destination_family_name: 名前（姓）
+        destination_first_name: 名前（名）
+        destination_family_name_kana: 名前 カナ（姓）
+        destination_first_name_kana: 名前 カナ（名）
         post_code: 郵便番号
         pref_id: 都道府県
         city: 市区町村
         house_number: 番地
     models:
-      user: ユーザ
+      user: ユーザー情報
       destination: お届け先
   devise:
     confirmations:
