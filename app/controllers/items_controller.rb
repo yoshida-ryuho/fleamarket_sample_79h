@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-
+    item = Item.find(params[:id])
   end
 
 
@@ -17,9 +17,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-    redirect_to profiles_path(@item)
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to profiles_path(current_user.id)
   end
 
 end

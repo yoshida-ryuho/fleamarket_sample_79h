@@ -63,9 +63,9 @@
 .Change
   .Change__button
     .Change__button__edit
-      = link_to '商品の編集', edit_item_path(@item), class:"edit-btn"
+      -# = link_to '商品の編集', edit_item_path(@item), class:"edit-btn"
     .Chage__button__destroy
-      = link_to "この商品を削除する", item_path(@item), method: delete, data: {confirm: "削除しますか？"}, class: 'destroy-btn'
+      = link_to "この商品を削除する", item_path(item.id), method: delete, class: 'destroy-btn'
   .Change__under-bar
     =render 'layouts/footer'
 
