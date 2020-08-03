@@ -7,16 +7,12 @@
       %label 出品画像
       %span.required 必須 
       %p 最大10枚までアップロードできます。   
-      = f.fields_for :images do |i|
-        .box
-          .item-num-0#image-box__container 
-        %ul#previews
-          %li.input
-            %label.upload-label
-              .input-area
-                = i.file_field :url, name: "item[images_attributes[0]url]", value:"", style: "display:none", id:"img-file"
-                %label{for: "img-file"}
-                .boxFileSelect                
+      #image-box
+        = f.fields_for :images do |image|
+          .js-file_group{"data-index" => "#{image.index}"}
+            = image.file_field :url, class: 'js-file'
+            %br/
+            %span.js-remove 削除
       .upload_image
     .new-inputs__name
       %label 商品名
