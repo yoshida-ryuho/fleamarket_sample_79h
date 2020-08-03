@@ -15,4 +15,11 @@ class ItemsController < ApplicationController
   def confirm
   
   end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to profiles_path(@item)
+  end
+
 end
