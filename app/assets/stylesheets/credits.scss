@@ -1,3 +1,195 @@
-// Place all the styles related to the credits controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.top-bar {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__font {
+    font-size: 25px;
+  }
+}
+
+.second-bar {
+  height: calc(100% - 80px);
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__one {
+    height: 160px;
+    width: 600px;
+
+    &__number {
+      height: 100px;
+      width: 600px;
+
+      &__text-required {
+        height: 20px;
+        display: flex;
+
+        &__text {
+          height: 20px;
+          margin-left: 100px;
+        }
+
+        &__required {
+          height: 20px;
+          margin-left: 10px;
+          background-color: red;
+
+          &__text {
+            color: white;
+          }
+        }
+      }
+
+      &__number-room {
+        height: 80px;
+        width: 400px;
+        border: solid 1px;
+        margin: 5px 100px 5px 100px;
+
+        &__text {
+          margin: 24px 0 20px 0;
+        }
+      }
+    }
+
+    &__icon {
+      height: 60px;
+      display: flex;
+      margin-left: 100px;
+      justify-content: start;
+
+      &__one {
+        height: 60px;
+        width: 60px;
+        background-color: red;
+      }
+
+      &__two {
+        height: 60px;
+        width: 60px;
+        background-color: violet;
+      }
+
+      &__three {
+        height: 60px;
+        width: 60px;
+        background-color: wheat;
+      }
+    }
+  }
+
+  &__two {
+    height: 100px;
+    width: 600px;
+    margin-top: 20px;
+
+    &__text-required {
+      height: 20px;
+      display: flex;
+
+      &__text {
+        height: 20px;
+        margin-left: 100px;
+      }
+
+      &__required {
+        height: 20px;
+        margin-left: 10px;
+        background-color: red;
+
+        &__text {
+          color: white;
+        }
+      }
+    }
+
+    &__month-year {
+      height: 80px;
+      width: 400px;
+      display: flex;
+      align-items: center;
+      margin: 5px 100px 5px 100px;
+
+      &__month {
+        height: 80px;
+        width: 180px;
+        border: solid 1px;
+      }
+
+      &__text {
+        height: 80px;
+        width: 16px;
+        margin: 0 2px 0 2px;
+      }
+
+      &__year {
+        height: 80px;
+        width: 180px;
+        border: solid 1px;
+      }
+
+      &__texts {
+        height: 80px;
+        width: 16px;
+        margin: 54px 2px 0 2px;
+      }
+    }
+  }
+
+  &__three {
+    height: 100px;
+    width: 600px;
+    margin-top: 20px;
+
+    &__text-required {
+      height: 20px;
+      display: flex;
+
+      &__text {
+        height: 20px;
+        margin-left: 100px;
+      }
+
+      &__required {
+        height: 20px;
+        margin-left: 10px;
+        background-color: red;
+
+        &__text {
+          color: white;
+        }
+      }
+    }
+
+    &__security {
+      height: 80px;
+      width: 400px;
+      border: solid 1px;
+      margin: 5px 100px 5px 100px;
+
+      &__text {
+        margin: 24px 0 20px 0;
+      }
+    }
+  }
+
+  &__register {
+    height: 80px;
+    width: 400px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+
+    &__text {
+      color: snow;
+    }
+  }
+}

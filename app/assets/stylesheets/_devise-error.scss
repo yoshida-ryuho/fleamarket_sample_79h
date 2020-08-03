@@ -1,8 +1,16 @@
 .error {
-  text-align: center;
   margin-bottom: 20px;
-  background-color: rgb(238, 153, 153);
-  &__coution {
+  
+  &__title {
+    text-align: center; 
+    background-color: rgb(238, 153, 153);
+  }
+  &__list {
+    padding-left: 200px;
     background-color: antiquewhite;
   }
+  &__coution {
+    font-size: small;
+  }
+
 }
