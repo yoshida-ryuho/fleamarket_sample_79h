@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
-  resources :profiles
+  resources :users
   resources :brands
   resources :comments
   resources :credits
