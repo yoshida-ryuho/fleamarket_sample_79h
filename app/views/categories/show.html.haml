@@ -1,0 +1,13 @@
+.CategoryWrapper
+  = render 'layouts/header'
+  .CategoryContent
+    .CategoryInner
+      .CategoryInner__Title
+        %h2.CategoryInner__title
+          = @parent_name.name
+
+  
+  
+  = render 'layouts/aside'
+  = render 'layouts/footer'
+  = render 'layouts/exhibition'

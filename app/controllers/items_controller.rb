@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
+    @parents = Category.where(ancestry: nil)    
   end
-
   def new
 
   end
