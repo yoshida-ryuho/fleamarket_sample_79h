@@ -8,6 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.text :introduction,null: false
       t.integer :price,null: false
       t.string :condition,null: false
+
       t.integer :pref_id,null: false
       t.string :preparation_day,null: false
       t.string :category,null: false

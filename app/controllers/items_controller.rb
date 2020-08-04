@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
+    @parents = Category.where(ancestry: nil)    
   end
-
   def new
     @item = Item.new
     @item.images.build
@@ -34,10 +34,9 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category, :postage_burden, images_attributes: [:url])
   end
-
+  
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-
 
 end
