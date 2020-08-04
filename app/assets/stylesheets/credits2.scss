@@ -1,0 +1,31 @@
+.top-bar {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+
+  &__text {
+    height: 60px;
+    width: 300px;
+    background-color: rebeccapurple;
+  } 
+}
+
+.bottom-bar {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: royalblue;
+
+  &__one {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: salmon;
+  }
+}
