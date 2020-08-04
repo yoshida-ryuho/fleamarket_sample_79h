@@ -185,9 +185,13 @@ p{
   cursor: pointer;
 
 }
-.item-image__operetion--delete{
+.js-remove{
   cursor: pointer;
   color: red;
+}
+.js-file_group{
+  display: flex;
+
 }
 
 .item-num-0{
