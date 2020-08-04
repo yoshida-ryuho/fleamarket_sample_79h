@@ -64,9 +64,8 @@
 .Change
   .Change__button
     .Change__button__edit
-      -# = link_to '商品の編集', edit_item_path(@item), class:"edit-btn"
-    .Chage__button__destroy
-      = link_to "この商品を削除する", item_path(item.id), method: delete, class: 'destroy-btn'
+      = link_to '商品の編集', class:"edit-btn"
+      = link_to "この商品を削除する", item_path, method: :delete, class: 'destroy-btn', date: {confirm: "削除しますか？"}
   .Change__under-bar
     =render 'layouts/footer'
 
@@ -90,11 +89,11 @@
 -#     .Login__under-bar
 -#       =render 'layouts/footer'
 
--# 自分の商品でもログインしていない、または他人が出品している商品の場合
+-#  自分の商品でもログインしていない、または他人が出品している商品の場合
 -# = render 'layouts/exhibition'
--# .main-show-view__comment-exc__button
-  購入画面に進む
--# .main-show-view__comment-exc__comment
-  商品説明
+-#  .main-show-view__comment-exc__button
+-#   購入画面に進む
+-#  .main-show-view__comment-exc__comment
+-#   商品説明
 
 

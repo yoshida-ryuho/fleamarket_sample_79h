@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_121059) do
+ActiveRecord::Schema.define(version: 2020_07_27_152203) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_07_29_121059) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
-    t.integer "user", null: false
-    t.integer "item", null: false
+    t.integer "user_id", null: false
+    t.integer "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(version: 2020_07_29_121059) do
     t.string "destination_first_name_kana", null: false
     t.string "destination_family_name_kana", null: false
     t.integer "post_code", null: false
-    t.integer "pref", null: false
+    t.integer "pref_id", null: false
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
-    t.string "phone_number", null: false
+    t.string "phone_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
