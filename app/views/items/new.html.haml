@@ -51,6 +51,7 @@
       %span.required 必須 
       .select
         = f.collection_select(:pref_id, Pref.all, :id, :name, {include_blank: "---"}, {class: "select"} ) 
+
       .instruction 選択してください  
       %label 発送までの日数
       %span.required 必須 

@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
+  # 他のメンバーが作業中なのでトップページに飛ばされないようにコメントアウトしてます。
+  # before_action :move_to_index, except: [:index, :show]
+  
   def index
-
+    @items = Item.includes(:images).order('created_at DESC').limit(5)
   end
 
   def new
@@ -31,5 +34,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category, :postage_burden, images_attributes: [:url])
   end
   
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 
 end
