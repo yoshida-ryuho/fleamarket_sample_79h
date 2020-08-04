@@ -7,8 +7,18 @@ class ItemsController < ApplicationController
     @parents = Category.where(ancestry: nil)    
   end
   def new
+    @item = Item.new
+    @item.images.build
 
   end
+  
+  def create
+    if Item.create(item_params)
+      redirect_to root_path
+    else
+      render :new
+    end     
+  end   
 
   def show
 
@@ -20,6 +30,11 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def item_params
+    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category, :postage_burden, images_attributes: [:url])
+  end
+  
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
