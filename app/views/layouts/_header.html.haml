@@ -25,27 +25,10 @@
                 .HeaderInner__Block{value: parent.id}
                   = link_to category_path(parent.id) ,class:"HeaderInner__Left--first" do
                     .HeaderInner__Parent_name
-                      -# -binding.pry
                       = parent.name
             .HeaderInner__CategoryBox--children
             .HeaderInner__CategoryBox--grandchildren
               
-
-            -# %select.select{:name => "categoryId"}
-            -#   %option{"aria-selected" => "true", :label => "カテゴリー", :selected => "selected", :value => ""} カテゴリー
-            -#   %option{"aria-selected" => "false", :label => "レディース", :value => "1"} レディース
-            -#   %option{"aria-selected" => "false", :label => "メンズ", :value => "2"} メンズ
-            -#   %option{"aria-selected" => "false", :label => "ベビー・キッズ", :value => "3"} ベビー・キッズ
-            -#   %option{"aria-selected" => "false", :label => "インテリア・住まい・小物", :value => "4"} インテリア・住まい・小物
-            -#   %option{"aria-selected" => "false", :label => "本・音楽・ゲーム", :value => "5"} 本・音楽・ゲーム
-            -#   %option{"aria-selected" => "false", :label => "おもちゃ・ホビー・グッズ", :value => "1328"} おもちゃ・ホビー・グッズ
-            -#   %option{"aria-selected" => "false", :label => "コスメ・香水・美容", :value => "6"} コスメ・香水・美容
-            -#   %option{"aria-selected" => "false", :label => "家電・スマホ・カメラ", :value => "7"} 家電・スマホ・カメラ
-            -#   %option{"aria-selected" => "false", :label => "スポーツ・レジャー", :value => "8"} スポーツ・レジャー
-            -#   %option{"aria-selected" => "false", :label => "ハンドメイド", :value => "9"} ハンドメイド
-            -#   %option{"aria-selected" => "false", :label => "チケット", :value => "1027"} チケット
-            -#   %option{"aria-selected" => "false", :label => "自動車・オートバイ", :value => "1318"} 自動車・オートバイ
-            -#   %option{"aria-selected" => "false", :label => "その他", :value => "10"} その他
         %li.HeaderInner__List.HeaderInner__List--MarginFix
           = link_to "#",class:"HeaderInner__Left--second" do
             %select.select{:name => "categoryId"}

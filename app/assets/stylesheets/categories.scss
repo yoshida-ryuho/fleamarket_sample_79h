@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
     // background-color: indianred;
   }
 
@@ -24,8 +23,6 @@
     display: flex;
     justify-content: space-around;
     background-color: lightblue;
-    
-
   }
   &__list {
     width: 20%;
@@ -56,19 +53,10 @@
       img {
         width: 100%;
         height: 100%;
-      // background-size: cover; 
         object-fit: cover;
       }
 
   }
-  // &__image {
-  //   width: 20%;
-  //   height: 20%;
-  //   margin: 0 10px;
-  // background-size: cover; 
-  // object-fit: cover;
-  // }
-
 }
 
 
