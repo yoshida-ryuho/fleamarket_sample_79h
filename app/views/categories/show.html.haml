@@ -1,0 +1,23 @@
+.CategoryWrapper
+  = render 'layouts/header'
+  .CategoryContent
+    .CategoryInner
+      .CategoryInner__Title
+        %h2.CategoryInner__title
+          = @parent_name.name
+        -# .CategoryInner__Items
+        -#   - @items.zip(@images) do |item ,image| 
+        -#     %ul.CategoryInner__List
+        -#       = link_to item_path(item.id) do
+        -#         %li.CategoryInner__list
+        -#           .CategoryInner__list--pic
+        -#             = image_tag image.url
+        -#             .CategoryInner__list--price  
+        -#               = "#{item.price}円"
+        -#           .CategoryInner__list--introduction
+        -#             = item.introduction
+  
+  
+  = render 'layouts/aside'
+  = render 'layouts/footer'
+  = render 'layouts/exhibition'
