@@ -13,11 +13,11 @@ class ItemsController < ApplicationController
   end
   
   def create
-    # @item = Items.(item_params)
-    # # @item = current_user.items.build(item_params)
-    # @item.save
-    Item.create(item_params)
-    redirect_to root_path
+    if Item.create(item_params)
+      redirect_to root_path
+    else
+      render :new
+    end     
   end   
 
   def show
