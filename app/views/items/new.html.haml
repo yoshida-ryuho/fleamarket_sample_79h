@@ -27,11 +27,13 @@
         = f.text_area :introduction, placeholder:  "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）",class:  "bicform",autocomplete:"off",rows:"7"
     .new-inputs__details
       %p 商品の詳細
-      %label カテゴリー
-      %span.required 必須 
-      .select
-        = f.select :category_id, [["選択してください。", 0],["レディース", "1"],["メンズ", "2"],["ベビー・キッズ","3"],["インテリア・住まい・小物","4"],["本・音楽・ゲーム","5"],["おもちゃ・ホビー・グッズ","6"],["コスメ・香水・美容","7"],["家電・スマホ・カメラ","8"],["スポーツ・レジャー","9"],["ハンドメイド","10"],["チケット","11"],["自動車・オートバイ","12"],["その他","13"]]
-      .instruction 選択してください  
+      .exhibitionPage__main__contents__detail__category
+        .exhibitionPage__main__contents__detail__category__title
+        %label カテゴリー
+        %span.required 必須 
+        .exhibitionPage__main__contents__detail__category__choose
+          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
+        .instruction 選択してください  
       %label ブランド
       %span.any 任意
       = f.text_field :brand, placeholder:  "例：シャネル",class:  "smallform",autocomplete:"off"
