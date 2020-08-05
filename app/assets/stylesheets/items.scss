@@ -172,6 +172,23 @@ a {
     text-align: center;
     background-color: #fff;
     margin: auto;
+    &__edit {
+      border: 1px solid #3CCACE;
+      background-color: #3CCACE;
+      color: #fff;
+      font-size: 14px;
+      width: 670px;
+      height: 60px;
+      border-radius: 4px;
+    }
+    &__destroy {
+      border: 1px solid #aaa;
+      background-color: #aaa;
+      width: 670px;
+      height: 60px;
+      border-radius: 4px;
+      margin-top: 16px;
+    }
   }
   &__under-bar {
     margin-top: 10px;
@@ -196,14 +213,8 @@ a {
 }
 
 .destroy-btn {
-  border: 1px solid #aaa;
-  background-color: #aaa;
   color: #fff;
   font-size: 14px;
-  width: 670px;
-  height: 60px;
-  border-radius: 4px;
-  margin-top: 16px;
 }
 
 // ログインしていてかつ他人が出品した商品
