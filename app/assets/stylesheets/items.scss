@@ -154,7 +154,7 @@ table {
   border-collapse: collapse;
 }
 
-a {
+.Exhibitor-category {
   text-decoration: none;
   color: #0099e8;
 }
@@ -227,8 +227,9 @@ a {
     width: 700px;
     padding: 30px 8px 30px 8px;
     text-align: center;
-    background-color: #fff;
     margin: auto;
+    border: 1px solid #3CCACE;
+    background-color: #3CCACE;
   }
   &__under-bar {
     margin-top: 10px;
@@ -236,13 +237,12 @@ a {
 }
 
 .Buy-btn {
-  border: 1px solid #3CCACE;
-  background-color: #3CCACE;
   color: #fff;
   font-size: 14px;
   width: 670px;
   height: 60px;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 // ログインしていない時
