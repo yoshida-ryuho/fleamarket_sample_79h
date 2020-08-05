@@ -40,6 +40,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.includes(:images).order('created_at DESC').find(params[:id])
+    @parents = Category.where(ancestry: nil)
   end
 
 
