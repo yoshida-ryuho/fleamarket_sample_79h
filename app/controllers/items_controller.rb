@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   # 他のメンバーが作業中なのでトップページに飛ばされないようにコメントアウトしてます。
   # before_action :move_to_index, except: [:index, :show]
-  
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
     @parents = Category.where(ancestry: nil)    
@@ -21,7 +20,7 @@ class ItemsController < ApplicationController
   end   
 
   def show
-
+    @item = Item.includes(:images).order('created_at DESC').find(params[:id])
   end
 
 
@@ -32,7 +31,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category, :postage_burden, images_attributes: [:url])
+    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category_id, :postage_burden, images_attributes: [:url])
   end
   
   def move_to_index
