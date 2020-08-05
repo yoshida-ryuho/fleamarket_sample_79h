@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   end
 
    # 子カテゴリーが選択された後に動くアクション
-   def get_category_grandchildren
+  def get_category_grandchildren
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find(params[:child_id]).children
   end
@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category, :postage_burden, images_attributes: [:url])
+    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category_id, :postage_burden, images_attributes: [:url])
   end
   
   def move_to_index
