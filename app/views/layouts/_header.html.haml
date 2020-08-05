@@ -44,7 +44,7 @@
             = link_to   destroy_user_session_path,class:"HeaderInner__Right--first", method: :delete do
               ログアウト
           %li.HeaderInner__List.HeaderInner__List--MarginFix
-            = link_to   profiles_path,class:"HeaderInner__Right--second" do
+            = link_to   users_path,class:"HeaderInner__Right--second" do
               = current_user.nickname + "のマイページ"
         - else
           %li.HeaderInner__List

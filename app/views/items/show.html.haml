@@ -1,36 +1,81 @@
-.top-bar
-  = render 'layouts/header'
-.main-show-view
-  .main-show-view__item-name
-    .main-show-view__item-name__name-zoon
-      商品名
-  .main-show-view__image-information
-    .main-show-view__image-information__image
-    .main-show-view__image-information__information
-      .main-show-view__image-information__information__seller
-        売人
-      .main-show-view__image-information__information__category
-        カテゴリー
-      .main-show-view__image-information__information__brand
-        ブランド
-      .main-show-view__image-information__information__status
-        状態
-      .main-show-view__image-information__information__delivery-burden
-        配送料の負担
-      .main-show-view__image-information__information__delivery-method
-        配送の方法
-      .main-show-view__image-information__information__area
-        配送元地域
-      .main-show-view__image-information__information__standard
-        配送日の目安
-  .main-show-view__comment-exc
-    .main-show-view__comment-exc__price-tax
-      .main-show-view__comment-exc__price-tax__price
-        1,200円
-      .main-show-view__comment-exc__price-tax__tax
-        税込み、送料込み
-    .main-show-view__comment-exc__button
-      購入画面に進む
-    .main-show-view__comment-exc__comment
-      いい商品ですね！
-= render 'layouts/exhibition'
+= render 'layouts/header'
+.Main
+  .main-show-view
+    .main-show-view__item-name
+      .main-show-view__item-name__name-zoon
+        = @item.name
+    .main-show-view__image-information
+      .main-show-view__image-information__image
+        - if @item.buyer.present?
+          .Status
+            .Status__inner
+              Sold
+        = image_tag @item.images.first.url.url
+        %ul
+          %li
+            - @item.images.each do |i|
+              = image_tag i.url.url, size: '80x80'
+      .main-show-view__image-information__information
+        %table{border: "1"}
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                = link_to '/' do
+                  = @item.seller.nickname
+            %tr
+              %th カテゴリー
+              %td
+                = link_to '/' do
+                  = @item.category_id
+            %tr
+              %th ブランド
+              %td 
+                = @item.brand
+            %tr
+              %th 商品の状態
+              %td 
+                = @item.condition
+            %tr
+              %th 配送料の負担
+              %td 
+                = @item.postage_burden
+            %tr
+              %th 配送日元地域
+              %td 
+                = @item.pref.name
+            %tr
+              %th 配送日の目安
+              %td 
+                = @item.preparation_day
+    .main-show-view__comment-exc
+      .main-show-view__comment-exc__price-tax
+        .main-show-view__comment-exc__price-tax__price
+          = "#{@item.price}円"
+        .main-show-view__comment-exc__price-tax__tax
+          (税込) 送料込み
+      .main-show-view__comment-exc__comment
+        = safe_join @item.introduction.split("\n"),tag(:br)
+  - if @item.buyer.present?
+    .Soldout
+      売り切れました
+  - else
+    - if user_signed_in? 
+      - if current_user.id == @item.seller_id
+        .Change
+          .Change__button
+            = link_to "商品の編集", "#", class: "edit-btn"
+            = link_to "この商品を削除する", "#", class: "destroy-btn"
+      - else 
+        .Buy
+          .Buy__button
+            = link_to "購入画面に進む", "#", class:"Buy-btn"
+    - else
+      .Login
+        .Login__sign
+          .Login__sign--up
+            = link_to '新規会員登録をして購入画面に進む', new_user_registration_path, class:"Sign-up-btn"
+          .Login__sign--in
+            = link_to 'ログインをして購入画面に進む', new_user_session_path, class:"Sign-in-btn"
+= render 'layouts/aside'
+= render 'layouts/footer'

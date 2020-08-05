@@ -13,7 +13,7 @@
                 Sold
           = link_to item_path(item.id), class:"post-list__items__link" do
             %figure.post-list__items__link__picture
-              = image_tag item.images.first.url
+              = image_tag item.images.first.url.url
             .post-list__items__link__texts
               %h3.pict-name
                 = item.name

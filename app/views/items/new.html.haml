@@ -31,7 +31,6 @@
       %span.required 必須 
       .select
         = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
-
       .instruction 選択してください  
       %label ブランド
       %span.any 任意
