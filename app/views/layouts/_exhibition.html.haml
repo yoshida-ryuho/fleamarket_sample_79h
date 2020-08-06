@@ -1,5 +1,6 @@
-.exhibition-button
-  .exhibition-button__text
-    出品する
-  .exhibition-button__icon
-    = image_tag 'icon/icon_camera.png',size: '54x54',alt: 'ロゴです'
+= link_to new_item_path do
+  .exhibition-button
+    .exhibition-button__text
+      出品する
+    .exhibition-button__icon
+      = image_tag 'icon/icon_camera.png',size: '54x54',alt: 'ロゴです'
