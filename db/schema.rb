@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_07_27_152203) do
     t.string "token"
     t.bigint "user_id", null: false
     t.integer "customer_id"
+    t.string "card_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_credits_on_user_id"

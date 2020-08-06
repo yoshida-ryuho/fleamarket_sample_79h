@@ -13,6 +13,15 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'credits#show'
+      post 'pay', to: 'credits#pay'
+      post 'delete', to: 'credits#delete'
+    end
+  end
+  
   resources :users
   resources :brands
   resources :comments
