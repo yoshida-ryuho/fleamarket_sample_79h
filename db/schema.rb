@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_152203) do
+ActiveRecord::Schema.define(version: 2020_08_03_132757) do
 
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.string "ancestry"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,20 +63,20 @@ ActiveRecord::Schema.define(version: 2020_07_27_152203) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "brand", null: false
-    t.integer "seller_id", null: false
+    t.string "brand"
+    t.integer "seller_id"
     t.integer "buyer_id"
     t.string "name", null: false
     t.text "introduction", null: false
     t.integer "price", null: false
     t.string "condition", null: false
-    t.string "delivery", null: false
     t.integer "pref_id", null: false
     t.string "preparation_day", null: false
-    t.string "category", null: false
     t.string "postage_burden", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,4 +99,5 @@ ActiveRecord::Schema.define(version: 2020_07_27_152203) do
 
   add_foreign_key "credits", "users"
   add_foreign_key "destinations", "users"
+  add_foreign_key "items", "categories"
 end

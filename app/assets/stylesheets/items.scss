@@ -4,10 +4,8 @@
   background-color: rgb(245, 245, 245);
   padding-top: 40px;
 }
-
 .main-show-view {
   box-sizing: border-box;
-  // height: 650px;
   background-color: #fff;
   margin: auto;
   width: 700px;
@@ -29,19 +27,48 @@
       text-align: center;
     }
   }
-
   &__image-information {
-    // height: 300px;
     width: 100%;
     display: flex;
     justify-content: space-around;
-
     &__image {
-      height: 300px;
-      width: 300px;
+      float: left;
+      max-width: 300px;
+      min-height: 375px;
       background-color: #fafafa;
+      position: relative;
+      .Status {
+        width: 0;
+        height: 0;
+        border-top: 60px solid #ea352d;
+        border-right: 60px solid transparent;
+        border-bottom: 60px solid transparent;
+        border-left: 60px solid #ea352d;
+        position: absolute;
+        &__inner {
+          transform: rotate(-45deg);
+          font-size: 28px;
+          margin: -35px 0px 0px -55px;
+          color: #fff;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+      }
+      img {
+        max-width: 300px;
+      }
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+        li {
+          margin: 0 10px 0 0;
+          img {
+            object-fit: cover;
+          }
+        }
+      }
     }
-
     &__information {
       height: 420px;
       max-width: 300px;
@@ -49,90 +76,70 @@
       margin: 0 auto;
       border: 1px solid #f5f5f5;
       border-collapse: collapse;
-
       &__seller {
         height: 37.5px;
         width: 400px;
       }
-
       &__category {
         height: 37.5px;
         width: 400px;
       }
-
       &__brand {
         height: 37.5px;
         width: 400px;
       }
-
       &__ststus {
         height: 37.5px;
         width: 400px;
       }
-
       &__delivery-burden {
         height: 37.5px;
         width: 400px;
       }
-
       &__delivery-method {
         height: 37.5px;
         width: 400px;
       }
-
       &__area {
         height: 37.5px;
         width: 400px;
       }
-
       &__standard {
         height: 37.5px;
-        // width: 400px;
       }
     }
   }
-
   &__comment-exc {
-    // height: 300px;
-    // width: 100%;
-    // display: flex;
-    // align-items: center;
-    // flex-direction: column;
     &__price-tax {
-      // height: 50px;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       &__price {
-        // height: 80px;
-        // width: 100px;
         margin-top: 24px;
         font-size: 50px;
         font-weight: bold;
       }
-
       &__tax {
-        // height: 40px;
-        // width: 80px;
         font-size: 16px;
         margin-top: 44px;
         margin-left: 5%;
       }
     }
-
     &__button {
       height: 100px;
       width: 400px;
       font-size: 50px;
     }
-
     &__comment {
-      // height: 100px;
-      // width: 200px;
     }
   }
 }
+
+//       white-space: pre-wrap;
+//     }
+//   }
+// }
 
 th {
   width: 39%;
@@ -159,8 +166,19 @@ table {
   color: #0099e8;
 }
 
-
-// ログインしていてかつ、自分が出品した商品の場合
+a {
+  text-decoration: none;
+  color: #0099e8;
+}
+.Soldout {
+  overflow: scroll;
+  width: 700px;
+  padding: 30px 8px 30px 8px;
+  text-align: center;
+  background-color: #fff;
+  margin: auto;
+}
+//  ログインしていてかつ、自分が出品した商品の場合
 .Change {
   box-sizing: border-box;
   width: 100vw;
@@ -205,6 +223,9 @@ table {
 .edit-btn {
   border: 1px solid #3CCACE;
   background-color: #3CCACE;
+.edit-btn {
+  border: 1px solid #3ccace;
+  background-color: #3ccace;
   color: #fff;
   font-size: 14px;
   width: 670px;
@@ -215,6 +236,17 @@ table {
 .destroy-btn {
   color: #fff;
   font-size: 14px;
+}
+
+.destroy-btn {
+  border: 1px solid #aaa;
+  background-color: #aaa;
+  color: #fff;
+  font-size: 14px;
+  width: 670px;
+  height: 60px;
+  border-radius: 4px;
+  margin-top: 16px;
 }
 
 // ログインしていてかつ他人が出品した商品
@@ -237,15 +269,11 @@ table {
 }
 
 .Buy-btn {
-  color: #fff;
-  font-size: 14px;
-  width: 670px;
-  height: 60px;
-  border-radius: 4px;
+  border: 1px solid #3ccace;
+  background-color: #3ccace;
   text-decoration: none;
 }
 
-// ログインしていない時
 .Login {
   box-sizing: border-box;
   width: 100vw;
@@ -264,8 +292,8 @@ table {
 }
 
 .Sign-up-btn {
-  border: 1px solid #3CCACE;
-  background-color: #3CCACE;
+  border: 1px solid #3ccace;
+  background-color: #3ccace;
   color: #fff;
   font-size: 14px;
   width: 670px;
@@ -276,10 +304,4 @@ table {
 .Sign-in-btn {
   border: 1px solid #aaa;
   background-color: #3CCACE;
-  color: #fff;
-  font-size: 14px;
-  width: 670px;
-  height: 60px;
-  border-radius: 4px;
-  margin-top: 16px;
 }

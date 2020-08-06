@@ -11,11 +11,23 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get 'confirm'
+      get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
+      get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
+   
     end
   end
-  resources :users
-  resources :brands
-  resources :comments
-  resources :credits
-  resources :destinations
+
+  resources :categories do 
+    collection do
+      get '/get_category_children', to: 'categories#get_category_children', defaults: { format: 'json' }
+      get '/get_category_grandchildren', to: 'categories#get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
+    
+    resources :users
+    resources :brands
+    resources :comments
+    resources :credits
+    resources :destinations
+    resources :categories, only: [:index, :show]
 end
