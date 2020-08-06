@@ -21,12 +21,12 @@
             %tr
               %th 出品者
               %td
-                = link_to '/' do
+                = link_to users_path(@user) , class: "Exhibitor-category" do
                   = @item.seller.nickname
             %tr
               %th カテゴリー
               %td
-                = link_to '/' do
+                = link_to '/' , class: "Exhibitor-category" do
                   = @item.category_id
             %tr
               %th ブランド
@@ -48,20 +48,6 @@
               %th 配送日の目安
               %td 
                 = @item.preparation_day
-        -# .main-show-view__image-information__information__category
-        -#   カテゴリー
-        -# .main-show-view__image-information__information__brand
-        -#   ブランド
-        -# .main-show-view__image-information__information__status
-        -#   状態
-        -# .main-show-view__image-information__information__delivery-burden
-        -#   配送料の負担
-        -# .main-show-view__image-information__information__delivery-method
-        -#   配送の方法
-        -# .main-show-view__image-information__information__area
-        -#   配送元地域
-        -# .main-show-view__image-information__information__standard
-        -#   配送日の目安
     .main-show-view__comment-exc
       .main-show-view__comment-exc__price-tax
         .main-show-view__comment-exc__price-tax__price
@@ -70,10 +56,6 @@
           (税込) 送料込み
       .main-show-view__comment-exc__comment
         = safe_join @item.introduction.split("\n"),tag(:br)
-    -# .main-show-view__comment-exc__button
-    -#   購入画面に進む
-    -# .main-show-view__comment-exc__comment
-    -#   商品説明
 
   - if @item.buyer.present?
     .Soldout
@@ -83,8 +65,10 @@
       - if current_user.id == @item.seller_id
         .Change
           .Change__button
-            = link_to "商品の編集", edit_item_path, class: "edit-btn"
-            = link_to "この商品を削除する", item_path, method: :delete, class: 'destroy-btn', data: {confirm: "削除しますか？"}
+            .Change__button__edit
+              = link_to "商品の編集", edit_item_path, class: "edit-btn"
+            .Change__button__destroy
+              = link_to "この商品を削除する", item_path, method: :delete, class: 'destroy-btn', data: {confirm: "削除しますか？"}
       - else 
         .Buy
           .Buy__button

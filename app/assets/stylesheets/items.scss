@@ -166,10 +166,6 @@ table {
   color: #0099e8;
 }
 
-a {
-  text-decoration: none;
-  color: #0099e8;
-}
 .Soldout {
   overflow: scroll;
   width: 700px;
@@ -183,23 +179,25 @@ a {
   box-sizing: border-box;
   width: 100vw;
   background-color: rgb(245, 245, 245);
+  margin-bottom: 15px;
+  text-align: center;
   &__button {
     overflow: scroll;
     width: 700px;
     padding: 30px 8px 30px 8px;
-    text-align: center;
     background-color: #fff;
     margin: auto;
     &__edit {
+      padding: 20px 8px 20px 8px;
       border: 1px solid #3CCACE;
       background-color: #3CCACE;
-      color: #fff;
       font-size: 14px;
       width: 670px;
       height: 60px;
       border-radius: 4px;
     }
     &__destroy {
+      padding: 20px 8px 20px 8px;
       border: 1px solid #aaa;
       background-color: #aaa;
       width: 670px;
@@ -211,36 +209,38 @@ a {
 }
 
 .edit-btn {
-  border: 1px solid #3CCACE;
-  background-color: #3CCACE;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .destroy-btn {
   color: #fff;
   font-size: 14px;
+  text-decoration: none;
 }
 // ログインしていてかつ他人が出品した商品
 .Buy {
   box-sizing: border-box;
   width: 100vw;
   background-color: rgb(245, 245, 245);
+  margin-bottom: 15px;
+  text-align: center;
   &__button {
     overflow: scroll;
     width: 700px;
-    padding: 30px 8px 30px 8px;
+    padding: 20px 8px 20px 8px;
     text-align: center;
     margin: auto;
     border: 1px solid #3CCACE;
     background-color: #3CCACE;
   }
-  &__under-bar {
-    margin-top: 10px;
-  }
 }
 
 .Buy-btn {
-  border: 1px solid #3ccace;
-  background-color: #3ccace;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -248,30 +248,42 @@ a {
   box-sizing: border-box;
   width: 100vw;
   background-color: rgb(245, 245, 245);
+  text-align: center;
+  margin-bottom: 15px;
   &__sign {
     overflow: scroll;
     width: 700px;
     padding: 30px 8px 30px 8px;
-    text-align: center;
     background-color: #fff;
     margin: auto;
-  }
-  &__under-bar {
-    margin-top: 10px;
+    &--up {
+      padding: 20px 8px 20px 8px;
+      border: 1px solid #3CCACE;
+      background-color: #3CCACE;
+      font-size: 14px;
+      width: 670px;
+      height: 60px;
+    }
+    &--in {
+      padding: 20px 8px 20px 8px;
+      border: 1px solid #3CCACE;
+      background-color: #3CCACE;
+      font-size: 14px;
+      width: 670px;
+      height: 60px;
+      margin-top: 16px;
+    }
   }
 }
 
 .Sign-up-btn {
-  border: 1px solid #3ccace;
-  background-color: #3ccace;
   color: #fff;
   font-size: 14px;
-  width: 670px;
-  height: 60px;
-  border-radius: 4px;
+  text-decoration: none;
 }
 
 .Sign-in-btn {
-  border: 1px solid #aaa;
-  background-color: #3CCACE;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
 }

@@ -50,8 +50,9 @@ class ItemsController < ApplicationController
 
   def destroy
     item = Item.find_by(params[:id])
+    comment = Comment
     item.destroy
-    redirect_to user_path(current_user)
+    redirect_to users_path(current_user)
   end
 
   def edit
