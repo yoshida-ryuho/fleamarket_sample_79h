@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @parents = Category.where(ancestry: nil)  
   end
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
   #   redirect_to users_path(@user)
   # end
   
-  # private
+  private
 
   # def user_params
   #   params.require(:user).permit(:nickmame,
