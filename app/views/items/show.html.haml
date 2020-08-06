@@ -26,8 +26,8 @@
             %tr
               %th カテゴリー
               %td
-                = link_to '/' , class: "Exhibitor-category" do
-                  = @item.category_id
+                = link_to '/' do
+                  = @item.category.name
             %tr
               %th ブランド
               %td 
