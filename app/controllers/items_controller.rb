@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   # 他のメンバーが作業中なのでトップページに飛ばされないようにコメントアウトしてます。
   # before_action :move_to_index, except: [:index, :show]
+  before_action :set_item, except: [:index, :new, :create]
+
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
     @parents = Category.where(ancestry: nil)    
@@ -47,15 +49,34 @@ class ItemsController < ApplicationController
   def confirm
   
   end
+  
+  def edit    
+
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category_id, :postage_burden, images_attributes: [:url]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category_id, :postage_burden, images_attributes: [:url, :_destroy, :id]).merge(seller_id: current_user.id)
   end
   
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+  
 
 end
