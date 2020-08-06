@@ -208,47 +208,17 @@ a {
       margin-top: 16px;
     }
   }
-  &__under-bar {
-    margin-top: 10px;
-    &__edit {
-      padding-bottom: 50px;
-      margin: auto;
-    }
-    &__destroy {
-      margin: auto;
-    }
-  }
 }
 
 .edit-btn {
   border: 1px solid #3CCACE;
   background-color: #3CCACE;
-.edit-btn {
-  border: 1px solid #3ccace;
-  background-color: #3ccace;
-  color: #fff;
-  font-size: 14px;
-  width: 670px;
-  height: 60px;
-  border-radius: 4px;
 }
 
 .destroy-btn {
   color: #fff;
   font-size: 14px;
 }
-
-.destroy-btn {
-  border: 1px solid #aaa;
-  background-color: #aaa;
-  color: #fff;
-  font-size: 14px;
-  width: 670px;
-  height: 60px;
-  border-radius: 4px;
-  margin-top: 16px;
-}
-
 // ログインしていてかつ他人が出品した商品
 .Buy {
   box-sizing: border-box;
