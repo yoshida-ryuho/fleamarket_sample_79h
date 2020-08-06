@@ -53,11 +53,7 @@ class ItemsController < ApplicationController
       if item.seller_id == current_user.id
         item.destroy
       end
-    # item_id = Item.find_by(params[:id])
-    # item = Item(item_params_destroy)
-    # item.destroy
-    # item_id.destroy
-    # redirect_to users_path(current_user)
+    redirect_to users_path(@user)
   end
 
   def edit
