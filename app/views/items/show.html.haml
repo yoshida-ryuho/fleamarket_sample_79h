@@ -1,50 +1,53 @@
-.top-bar
-  = render 'layouts/header'
-    = @item.name
-.main-show-view__image-information
-  .main-show-view__image-information__image
-    - if @item.buyer.present?
-      .Status
-        .Status__inner
-          Sold
-    = image_tag @item.images.first.url.url
-    %ul
-      %li
-        - @item.images.each do |i|
-          = image_tag i.url.url, size: '80x80'
-  .main-show-view__image-information__information
-    %table{border: "1"}
-      %tbody
-        %tr
-          %th 出品者
-          %td
-            = link_to '/' do
-              = @item.seller.nickname
-        %tr
-          %th カテゴリー
-          %td
-            = link_to '/' do
-              = @item.category_id
-        %tr
-          %th ブランド
-          %td 
-            = @item.brand
-        %tr
-          %th 商品の状態
-          %td 
-            = @item.condition
-        %tr
-          %th 配送料の負担
-          %td 
-            = @item.postage_burden
-        %tr
-          %th 配送日元地域
-          %td 
-            = @item.pref.name
-        %tr
-          %th 配送日の目安
-          %td 
-            = @item.preparation_day
+= render 'layouts/header'
+.Main
+  .main-show-view
+    .main-show-view__item-name
+      .main-show-view__item-name__name-zoon
+        = @item.name
+    .main-show-view__image-information
+      .main-show-view__image-information__image
+        - if @item.buyer.present?
+          .Status
+            .Status__inner
+              Sold
+        = image_tag @item.images.first.url.url
+        %ul
+          %li
+            - @item.images.each do |i|
+              = image_tag i.url.url, size: '80x80'
+      .main-show-view__image-information__information
+        %table{border: "1"}
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                = link_to '/' do
+                  = @item.seller.nickname
+            %tr
+              %th カテゴリー
+              %td
+                = link_to '/' do
+                  = @item.category_id
+            %tr
+              %th ブランド
+              %td 
+                = @item.brand
+            %tr
+              %th 商品の状態
+              %td 
+                = @item.condition
+            %tr
+              %th 配送料の負担
+              %td 
+                = @item.postage_burden
+            %tr
+              %th 配送日元地域
+              %td 
+                = @item.pref.name
+            %tr
+              %th 配送日の目安
+              %td 
+                = @item.preparation_day
         -# .main-show-view__image-information__information__category
         -#   カテゴリー
         -# .main-show-view__image-information__information__brand
