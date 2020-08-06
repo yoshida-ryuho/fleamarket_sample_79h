@@ -49,10 +49,15 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find_by(params[:id])
-    comment = Comment
-    item.destroy
-    redirect_to users_path(current_user)
+    item = Item.find(params[:id])
+      if item.seller_id == current_user.id
+        item.destroy
+      end
+    # item_id = Item.find_by(params[:id])
+    # item = Item(item_params_destroy)
+    # item.destroy
+    # item_id.destroy
+    # redirect_to users_path(current_user)
   end
 
   def edit
@@ -67,6 +72,10 @@ class ItemsController < ApplicationController
   
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def item_params_destroy
+    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category_id, :postage_burden, images_attributes: [:url]).merge(seller_id: :buyer_id)
   end
 
 end
