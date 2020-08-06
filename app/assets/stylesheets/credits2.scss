@@ -4,28 +4,76 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
 
   &__text {
     height: 60px;
     width: 300px;
-    background-color: rebeccapurple;
+    font-size: 50px;
   } 
 }
 
 .bottom-bar {
-  height: 600px;
+  height: 800px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: royalblue;
+  align-items: flex-start;
+  background-color: whitesmoke;
 
   &__one {
     height: 40px;
     width: 100%;
     display: flex;
-    justify-content: center;
-    background-color: salmon;
+    margin-top: 80px;
+    flex-direction: column;
+    align-items: center;
+
+    &__text {
+      height: 40px;
+      width: 280px;
+      font-size: 22px;
+    }
+  }
+
+  &__two {
+    height: 440px;
+    width: 450px;
+    margin-left: 120px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__information {
+      height: 300px;
+      width: 300px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      &__icon {
+        height: 60px;
+        width: 60px;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        background-color: slategray;
+      }
+
+      &__number {
+        height: 30px;
+        width: 120px;
+      }
+
+      &__date {
+        height: 30px;
+        width: 50px;
+        margin-bottom: 20px;
+      }
+
+      &__delete {
+        height: 20px;
+        width: 50px;
+      }
+    }
   }
 }

@@ -19,12 +19,17 @@ Rails.application.routes.draw do
       post 'show', to: 'credits#show'
       post 'pay', to: 'credits#pay'
       post 'delete', to: 'credits#delete'
+
+  resources :credits, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
     end
   end
   
   resources :users
   resources :brands
   resources :comments
-  resources :credits
   resources :destinations
 end

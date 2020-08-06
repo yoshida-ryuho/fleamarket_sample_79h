@@ -4,6 +4,7 @@ class CreateCredits < ActiveRecord::Migration[6.0]
       t.string :token
       t.references :user_id,null: false, foreign_key: true
       t.integer :customer_id
+      t.string :card_id, null: false
       t.timestamps
     end
   end
