@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
     @items = Item.includes(:images).order('created_at DESC').limit(5)
     @parents = Category.where(ancestry: nil)    
   end
+  
   def new
     @item = Item.new
     @item.images.build
@@ -29,7 +30,6 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find(params[:child_id]).children
   end
 
-  
   def create
     if Item.create(item_params)
       redirect_to root_path
@@ -43,20 +43,18 @@ class ItemsController < ApplicationController
     @parents = Category.where(ancestry: nil)
   end
 
-
   def confirm
   
   end
 
   def destroy
     item = Item.find(params[:id])
-      if item.seller_id == current_user.id
-        item.destroy
+      if item.seller_id == current_user.id && item.destroy
       end
     redirect_to users_path(@user)
   end
 
-  def edit
+  def set_item
     @item = Item.find_by(params[:id])
   end
 
@@ -68,10 +66,6 @@ class ItemsController < ApplicationController
   
   def move_to_index
     redirect_to action: :index unless user_signed_in?
-  end
-
-  def item_params_destroy
-    params.require(:item).permit(:name, :introduction, :price, :brand, :condition, :pref_id, :preparation_day, :category_id, :postage_burden, images_attributes: [:url]).merge(seller_id: :buyer_id)
   end
 
 end
