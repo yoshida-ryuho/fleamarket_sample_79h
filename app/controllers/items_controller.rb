@@ -54,8 +54,8 @@ class ItemsController < ApplicationController
     redirect_to users_path(@user)
   end
 
-  def set_item
-    @item = Item.find_by(params[:id])
+  def edit
+
   end
 
   private
@@ -68,4 +68,7 @@ class ItemsController < ApplicationController
     redirect_to action: :index unless user_signed_in?
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
