@@ -10,5 +10,8 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User", optional: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :pref
+
+  validates :name, :introduction, :price, :condition, :preparation_day, :postage_burden, presence: true
+
   
 end
