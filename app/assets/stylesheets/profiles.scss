@@ -1,57 +1,39 @@
-.main-screen {
-  height: 400px;
+.Main-screen {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
   background-color: rgb(245, 245, 245);
-  &__name {
-    height: 50px;
-    width: 120px;
-    margin-top: 50px;
-    font-size: 50px;
+  overflow: scroll;
+  box-sizing: border-box;
+  &__profile {
+    height: 300px;
+    width: 700px;
+    margin: 40px auto;
+    background-image: url(pict/users-icon-background.jpg);
   }
-​
-  &__payment-privacy {
-    height: 400px;
-    margin-right: 500px;
-​
-    &__payment {
-      font-size: 20px;
-      text-decoration: underline;
+  &__contents {
+    width: 700px;
+    background-color: #fff;
+    margin: auto;
+    &__media {
+      text-align: center;
+      font-size: 45px;
     }
-​
-    &__privacy {
-      font-size: 20px;
-      text-decoration: underline;
+    .Main-screen__contents__cedit {
+
     }
-  }
-​
-  &__icon {
-    height: 200px;
-    width: 200px;
-    margin-bottom: 50px;
-  }
-​
-  &__evaluation-exhibition {
-    height: 15px;
-    width: 100px;
-    display: flex;
-    margin-bottom: 30px;
-    justify-content: space-between;
-​
-    &__evalustion {
-      height: 15px;
-      width: 40px;
-      font-size: 15px;
-    }
-​
-    &__exhibition {
-      height: 15px;
-      width: 60px;
-      font-size: 15px;
-      margin-left: 20px;
+    .Main-screen__contents__details {
+      
     }
   }
+}
+
+.Facebook-btn {
+  color: #4949be;
+}
+
+.Line-btn {
+  color: rgb(66, 204, 66);
 }

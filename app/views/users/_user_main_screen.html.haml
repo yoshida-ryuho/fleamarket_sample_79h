@@ -1,21 +1,38 @@
 = render 'layouts/header'
 
-.main-screen
-  .main-screen__
-  .main-screen__name
-    test
-  .main-screen__payment-privacy
-    .main-screen__payment-privacy__payment
-      支払い方法
-    .main-screen__payment-privacy__privacy
-      個人情報
-  .main-screen__icon
-    = image_tag 'icon/member_photo_noimage_thumb.png',size: '200x200',alt: 'ロゴです'
-  .main-screen__evaluation-exhibition
-    .main-screen__evaluation-exhibition__evalustion
-      評価
-    .main-screen__evaluation-exhibition__exhibition
-      出品数
+.Main-screen
+  .Main-screen__profile
+    
+  .Main-screen__contents  
+    .Main-screen__contents__media
+      = link_to "https://www.facebook.com/", class: "Facebook-btn" do
+        = icon('fab', 'facebook-square')
+      = link_to "https://twitter.com/", class: "Twitter-btn" do
+        = icon('fab', 'twitter')
+      = link_to "https://www.instagram.com/", class: "Line-btn" do
+        = icon('fab', 'line')
+    .Main-screen__contents__cedit
+      .Main-screen__contents__credit--registrationn
+        %li クレジットカード登録
+      .Main-screen__contents__credit--delete
+        %li クレジットカード情報削除
+    .Main-screen__contents__details
+      .Main-screen__contents__details--parsonal-info
+        %li 本人情報変更
+      .Main-screen__contents__details--logout
+        %li ログアウト
+
+    -# .Main-screen__payment-privacy__payment
+      
+    -# .Main-screen__payment-privacy__privacy
+      
+  -# .Main-screen__icon
+  -#   = image_tag 'icon/member_photo_noimage_thumb.png',size: '200x200',alt: 'ロゴです'
+  -# .Main-screen__evaluation-exhibition
+  -#   .main-screen__evaluation-exhibition__evalustion
+  -#     評価
+  -#   .main-screen__evaluation-exhibition__exhibition
+  -#     出品数
       
 = render 'layouts/exhibition'
 
