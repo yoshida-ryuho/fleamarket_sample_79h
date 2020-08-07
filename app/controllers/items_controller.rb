@@ -48,10 +48,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
+    item = set_item
       if item.seller_id == current_user.id && item.destroy
+        redirect_to users_path(@user)
       end
-    redirect_to users_path(@user)
   end
 
   def edit
