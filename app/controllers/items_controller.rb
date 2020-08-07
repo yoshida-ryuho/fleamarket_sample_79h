@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   # 他のメンバーが作業中なのでトップページに飛ばされないようにコメントアウトしてます。
   # before_action :move_to_index, except: [:index, :show]
+  before_action :set_item, only:[:destroy]
+
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
     @parents = Category.where(ancestry: nil)    
@@ -48,7 +50,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = set_item
+    item = @item
       if item.seller_id == current_user.id && item.destroy
         redirect_to users_path(@user)
       end
