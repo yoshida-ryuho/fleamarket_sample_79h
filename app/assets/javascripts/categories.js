@@ -1,32 +1,39 @@
 $(document).on('turbolinks:load', function(){
 
   $(function() {
-   
-   
+
+    $(".HeaderInner__parents").hide();
+
     $(".HeaderInner__List").hover(
       function(){
         console.log('のった')
-      $(this).find(".HeaderInner__parents").show();
+      var parents = $(this).find(".HeaderInner__parents")
+          parents.show();
        },
       function(){
-      $(this).find(".HeaderInner__parents").hide();
+        var parents = $(this).find(".HeaderInner__parents")
+          parents.hide();
        }
     )
     $(".HeaderInner__parent").hover(
       function(){
-      $(this).children(".HeaderInner__children").show();
+      var children = $(this).children(".HeaderInner__children")
+          children.show();
        },
       function(){
-      $(this).children(".HeaderInner__children").hide();
+        var children = $(this).children(".HeaderInner__children")
+        children.hide();
        }
     )
    
     $(".HeaderInner__child").hover(
       function() {
-        $(this).children(".HeaderInner__grandchildren").show();
+        var grandchildren = $(this).children(".HeaderInner__grandchildren")
+            grandchildren.show();
       },
       function(){
-        $(this).children(".HeaderInner__grandchildren").hide();
+        var grandchildren = $(this).children(".HeaderInner__grandchildren")
+            grandchildren.hide();
       }
     )
   
