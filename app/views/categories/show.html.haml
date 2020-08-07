@@ -4,7 +4,43 @@
     .CategoryInner
       .CategoryInner__Title
         %h2.CategoryInner__title
-          = @parent_name.name
+          = @parent.name
+      .CategoryInner__Items
+        %ul.CategoryInner__List
+          - @items.zip(@images) do |item ,image| 
+            = link_to item_path(item.id) ,class: "CategoryInner__oneItem "do
+              %li.CategoryInner__list
+                .CategoryInner__list--pic
+                  = image_tag image.images.first.url.url
+                  .CategoryInner__list--price  
+                    = "#{item.price}円"
+                  .CategoryInner__list--introduction
+                    = item.introduction
+
+                    -# "/uploads/image/url/#{item.id}/#{image.url.identifier}"
+      -# .CategoryInner__Items
+
+      -#   - @one_category_item.zip(@images) do |item ,image| 
+      -#     = image_tag image.url.file.file
+      -#     .CategoryInner__list--price  
+      -#       = "#{item.price}円"
+      -#     .CategoryInner__list--introduction
+      -#       = item.introduction
+      -# .CategoryInner__Items
+      -#   %ul.CategoryInner__List
+      -#     %li.CategoryInner__list
+      -#       .CategoryInner__list--pic
+          
+      -#         .CategoryInner__list--price  
+    
+      -#       .CategoryInner__list--introduction
+      -#     %li.CategoryInner__list
+      -#       .CategoryInner__list--pic
+          
+      -#         .CategoryInner__list--price  
+    
+      -#       .CategoryInner__list--introduction
+          
 
   
   
