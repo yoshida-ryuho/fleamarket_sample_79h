@@ -2,7 +2,9 @@ $(document).on('turbolinks:load', function(){
 
   $(function() {
 
-    $(".HeaderInner__parents").hide();
+    $(".HeaderInner__parents,.HeaderInner__children,.HeaderInner__grandchildren").hide();
+    $(".HeaderInner__parent,.HeaderInner__child,.HeaderInner__grandchild").css('background-color','#fff');
+
 
     $(".HeaderInner__List").hover(
       function(){
