@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :pref
 
-  validates :name, :introduction, :price, :condition, :preparation_day, :postage_burden, presence: true
+  validates :name, :introduction, :price, :condition, :preparation_day, :pref, :postage_burden, presence: true
 
   
 end
