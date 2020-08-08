@@ -38,13 +38,6 @@
         %li.HeaderInner__List--Brand
           = link_to "#",class:"HeaderInner__Left--second" do
             ブランド
-            -# %select.select{:name => "categoryId"}
-            -#   %option.{"aria-selected" => "true", :label => "ブランド", :selected => "selected", :value => ""} ブランド
-            -#   %option{"aria-selected" => "false", :label => "シャネル", :value => "1"} シャネル
-            -#   %option{"aria-selected" => "false", :label => "アディダス", :value => "2"} アディダス
-            -#   %option{"aria-selected" => "false", :label => "ナイキ", :value => "3"} ナイキ
-            -#   %option{"aria-selected" => "false", :label => "プーマ", :value => "4"} プーマ
-            -#   %option{"aria-selected" => "false", :label => "ルイ ビトン", :value => "5"} ルイ ビトン
       %ul.HeaderInner__Right
         - if user_signed_in?
           %li.HeaderInner__List
