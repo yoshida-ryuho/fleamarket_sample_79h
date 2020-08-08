@@ -8,32 +8,32 @@ $(document).on('turbolinks:load', function(){
       function(){
         console.log('のった')
       var parents = $(this).find(".HeaderInner__parents")
-          parents.show();
+          parents.show(10);
        },
       function(){
         var parents = $(this).find(".HeaderInner__parents")
-          parents.hide();
+          parents.hide(10);
        }
     )
     $(".HeaderInner__parent").hover(
       function(){
       var children = $(this).children(".HeaderInner__children")
-          children.show();
+          children.show(10);
        },
       function(){
         var children = $(this).children(".HeaderInner__children")
-        children.hide();
+        children.hide(10);
        }
     )
    
     $(".HeaderInner__child").hover(
       function() {
         var grandchildren = $(this).children(".HeaderInner__grandchildren")
-            grandchildren.show();
+            grandchildren.show(10);
       },
       function(){
         var grandchildren = $(this).children(".HeaderInner__grandchildren")
-            grandchildren.hide();
+            grandchildren.hide(10);
       }
     )
   
