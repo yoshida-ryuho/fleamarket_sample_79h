@@ -8,7 +8,6 @@ $(document).on('turbolinks:load', function(){
 
     $(".HeaderInner__List").hover(
       function(){
-        console.log('のった')
       var parents = $(this).find(".HeaderInner__parents")
           parents.show(10);
        },
