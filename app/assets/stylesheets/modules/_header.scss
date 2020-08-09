@@ -50,12 +50,13 @@
    
     
         &__List {
-          width: 50%;
+          width: 200px;
           list-style: none;
           font-size: 14px;
           &--MarginFix {
-            left: 100px;
-            margin-left: 100px;
+            // left: 100px;
+            // margin-left: 100px;
+            width: 300px;
           }
 
         }
@@ -71,6 +72,7 @@
     &--first,&--second {
       text-decoration: none;
       color:#333;
+      font-size: 16px;
     }
     &--first:hover,&--second:hover {
       color: orange;
@@ -115,7 +117,7 @@
 
   }
   &__parents {
-    width: 80%;
+    width: 280px;
     height: 650px;
     display: none;
     position: relative;
@@ -138,12 +140,12 @@
   }
 
   &__children {
-    width: 100%;
+    width: 280px;
     height: 650px;
     display: none;
     box-shadow: 1px 0 5px 0px #999;
     position: absolute;
-    left: 240px;
+    left: 200px;
     bottom: 0px;
     z-index: 1;
     background-color: #fff;
@@ -159,7 +161,7 @@
       height: 30px;
     }
   &__grandchildren {
-    width: 100%;
+    width: 280px;
     height: 650px;
     display: none;
     box-shadow: 1px 0 5px 0px #999;
@@ -181,12 +183,21 @@
 
   }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
   .HeaderInner {
+    margin: 0 0;
     &__Right,&__Left {
       &--first,&--second {
         font-size: 13px;
       }
+    }
+    &__Nav {
+      width: 120%;
+      display: flex;
+      justify-content: space-around;
+          }
+    &__Main {
+      padding-left: 20px;
     }
   }
 }

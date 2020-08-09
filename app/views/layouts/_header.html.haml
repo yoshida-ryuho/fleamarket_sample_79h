@@ -43,14 +43,14 @@
           %li.HeaderInner__List
             = link_to   destroy_user_session_path,class:"HeaderInner__Right--first", method: :delete do
               ログアウト
-          %li.HeaderInner__List.HeaderInner__List--MarginFix
-            = link_to   users_path,class:"HeaderInner__Right--second" do
-              = current_user.nickname + "のマイページ"
+            %li.HeaderInner__List--MarginFix
+              = link_to   users_path,class:"HeaderInner__Right--second" do
+                = current_user.nickname
         - else
           %li.HeaderInner__List
             = link_to  new_user_session_path , class:"HeaderInner__Right--first" do
               ログイン
-          %li.HeaderInner__List.HeaderInner__List--MarginFix
-            = link_to new_user_registration_path, class:"HeaderInner__Right--second" do
-              新規会員登録
+            %li.HeaderInner__List--MarginFix
+              = link_to new_user_registration_path, class:"HeaderInner__Right--second" do
+                新規会員登録
       
