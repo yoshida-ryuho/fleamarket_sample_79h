@@ -54,8 +54,6 @@
           list-style: none;
           font-size: 14px;
           &--MarginFix {
-            // left: 100px;
-            // margin-left: 100px;
             width: 300px;
           }
 
@@ -117,7 +115,7 @@
 
   }
   &__parents {
-    width: 280px;
+    width: 230px;
     height: 650px;
     display: none;
     position: relative;
@@ -140,12 +138,12 @@
   }
 
   &__children {
-    width: 280px;
+    width: 230px;
     height: 650px;
     display: none;
     box-shadow: 1px 0 5px 0px #999;
     position: absolute;
-    left: 200px;
+    left: 220px;
     bottom: 0px;
     z-index: 1;
     background-color: #fff;
@@ -161,12 +159,12 @@
       height: 30px;
     }
   &__grandchildren {
-    width: 280px;
+    width: 230px;
     height: 650px;
     display: none;
     box-shadow: 1px 0 5px 0px #999;
     position: absolute;
-    left: 250px;
+    left: 220px;
     top: 0px;
     z-index: 1;
     background-color:#fff;
