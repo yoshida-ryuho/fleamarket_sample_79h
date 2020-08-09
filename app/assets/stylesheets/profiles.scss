@@ -20,9 +20,10 @@
     &__media {
       text-align: center;
       font-size: 45px;
+      text-decoration: none;
     }
     .Main-screen__contents__cedit {
-
+      text-decoration: none;
     }
     .Main-screen__contents__details {
       
@@ -32,8 +33,18 @@
 
 .Facebook-btn {
   color: #4949be;
+  text-decoration: none;
+}
+
+.Twitter-btn {
+  text-decoration: none;
 }
 
 .Line-btn {
   color: rgb(66, 204, 66);
+}
+
+li {
+  border-top: 1px solid #eee;
+  text-decoration: none;
 }
