@@ -4,10 +4,18 @@
     .CategoryInner
       .CategoryInner__Title
         %h2.CategoryInner__title
-          = @parent_name.name
-
-  
-  
+          = @parent.name
+      .CategoryInner__Items
+        %ul.CategoryInner__List
+          - @items.zip(@images) do |item ,image| 
+            = link_to item_path(item.id) ,class: "CategoryInner__oneItem "do
+              %li.CategoryInner__list
+                .CategoryInner__list--pic
+                  = image_tag image.images.first.url.url
+                  .CategoryInner__list--price  
+                    = "#{item.price}円"
+                  .CategoryInner__list--introduction
+                    = item.introduction
   = render 'layouts/aside'
   = render 'layouts/footer'
   = render 'layouts/exhibition'
