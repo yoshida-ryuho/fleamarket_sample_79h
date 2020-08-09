@@ -1,12 +1,15 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :destroy]
 
   # 他のメンバーが作業中なのでトップページに飛ばされないようにコメントアウトしてます。
   # before_action :move_to_index, except: [:index, :show]
+  before_action :set_item, only:[:destroy]
+
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
     @parents = Category.where(ancestry: nil)    
   end
+  
   def new
     @item = Item.new
     @item.images.build
@@ -31,7 +34,6 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find(params[:child_id]).children
   end
 
-  
   def create
     if Item.create(item_params)
       redirect_to root_path
@@ -45,9 +47,14 @@ class ItemsController < ApplicationController
     @parents = Category.where(ancestry: nil)
   end
 
-
   def confirm
   
+  end
+
+  def destroy
+    if @item.seller_id == current_user.id && @item.destroy
+      redirect_to users_path(@user)
+    end
   end
 
   def edit
@@ -75,6 +82,5 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 
 end
