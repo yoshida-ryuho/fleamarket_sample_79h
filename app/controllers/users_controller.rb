@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @parents = Category.where(ancestry: nil)  
   end
 
+
+  def edit
+
+  end
   # def new
   #   @user = User.new
   #   @user.build_profile

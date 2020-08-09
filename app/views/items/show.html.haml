@@ -21,12 +21,12 @@
             %tr
               %th 出品者
               %td
-                = link_to '/' do
+                = link_to users_path(@user) , class: "Exhibitor-category" do
                   = @item.seller.nickname
             %tr
               %th カテゴリー
               %td
-                = link_to '/' do
+                = link_to '/', class: "Exhibitor-category" do
                   = @item.category.name
             %tr
               %th ブランド
@@ -56,6 +56,7 @@
           (税込) 送料込み
       .main-show-view__comment-exc__comment
         = safe_join @item.introduction.split("\n"),tag(:br)
+
   - if @item.buyer.present?
     .Soldout
       売り切れました
@@ -64,8 +65,10 @@
       - if current_user.id == @item.seller_id
         .Change
           .Change__button
-            = link_to "商品の編集", "#", class: "edit-btn"
-            = link_to "この商品を削除する", "#", class: "destroy-btn"
+            .Change__button__edit
+              = link_to "商品の編集", edit_item_path, class: "edit-btn"
+            .Change__button__destroy
+              = link_to "この商品を削除する", item_path, method: :delete, class: 'destroy-btn', data: {confirm: "削除しますか？"}
       - else 
         .Buy
           .Buy__button
