@@ -1,5 +1,3 @@
-//ここからヘッダー
-
 %header.CommonHeader
   .HeaderInner
     .HeaderInner__Main
@@ -16,41 +14,43 @@
     .HeaderInner__Nav
       %ul.HeaderInner__Left
         %li.HeaderInner__List
-          .HeaderInner__Default
-            = link_to "#" ,class:'HeaderInner__Default--style' do
-              カテゴリーから探す
-          .HeaderInner__CategoryBox
-            .HeaderInner__CategoryBox--parents
-              - @parents.each do |parent|
-                .HeaderInner__Block{value: parent.id}
-                  = link_to category_path(parent.id) ,class:"HeaderInner__Left--first" do
-                    .HeaderInner__Parent_name
-                      = parent.name
-            .HeaderInner__CategoryBox--children
-            .HeaderInner__CategoryBox--grandchildren
-              
-        %li.HeaderInner__List.HeaderInner__List--MarginFix
+          = link_to "#" ,class:'HeaderInner__Default--style' do
+            カテゴリーから探す    
+          %ul.HeaderInner__parents
+            - @parents.each do |parent|
+              %li.HeaderInner__parent{value: parent.id}
+                = link_to category_path(parent.id) ,class:"HeaderInner__Left--first" do
+                  .HeaderInner__parent--name
+                    = parent.name   
+                  %ul.HeaderInner__children
+                    - parent.children.each do |child|
+                      %li.HeaderInner__child{value: child.id}
+                        = link_to category_path(child.id) ,class:"HeaderInner__Left--first" do
+                          .HeaderInner__children--name
+                            = child.name   
+                        %ul.HeaderInner__grandchildren
+                          - child.children.each do |grandchild|
+                      
+                            %li.HeaderInner__grandchild{value: grandchild.id}
+                              = link_to category_path(grandchild.id) ,class:"HeaderInner__Left--first" do
+                                .HeaderInner__grandchildren--name
+                                  = grandchild.name  
+        %li.HeaderInner__List--Brand
           = link_to "#",class:"HeaderInner__Left--second" do
-            %select.select{:name => "categoryId"}
-              %option{"aria-selected" => "true", :label => "ブランド", :selected => "selected", :value => ""} ブランド
-              %option{"aria-selected" => "false", :label => "シャネル", :value => "1"} シャネル
-              %option{"aria-selected" => "false", :label => "アディダス", :value => "2"} アディダス
-              %option{"aria-selected" => "false", :label => "ナイキ", :value => "3"} ナイキ
-              %option{"aria-selected" => "false", :label => "プーマ", :value => "4"} プーマ
-              %option{"aria-selected" => "false", :label => "ルイ ビトン", :value => "5"} ルイ ビトン
+            ブランド
       %ul.HeaderInner__Right
         - if user_signed_in?
           %li.HeaderInner__List
             = link_to   destroy_user_session_path,class:"HeaderInner__Right--first", method: :delete do
               ログアウト
-          %li.HeaderInner__List.HeaderInner__List--MarginFix
-            = link_to   users_path,class:"HeaderInner__Right--second" do
-              = current_user.nickname + "のマイページ"
+            %li.HeaderInner__List--MarginFix
+              = link_to   users_path,class:"HeaderInner__Right--second" do
+                = current_user.nickname
         - else
           %li.HeaderInner__List
             = link_to  new_user_session_path , class:"HeaderInner__Right--first" do
               ログイン
-          %li.HeaderInner__List.HeaderInner__List--MarginFix
-            = link_to new_user_registration_path, class:"HeaderInner__Right--second" do
-              新規会員登録
+            %li.HeaderInner__List--MarginFix
+              = link_to new_user_registration_path, class:"HeaderInner__Right--second" do
+                新規会員登録
       
