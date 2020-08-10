@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  # has_many :comments, dependent: -destroy-belongs_to :user
   has_many :comments, dependent: :destroy
   belongs_to :user,optional: true
   belongs_to :category
@@ -10,7 +11,6 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User", optional: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :pref
-
   validates :name, :introduction, :price, :condition, :preparation_day, :pref, :postage_burden, presence:{ message: "を入力してください"}
   validates :images, presence: { message: "を入力してください"}
   validates :price, :numericality => { greater_than: 300, less_than: 9999999 } 
@@ -18,3 +18,4 @@ class Item < ApplicationRecord
 
   
 end
+
