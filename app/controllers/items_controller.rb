@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
     #データベースから、親カテゴリーのみ抽出し、配列化
     @category_parent_array = Category.where(ancestry: nil)
 
+
   end
 
     # 以下全て、formatはjsonのみ
@@ -33,12 +34,19 @@ class ItemsController < ApplicationController
 
   
   def create
-    if Item.create!(item_params)
+
+    @item = Item.create!(item_params)
+    if @item.save
       redirect_to root_path
     else
-      render :new
-    end     
-  end   
+      unless @item.images.present?
+        @item.images.new
+        render 'new'
+      else
+        render 'new'
+      end
+    end
+  end
 
   def show
     @item = Item.includes(:images).order('created_at DESC').find(params[:id])

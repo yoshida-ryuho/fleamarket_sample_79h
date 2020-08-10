@@ -11,7 +11,10 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :pref
 
-  validates :name, :introduction, :price, :condition, :preparation_day, :pref, :postage_burden, presence: true
+  validates :name, :introduction, :price, :condition, :preparation_day, :pref, :postage_burden, presence:{ message: "を入力してください"}
+  validates :images, presence: { message: "を入力してください"}
+  validates :price, :numericality => { greater_than: 300, less_than: 9999999 } 
+
 
   
 end
