@@ -1,11 +1,12 @@
-.top-bar
-  .top-bar__text
-.bottom-bar
-  .bottom-bar__one
-    .bottom-bar__one__text
-  .bottom-bar__two
-    .bottom-bar__two__information
-      .bottom-bar__two__information__icon
-      .bottom-bar__two__information__number
-      .bottom-bar__two__information__date
-    .botton-bar__two__delete
+.card-group
+  .card-group__title
+    %label クレジットカード一覧
+    %br
+    = "**** **** **** " + @default_card_information.last4
+    %br
+    - exp_month = @default_card_information.exp_month.to_s
+    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+    = exp_month + " / " + exp_year
+    = form_tag(delete_credits_path, method: :post, id: 'charge-form',  name: "inputForm") do
+      %input{ type: "hidden", name: "card_id", value: "" }
+      %button.btn_delate  削除する

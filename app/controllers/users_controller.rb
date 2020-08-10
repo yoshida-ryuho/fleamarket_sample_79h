@@ -1,31 +1,65 @@
 class UsersController < ApplicationController
+  require 'payjp'
   before_action :authenticate_user!
+  before_action :set_credit, only: [:buy,:confirm]
+  before_action :set_item, only: [:buy,:confirm]
+  
+
+
   def index
-    @parents = Category.where(ancestry: nil)  
+    @parents = Category.where(ancestry: nil) 
+    @credit_information = Credit.where(user_id: current_user.id) 
   end
 
 
   def edit
 
   end
-  # def new
-  #   @user = User.new
-  #   @user.build_profile
-  #   @user.build_destination
 
-  # end
+  def confirm
+    @image = @item.images.first
+    @credit = @set_credit.first
+    @destination = Destination.find(current_user.id)
+    if @credit.blank?
+      redirect_to controller: "credits", action: "new"
+      flash[:alert] = 'クレジットカードを登録してください'
+    else
+    
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(@credit.customer_id)
+      @default_card_information = customer.cards.retrieve(@credit.card_id)
+    end
+  end
 
-  # def create
-  #   @user = User.new(user_params)
-  #   @user.save
-  #   redirect_to users_path(@user)
-  # end
-  
+  def buy
+    @credit = @set_credit.first
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp::Charge.create(
+    amount: @item.price,
+    customer: @credit.customer_id,
+    currency: 'jpy',
+  )
+  redirect_to action: 'done_buy', id: @item
+  end
+
+  def done_buy
+    @buy_item = Item.find(params[:id])
+    if @buy_item.update(buyer_id: current_user.id)
+    redirect_to root_path
+    flash[:alert] = '購入が完了しました' 
+    else
+    redirect_to confirm_user_path
+    flash[:alert] = '購入に失敗しました'
+    end
+  end
+
   private
 
-  # def user_params
-  #   params.require(:user).permit(:nickmame,
-  #     profile_attributes:[:id,:family_name,:first_name,:family_name_kana,:first_name_kana,:birth_date],
-  #     destination_attributes:[:id, :destination_family_name,:destination_first_name,:destination_family_name_kana,:fdestination_first_name_kana,:post_code,:pref,:city,:house_number,:building_name,:phone_number]).merge(user_id: current_user.id)
-  # end
+  def set_credit
+    @set_credit = Credit.where(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = @item = Item.find(params[:id])
+  end
 end

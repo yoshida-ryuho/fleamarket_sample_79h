@@ -10,24 +10,33 @@ Rails.application.routes.draw do
  
   resources :items do
     collection do
-      get 'confirm'
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
       get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
-   
     end
   end
 
-  resources :categories do 
+  resources :credits,only:[:index,:new,:show,:edit,:update]do
     collection do
-      get '/get_category_children', to: 'categories#get_category_children', defaults: { format: 'json' }
-      get '/get_category_grandchildren', to: 'categories#get_category_grandchildren', defaults: { format: 'json' }
+      #payjpでトークン化を行う
+      post 'pay', to: 'credits#pay'
+      #カード削除
+      post 'delete', to: 'credits#delete'
+      #カード情報入力
+      post 'show', to: 'credits#show'
     end
   end
     
-    resources :users
-    resources :brands
-    resources :comments
-    resources :credits
-    resources :destinations
-    resources :categories, only: [:index, :show]
+  resources :users do
+    collection do
+      post 'buy',to: 'users#buy'
+      get  'done_buy',to: 'users#done_buy'
+    end
+    member do
+      get 'confirm'
+    end
+  end
+  resources :brands
+  resources :comments
+  resources :destinations
+  resources :categories, only: [:index, :show]
 end

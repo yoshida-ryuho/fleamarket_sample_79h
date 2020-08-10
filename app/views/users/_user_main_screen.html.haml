@@ -15,6 +15,17 @@
       評価
     .main-screen__evaluation-exhibition__exhibition
       出品数
+  - if @credit_information.present?  
+    %ul 
+      %li
+        = link_to delete_credits_path ,"data-turbolinks": false do
+          クレジットカード情報の削除
+  - else 
+    %ul
+      %li
+        = link_to new_credit_path ,"data-turbolinks": false do
+          クレジットカード情報の登録 
+
       
 = render 'layouts/exhibition'
 
