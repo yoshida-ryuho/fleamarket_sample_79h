@@ -36,14 +36,17 @@ class ItemsController < ApplicationController
 
   def create
 
-    @item = Item.create!(item_params)
+    @item = Item.create(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to root_path, notice: "登録しました"
+
     else
       unless @item.images.present?
         @item.images.new
+        flash[:alert] = '画像を選択してください。'
         render 'new'
       else
+        flash[:alert] = '必須項目に空欄がございます。'
         render 'new'
       end
     end
