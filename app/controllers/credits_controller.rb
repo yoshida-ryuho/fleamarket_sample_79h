@@ -63,8 +63,6 @@ class CreditsController < ApplicationController
 
   def update
     @credit = Credit.where(user_id: current_user.id)
-    binding.pry
-
     if Credit.update(params[:id])
       redirect_to user_path
       flash[:notice]= 'クレジットカード情報を登録しました'
