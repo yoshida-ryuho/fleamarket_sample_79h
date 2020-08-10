@@ -53,8 +53,33 @@
           width: 200px;
           list-style: none;
           font-size: 14px;
-          &--MarginFix {
-            width: 300px;
+          &--Brand {
+            width: 100px;
+          }
+          &--Right {
+            margin-left: 50px;
+          }
+          &--icon {
+            margin-top: 5px;
+          }
+          &--Mypage {
+            margin-top: 10px;
+            padding-left: 5px;
+          }
+          &--New {
+            margin-top: 10px;
+          }
+          &--new {
+            margin-left: 100px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            &:hover {
+              color: orange;
+              transition: all .3s ease;
+
+            }
+
           }
 
         }
@@ -63,10 +88,10 @@
   
 
   &__Right {
-    width: 30%;
+    width: 50%;
     display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
+    justify-content: flex-end;
+    // margin-top: 10px;
     &--first,&--second {
       text-decoration: none;
       color:#333;
@@ -76,6 +101,14 @@
       color: orange;
       transition: all .3s ease;
     }
+    &--second {
+      display: flex;
+      justify-content: space-around;
+      // overflow: hidden;
+    }
+  }
+  &__RightList {
+    margin-top: 10px;
   }
 
   
@@ -107,11 +140,10 @@
   &__Default {
     margin-bottom: 5px;
     height: 30px;
-    &--style {
-      text-decoration: none;
-      color:black;
-      padding-left: 15px;
-    }
+    text-decoration: none;
+    color:black;
+    padding-left: 15px;
+  
 
   }
   &__parents {
@@ -184,18 +216,52 @@
 @media screen and (max-width: 800px) {
   .HeaderInner {
     margin: 0 0;
+    width: 100%;
+    &__List {
+      width: 80%;
+      &--new {
+        font-size: 13px;
+        padding-right: 10px;
+      }
+
+    }
+    &__Left {
+      display: flex;
+      justify-content: space-between;
+      &--second {
+        // padding-left: 50px;
+      }
+    }
     &__Right,&__Left {
+      width: 50%;
       &--first,&--second {
         font-size: 13px;
       }
     }
     &__Nav {
-      width: 120%;
-      display: flex;
-      justify-content: space-around;
+      width: 100%;
+      // justify-content: space-between;
           }
     &__Main {
       padding-left: 20px;
+      padding-right: 20px;
     }
+    &__Default {
+      font-size: 13px;
+      text-decoration: none;
+      color: rgb(66, 66, 66);
+
+    }
+    
+
+    &__parents {
+      width: 180px;
+    }
+
+  
+    &__children {
+      left: 180px;
+      }
+  
   }
 }
