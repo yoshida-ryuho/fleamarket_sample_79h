@@ -14,7 +14,7 @@
     .HeaderInner__Nav
       %ul.HeaderInner__Left
         %li.HeaderInner__List
-          = link_to "#" ,class:'HeaderInner__Default--style' do
+          = link_to "#" ,class:'HeaderInner__Default' do
             カテゴリーから探す    
           %ul.HeaderInner__parents
             - @parents.each do |parent|
@@ -40,17 +40,20 @@
             ブランド
       %ul.HeaderInner__Right
         - if user_signed_in?
-          %li.HeaderInner__List
+          %li.HeaderInner__RightList
             = link_to   destroy_user_session_path,class:"HeaderInner__Right--first", method: :delete do
               ログアウト
-            %li.HeaderInner__List--MarginFix
+            %li.HeaderInner__List--Right
               = link_to   users_path,class:"HeaderInner__Right--second" do
-                = current_user.nickname
+                .HeaderInner__List--icon
+                  = image_tag "icon/member_photo_noimage_thumb.png",size:'30x30'
+                .HeaderInner__List--Mypage
+                  = current_user.nickname + 'のマイページ'
         - else
-          %li.HeaderInner__List
+          %li.HeaderInner__RightList
             = link_to  new_user_session_path , class:"HeaderInner__Right--first" do
               ログイン
-            %li.HeaderInner__List--MarginFix
-              = link_to new_user_registration_path, class:"HeaderInner__Right--second" do
+            %li.HeaderInner__List--New
+              = link_to new_user_registration_path, class:"HeaderInner__List--new" do
                 新規会員登録
       

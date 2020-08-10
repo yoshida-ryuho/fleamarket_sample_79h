@@ -50,6 +50,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["devise.regist_data"]["user"].clear #sessionを明示的に削除 セキュリティ上必要
     sign_in(:user, @user) #登録後ログイン状態になるようにしている
     redirect_to root_path
+    flash[:notice] = "新規会員登録が完了しました"
   end
 
   

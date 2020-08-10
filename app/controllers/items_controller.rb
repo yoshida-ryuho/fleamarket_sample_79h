@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :destroy]
+  before_action :set_item, only: [:edit, :update, :destroy,:confirm]
 
   # 他のメンバーが作業中なのでトップページに飛ばされないようにコメントアウトしてます。
   # before_action :move_to_index, except: [:index, :show]
@@ -46,9 +46,7 @@ class ItemsController < ApplicationController
     @parents = Category.where(ancestry: nil)
   end
 
-  def confirm
-  
-  end
+
 
   def destroy
     if @item.seller_id == current_user.id && @item.destroy
@@ -57,6 +55,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+ 
     
   end
 
