@@ -35,9 +35,9 @@ class UsersController < ApplicationController
     @credit = @set_credit.first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-    :amount => @item.price,
-    :customer => @credit.customer_id,
-    :currency => 'jpy',
+    amount: @item.price,
+    customer: @credit.customer_id,
+    currency: 'jpy',
   )
   redirect_to action: 'done_buy', id: @item
   end
