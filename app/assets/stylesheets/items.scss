@@ -132,19 +132,26 @@
       font-size: 50px;
     }
     &__comment {
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
   }
 }
+tr {
+  word-wrap: break-word;
+  font-size: 14px;
+  th {
+    width: 39%;
+    padding: 8px;
+    text-align: left;
+    background: #fafafa;
+  }
 
-th {
-  width: 39%;
-  text-align: left;
-  background: #fafafa;
-}
-
-td {
-  width: 61%;
-  background: #fff;
+  td {
+    width: 61%;
+    padding: 8px;
+    background: #fff;
+  }
 }
 
 table {
@@ -168,6 +175,7 @@ table {
   text-align: center;
   background-color: #fff;
   margin: auto;
+  margin-bottom: 15px;
 }
 //  ログインしていてかつ、自分が出品した商品の場合
 .Change {
@@ -182,24 +190,6 @@ table {
     padding: 30px 8px 30px 8px;
     background-color: #fff;
     margin: auto;
-    &__edit {
-      padding: 20px 8px 20px 8px;
-      border: 1px solid #3ccace;
-      background-color: #3ccace;
-      font-size: 14px;
-      width: 670px;
-      height: 60px;
-      border-radius: 4px;
-    }
-    &__destroy {
-      padding: 20px 8px 20px 8px;
-      border: 1px solid #aaa;
-      background-color: #aaa;
-      width: 670px;
-      height: 60px;
-      border-radius: 4px;
-      margin-top: 16px;
-    }
   }
 }
 
@@ -207,12 +197,30 @@ table {
   color: #fff;
   font-size: 14px;
   text-decoration: none;
+  &__text {
+    padding: 20px 8px 20px 8px;
+    border: 1px solid #3ccace;
+    background-color: #3ccace;
+    font-size: 14px;
+    width: 670px;
+    height: 60px;
+    border-radius: 4px;
+  }
 }
 
 .destroy-btn {
   color: #fff;
   font-size: 14px;
   text-decoration: none;
+  &__text {
+    padding: 20px 8px 20px 8px;
+    border: 1px solid #aaa;
+    background-color: #aaa;
+    width: 670px;
+    height: 60px;
+    border-radius: 4px;
+    margin-top: 16px;
+  }
 }
 // ログインしていてかつ他人が出品した商品
 .Buy {
@@ -251,23 +259,6 @@ table {
     padding: 30px 8px 30px 8px;
     background-color: #fff;
     margin: auto;
-    &--up {
-      padding: 20px 8px 20px 8px;
-      border: 1px solid #3ccace;
-      background-color: #3ccace;
-      font-size: 14px;
-      width: 670px;
-      height: 60px;
-    }
-    &--in {
-      padding: 20px 8px 20px 8px;
-      border: 1px solid #3ccace;
-      background-color: #3ccace;
-      font-size: 14px;
-      width: 670px;
-      height: 60px;
-      margin-top: 16px;
-    }
   }
 }
 
@@ -275,10 +266,31 @@ table {
   color: #fff;
   font-size: 14px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  &__text {
+    padding: 20px 8px 20px 8px;
+    border: 1px solid #3ccace;
+    background-color: #3ccace;
+    font-size: 14px;
+    width: 670px;
+    height: 60px;
+  }
 }
 
 .Sign-in-btn {
   color: #fff;
   font-size: 14px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  &__text {
+    padding: 20px 8px 20px 8px;
+    border: 1px solid #3ccace;
+    background-color: #3ccace;
+    font-size: 14px;
+    width: 670px;
+    height: 60px;
+    margin-top: 16px;
+  }
 }
