@@ -25,6 +25,7 @@
   &__oneItem {
     width: 20%;
     display: block;
+    text-decoration: none;
 
   }
   &__list {
@@ -75,6 +76,7 @@
         height: 3.6em ;
         font-size: 16px;
         line-height: 1.8;
+        word-wrap: break-word;
       }
     
       img {

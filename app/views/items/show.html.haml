@@ -72,7 +72,7 @@
       - else 
         .Buy
           .Buy__button
-            = link_to "購入画面に進む", "#", class:"Buy-btn"
+            = link_to "購入画面に進む", confirm_user_path(@item.id), class:"Buy-btn","data-turbolinks": false
     - else
       .Login
         .Login__sign

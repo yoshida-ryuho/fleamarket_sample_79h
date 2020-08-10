@@ -12,6 +12,10 @@
               %li.CategoryInner__list
                 .CategoryInner__list--pic
                   = image_tag image.images.first.url.url
+                  - if item.buyer_id.present?
+                    .CategoryInner__list--rabel
+                      .CategoryInner__list--sold
+                        Sold
                   .CategoryInner__list--price  
                     = "#{item.price}円"
                   .CategoryInner__list--introduction

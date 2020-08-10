@@ -1,0 +1,64 @@
+.Around
+  .Around__logo
+    = image_tag 'logo/logo.png', class: "image_tag1", alt: 'トップのロゴ'
+  .Around__contents
+    .Around__contents__string
+      購入内容の確認
+    .Around__contents__goods
+      .Around__contents__goods__image
+        = image_tag @image.url.url, size: '70x70', alt: '商品の仮写真'
+      .Around__contents__goods__item-name
+        ポロシャツ
+        .Around__contents__goods__item-name__details
+          %span.details-string 送料込み(税込)
+          %span.details-price 
+            = "#{@item.price}円"
+    .Around__contents__price
+      .Around__contents__price__string
+        支払い金額
+        .Around__contents__price__string--point
+          =icon('fas', 'square')
+          %span.point-string-left ポイント
+          %span.point-string-right 所持ポイント：P0
+      .Around__contents__price--amount
+        = "#{@item.price}円"
+    .Around__contents__method-payment
+      .Around__contents__method-payment--string
+        支払い方法
+      .Around__contents__method-payment--add
+        .card-group
+          .card-group__title
+            %label クレジットカード
+            %br
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            = form_tag(delete_credits_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+        -# =icon('far', 'plus-square')
+        -# 登録してください
+    .Around__contents__delivery-address
+      .Around__contents__delivery-address--string
+        配送先
+      .Around__contents__delivery-address--add
+        = "〒#{@destination.post_code}"
+        %br
+        = @destination.pref.name
+        = @destination.city
+        = @destination.house_number
+        = @destination.building_name
+        %br
+        = @destination.destination_family_name 
+        = @destination.destination_first_name  
+        -# =icon('far', 'plus-square')
+        -# 登録してください
+    .Around__contents__buy-botton
+      -# = form_with model: @item do |form|
+      -# = form_with model: [:admin, @user], local: true do |f| 
+      = form_tag(action: :buy, method: :post,id: @item.id,user_id: current_user.id) do
+        %button.buy-btn 購入する
+        
+  .Around__footer-logo
+    = image_tag 'logo/logo-white.png', size: '140x70', class: "image_tag2", alt: 'フッターのロゴ'
