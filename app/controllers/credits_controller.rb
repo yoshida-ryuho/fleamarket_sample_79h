@@ -7,7 +7,7 @@ class CreditsController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -32,7 +32,7 @@ class CreditsController < ApplicationController
     if credit.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
       customer = Payjp::Customer.retrieve(credit.customer_id)
       customer.delete
       credit.delete
@@ -46,7 +46,7 @@ class CreditsController < ApplicationController
     if credit.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
       customer = Payjp::Customer.retrieve(credit.customer_id)
       @default_card_information = customer.cards.retrieve(credit.card_id)
     end
@@ -54,7 +54,7 @@ class CreditsController < ApplicationController
 
   def edit
     credit = Credit.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
       customer = Payjp::Customer.retrieve(credit.customer_id)
       @default_card_information = customer.cards.retrieve(credit.card_id)
   
