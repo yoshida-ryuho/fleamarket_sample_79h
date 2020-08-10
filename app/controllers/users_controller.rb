@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def index
-    @parents = Category.where(ancestry: nil)  
+    @parents = Category.where(ancestry: nil) 
+    @items = Item.includes(:images).order('created_at DESC').limit(5)
   end
 
 

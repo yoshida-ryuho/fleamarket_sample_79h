@@ -11,16 +11,27 @@
         = icon('fab', 'twitter')
       = link_to "https://www.instagram.com/", class: "Line-btn" do
         = icon('fab', 'line')
-    .Main-screen__contents__cedit
-      .Main-screen__contents__credit--registrationn
-        %li クレジットカード登録
-      .Main-screen__contents__credit--delete
-        %li クレジットカード情報削除
     .Main-screen__contents__details
-      .Main-screen__contents__details--parsonal-info
-        %li 本人情報変更
-      .Main-screen__contents__details--logout
-        %li ログアウト
+      .Main-screen__contents__details__credit
+        .Main-screen__contents__details__credit--registration
+          = link_to 'クレジットカード情報登録', "#", class: "card-regis"
+          = icon('fas', 'arrow-right')
+        .Main-screen__contents__details__credit--delete
+          = link_to 'クレジットカード情報削除', "#", class: "card-delete"
+          = icon('fas', 'arrow-right')
+      .Main-screen__contents__details__account
+        .Main-screen__contents__details__account--parsonal-info
+          = link_to '本人情報変更', "#", class: "info-change"
+          = icon('fas', 'arrow-right')
+        .Main-screen__contents__details__account--logout
+          = link_to 'ログアウト', "#", class: "logout-btn"
+          = icon('fas', 'arrow-right')
+    .Main-screen__contents__items-box
+      .Main-screen__contents__items-box__head
+        この出品者の商品
+      .Main-screen__contents__items-box__goods
+        = render 'users/items-for_user_main_screen'
+
 
     -# .Main-screen__payment-privacy__payment
       
