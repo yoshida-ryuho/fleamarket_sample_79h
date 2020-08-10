@@ -91,7 +91,6 @@
     width: 50%;
     display: flex;
     justify-content: flex-end;
-    // margin-top: 10px;
     &--first,&--second {
       text-decoration: none;
       color:#333;
@@ -104,7 +103,6 @@
     &--second {
       display: flex;
       justify-content: space-around;
-      // overflow: hidden;
     }
   }
   &__RightList {
@@ -228,9 +226,6 @@
     &__Left {
       display: flex;
       justify-content: space-between;
-      &--second {
-        // padding-left: 50px;
-      }
     }
     &__Right,&__Left {
       width: 50%;
@@ -240,7 +235,6 @@
     }
     &__Nav {
       width: 100%;
-      // justify-content: space-between;
           }
     &__Main {
       padding-left: 20px;

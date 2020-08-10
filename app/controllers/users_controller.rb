@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def confirm
-    # @item = Item.find(params[:id]) 
     @image = @item.images.first
     @credit = @set_credit.first
     @destination = Destination.find(current_user.id)
@@ -33,8 +32,6 @@ class UsersController < ApplicationController
   end
 
   def buy
-    # @item = Item.find(params[:id])
-    # binding.pry
     @credit = @set_credit.first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
@@ -47,8 +44,6 @@ class UsersController < ApplicationController
 
   def done_buy
     @buy_item = Item.find(params[:id])
-    # binding.pry
-    # @image = @buyitem.images.first
     if @buy_item.update(buyer_id: current_user.id)
     redirect_to root_path
     flash[:alert] = '購入が完了しました' 
