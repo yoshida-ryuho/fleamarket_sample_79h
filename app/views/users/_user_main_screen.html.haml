@@ -5,8 +5,8 @@
     .Main-screen__profile__icon
       = icon('fas', 'circle')
       .Main-screen__profile__icon__user-name
-        = link_to "ユーザ名", root_path, class:"User-nickname" do
-          = @item.seller.nickname
+        = link_to "#", class:"User-nickname" do
+          = current_user.nickname
   .Main-screen__contents 
     .Main-screen__contents__media
       = link_to "https://www.facebook.com/", class: "Facebook-btn" do
@@ -18,47 +18,24 @@
     .Main-screen__contents__details
       .Main-screen__contents__details__credit
         .Main-screen__contents__details__credit--registration
-          = link_to 'クレジットカード情報登録', "#", class: "card-regis"
-          = icon('fas', 'arrow-right')
-        .Main-screen__contents__details__credit--delete
-          = link_to 'クレジットカード情報削除', "#", class: "card-delete"
-          = icon('fas', 'arrow-right')
+          - if @credit_information.present?
+            = link_to 'クレジットカード情報削除', delete_credits_path, class: "card-delete"
+            = icon('fas', 'arrow-right')
+          - else
+            = link_to 'クレジットカード情報登録', new_credit_path, class: "card-regis", "data-turbolinks": false
+            = icon('fas', 'arrow-right')
       .Main-screen__contents__details__account
         .Main-screen__contents__details__account--parsonal-info
           = link_to '本人情報変更', "#", class: "info-change"
           = icon('fas', 'arrow-right')
         .Main-screen__contents__details__account--logout
-          = link_to 'ログアウト', "#", class: "logout-btn"
+          = link_to 'ログアウト', "", class: "logout-btn"
           = icon('fas', 'arrow-right')
     .Main-screen__contents__items-box
       .Main-screen__contents__items-box__head
         この出品者の商品
       .Main-screen__contents__items-box__goods
-        = render 'users/items-for_user_main_screen'
-
-
-    -# .Main-screen__payment-privacy__payment
-      
-    -# .Main-screen__payment-privacy__privacy
-      
-  -# .Main-screen__icon
-  -#   = image_tag 'icon/member_photo_noimage_thumb.png',size: '200x200',alt: 'ロゴです'
-  -# .Main-screen__evaluation-exhibition
-  -#   .main-screen__evaluation-exhibition__evalustion
-  -#     評価
-  -#   .main-screen__evaluation-exhibition__exhibition
-  -#     出品数
-
-  -# - if @credit_information.present?  
-  -#   %ul 
-  -#     %li
-  -#       = link_to delete_credits_path ,"data-turbolinks": false do
-  -#         クレジットカード情報の削除
-  -# - else 
-  -#   %ul
-  -#     %li
-  -#       = link_to new_credit_path ,"data-turbolinks": false do
-  -#         クレジットカード情報の登録 
+        = render 'items-for_user_main_screen'
       
 = render 'layouts/exhibition'
 
