@@ -1,20 +1,21 @@
 .post-list
-  - @items.each do |item|
-    .post-list__items
-      - if item.buyer.present?
-        .post-list__items__status
-          .post-list__items__status__inner
-            Sold
-      = link_to item_path(item.id), class:"post-list__items__link" do
-        %figure.post-list__items__link__picture
-          = image_tag item.images.first.url.url
-        .post-list__items__link__texts
-          %h3.pict-name
-            = item.name
-          .pict-detail
-            %ul
-              %li 
-                = "#{item.price}円"
-              %li
-                = icon('fa', 'star likeIcon')
-            %p (税込)
+  - if @items.present?
+    - @items.each do |item|
+      .post-list__items
+        - if item.buyer.present?
+          .post-list__items__status
+            .post-list__items__status__inner
+              Sold
+        = link_to item_path(item.id), class:"post-list__items__link" do
+          %figure.post-list__items__link__picture
+            = image_tag item.images.first.url.url
+          .post-list__items__link__texts
+            %h3.pict-name
+              = item.name
+            .pict-detail
+              %ul
+                %li 
+                  = "#{item.price}円"
+                %li
+                  = icon('fa', 'star likeIcon')
+              %p (税込)

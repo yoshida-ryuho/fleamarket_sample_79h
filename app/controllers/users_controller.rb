@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @parents = Category.where(ancestry: nil) 
     @items = Item.where(seller_id: params[:id]).includes(:images).order('created_at DESC')
     @credit_information = Credit.where(user_id: current_user.id)
-    @item = Item.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def edit

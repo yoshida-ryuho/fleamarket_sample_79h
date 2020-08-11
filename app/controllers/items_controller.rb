@@ -1,8 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :destroy,:confirm]
-
-  # 他のメンバーが作業中なのでトップページに飛ばされないようにコメントアウトしてます。
-  # before_action :move_to_index, except: [:index, :show]
+  before_action :set_item, only: [:edit, :update, :confirm]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(5)
@@ -58,8 +56,9 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    if @item.seller_id == current_user.id && @item.destroy
-      redirect_to users_path(@user)
+    item = Item.find(params[:id])
+    if item.seller_id == current_user.id && item.destroy
+      redirect_to user_path(current_user.id)
     end
   end
 
