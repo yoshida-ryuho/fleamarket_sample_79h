@@ -11,7 +11,7 @@
         #previews
           - if @item.persisted?
             - @item.images.each_with_index do |image, i|
-              = image_tag image.url.url, data: { index: i }, width: "130", height: '70'
+              = image_tag image.url.url, data: { index: i }, width: "130", height: '70',required: "true"
         = f.fields_for :images do |image|
           .js-file_group{"data-index" => "#{image.index}"}
             = image.file_field :url, class: 'js-file'
@@ -30,13 +30,13 @@
       %label 商品名
       %span.required 必須 
       .input-form
-        = f.text_field :name, placeholder:  "40文字まで",class:  "smallform",autocomplete:"off"
+        = f.text_field :name, placeholder:  "40文字まで",class:  "smallform",autocomplete:"off",required: "true"
       .instruction 入力してください  
     .new-inputs__introduction
       %label 商品の説明
       %span.required 必須 
       .input-form
-        = f.text_area :introduction, placeholder:  "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）",class:  "bicform",autocomplete:"off",rows:"7"
+        = f.text_area :introduction, placeholder:  "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）",class:  "bicform",autocomplete:"off",rows:"7",required: "true"
     .new-inputs__details
       %p 商品の詳細
       .exhibitionPage__main__contents__detail__category
@@ -44,7 +44,7 @@
         %label カテゴリー
         %span.required 必須 
         .exhibitionPage__main__contents__detail__category__choose
-          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
+          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category',required: "true"}
         .instruction 選択してください  
       %label ブランド
       %span.any 任意
@@ -52,32 +52,32 @@
       %label 状態
       %span.required 必須 
       .select
-        = f.select :condition, [["選択してください。", 0],["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]]
+        = f.select :condition, [["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]], { include_blank: '選択してください'}, { class: 'form-control' , required: true }
       .instruction 選択してください  
     .new-inputs__delivery
       %p 配送について 
       %label 状態
       %span.required 必須 
       .select
-        = f.select :postage_burden, [["選択してください。", 0],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]]
+        = f.select :postage_burden, [["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]], { include_blank: '選択してください'}, { class: 'form-control' , required: true }
       .instruction 選択してください  
       %label 発送元地域
       %span.required 必須 
       .select
-        = f.collection_select(:pref_id, Pref.all, :id, :name, {include_blank: "---"}, {class: "select"} ) 
+        = f.collection_select(:pref_id, Pref.all, :id, :name, {include_blank: "---"}, {class: "select", required: true } ) 
 
       .instruction 選択してください  
       %label 発送までの日数
       %span.required 必須 
       .select
-        = f.select :preparation_day, [["選択してください。", 0],["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]]  
+        = f.select :preparation_day, [["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]], { include_blank: '選択してください'}, { class: 'form-control' , required: true }
       .instruction 選択してください
     .new-inputs__price
       %p 価格（¥300〜9,999,999）
       %label 販売価格
       %span.required 必須
       %span.yen ¥
-      = f.text_field :price, placeholder:  "0",class:  "smallform",autocomplete:"off"
+      = f.text_field :price, placeholder:  "0",class:  "smallform",autocomplete:"off",required: "true"
       .instruction 300以上9999999以下で入力してください
     .new-inputs__btns
       .btn-exhibtion

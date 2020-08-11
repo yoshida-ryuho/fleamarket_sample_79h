@@ -3,12 +3,6 @@
     = link_to root_path do
       = image_tag 'logo/logo.png',size:'150x40',alt: 'ロゴです'
   = form_with model: @item, class: "new-inputs" do |f|
-    -# - if @item.valid?     
-    -#   .item-form__errors
-    -#     %div.item-form__errors__count= "#{@item.errors.full_messages.count}件のエラーが発生しました"
-    -#     %ul
-    -#       - @item.errors.full_messages.each do |message|
-    -#         %li.error-message= message      
     .new-inputs__images
       %label 出品画像
       %span.required 必須 
