@@ -21,7 +21,7 @@
             %tr
               %th 出品者
               %td
-                = link_to users_path(@item.seller.id) , class: "Exhibitor-category" do
+                = link_to user_path(@item.seller.id) , class: "Exhibitor-category" do
                   = @item.seller.nickname
             %tr
               %th カテゴリー

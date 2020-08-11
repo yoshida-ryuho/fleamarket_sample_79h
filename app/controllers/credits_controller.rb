@@ -19,7 +19,7 @@ class CreditsController < ApplicationController
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @credit = Credit.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @credit.save
-        redirect_to :users
+        redirect_to user_path(current_user.id)
         flash[:notice] = 'クレジットカードの登録が完了しました'
       else
         redirect_to action: "pay"
@@ -36,7 +36,7 @@ class CreditsController < ApplicationController
       customer = Payjp::Customer.retrieve(credit.customer_id)
       customer.delete
       credit.delete
-      redirect_to :users
+      redirect_to user_path(current_user.id)
       flash[:alert] = 'クレジットカードの情報を削除しました'
     end
   end
