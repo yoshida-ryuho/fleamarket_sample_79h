@@ -233,7 +233,14 @@ table {
   background-color: rgb(245, 245, 245);
   margin-bottom: 15px;
   text-align: center;
-  &__button {
+}
+
+.Buy-btn {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  &__text {
     overflow: scroll;
     width: 700px;
     padding: 20px 8px 20px 8px;
@@ -242,13 +249,6 @@ table {
     border: 1px solid #3ccace;
     background-color: #3ccace;
   }
-}
-
-.Buy-btn {
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 .Login {

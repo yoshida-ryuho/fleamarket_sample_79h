@@ -79,8 +79,9 @@
                 この商品を削除する
       - else 
         .Buy
-          .Buy__button
-            = link_to "購入画面に進む", confirm_user_path(@item.id), class:"Buy-btn","data-turbolinks": false
+          = link_to  confirm_user_path(@item.id), class:"Buy-btn","data-turbolinks": false do
+            .Buy-btn__text
+              購入画面に進む
     - else
       .Login
         .Login__sign
