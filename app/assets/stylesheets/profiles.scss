@@ -1,9 +1,5 @@
 .Main-screen {
   width: 100%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // flex-direction: column;
   background-color: rgb(245, 245, 245);
   overflow: scroll;
   box-sizing: border-box;
@@ -12,6 +8,21 @@
     width: 700px;
     margin: 40px auto;
     background-image: url(pict/users-icon-background.jpg);
+    position: relative;
+    &__icon {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      margin: 0px auto;
+      left: 265px;
+      top: 45px;
+      font-size: 180px;
+      color: #3CCACE;
+      &__user-name {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
   }
   &__contents {
     width: 700px;
@@ -91,4 +102,13 @@
 .logout-btn {
   text-decoration: none;
   color: #333;
+}
+
+.User-icon {
+  font-size: 40px;
+}
+
+.User-nickname {
+  color: #333;
+  text-decoration: none;
 }

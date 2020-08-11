@@ -2,8 +2,12 @@
 
 .Main-screen
   .Main-screen__profile
-    
-  .Main-screen__contents  
+    .Main-screen__profile__icon
+      = icon('fas', 'circle')
+      .Main-screen__profile__icon__user-name
+        = link_to "ユーザ名","#", class:"User-nickname" do
+          = @item.seller.nickname
+  .Main-screen__contents 
     .Main-screen__contents__media
       = link_to "https://www.facebook.com/", class: "Facebook-btn" do
         = icon('fab', 'facebook-square')
