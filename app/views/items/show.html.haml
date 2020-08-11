@@ -21,12 +21,18 @@
             %tr
               %th 出品者
               %td
-                = link_to users_path(@user) , class: "Exhibitor-category" do
+                = link_to users_path(@item.seller.id) , class: "Exhibitor-category" do
                   = @item.seller.nickname
             %tr
               %th カテゴリー
               %td
-                = link_to '/', class: "Exhibitor-category" do
+                = link_to category_path(@item.category.parent.parent.id), class: "Exhibitor-category" do
+                  = @item.category.parent.parent.name
+                  %br
+                = link_to category_path(@item.category.parent.id), class: "Exhibitor-category" do
+                  = @item.category.parent.name
+                  %br
+                = link_to category_path(@item.category.id), class: "Exhibitor-category" do
                   = @item.category.name
             %tr
               %th ブランド
@@ -65,20 +71,25 @@
       - if current_user.id == @item.seller_id
         .Change
           .Change__button
-            .Change__button__edit
-              = link_to "商品の編集", edit_item_path, class: "edit-btn"
-            .Change__button__destroy
-              = link_to "この商品を削除する", item_path, method: :delete, class: 'destroy-btn', data: {confirm: "削除しますか？"}
+            = link_to edit_item_path, class: "edit-btn" do
+              .edit-btn__text
+                商品の編集
+            = link_to item_path, method: :delete, class: 'destroy-btn', data: {confirm: "削除しますか？"} do
+              .destroy-btn__text
+                この商品を削除する
       - else 
         .Buy
-          .Buy__button
-            = link_to "購入画面に進む", confirm_user_path(@item.id), class:"Buy-btn","data-turbolinks": false
+          = link_to  confirm_user_path(@item.id), class:"Buy-btn","data-turbolinks": false do
+            .Buy-btn__text
+              購入画面に進む
     - else
       .Login
         .Login__sign
-          .Login__sign--up
-            = link_to '新規会員登録をして購入画面に進む', new_user_registration_path, class:"Sign-up-btn"
-          .Login__sign--in
-            = link_to 'ログインをして購入画面に進む', new_user_session_path, class:"Sign-in-btn"
+          = link_to new_user_registration_path, class:"Sign-up-btn" do
+            .Sign-up-btn__text
+              新規会員登録をして購入画面に進む
+          = link_to  new_user_session_path, class:"Sign-in-btn" do
+            .Sign-in-btn__text
+              ログインをして購入画面に進む
 = render 'layouts/aside'
 = render 'layouts/footer'

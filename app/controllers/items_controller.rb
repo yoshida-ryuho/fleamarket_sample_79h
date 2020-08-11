@@ -48,6 +48,7 @@ class ItemsController < ApplicationController
       end
     end
   end
+  
 
   def show
     @item = Item.includes(:images).order('created_at DESC').find(params[:id])
