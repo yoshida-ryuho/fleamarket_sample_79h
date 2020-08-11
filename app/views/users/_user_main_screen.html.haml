@@ -3,7 +3,7 @@
 .Main-screen
   .Main-screen__profile
     .Main-screen__profile__icon
-      = icon('fas', 'circle')
+      = icon('far', 'user-circle')
       .Main-screen__profile__icon__user-name
         = link_to "#", class:"User-nickname" do
           = current_user.nickname
@@ -29,7 +29,7 @@
           = link_to '本人情報変更', "#", class: "info-change"
           = icon('fas', 'arrow-right')
         .Main-screen__contents__details__account--logout
-          = link_to 'ログアウト', "", class: "logout-btn"
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-btn"
           = icon('fas', 'arrow-right')
     .Main-screen__contents__items-box
       .Main-screen__contents__items-box__head
