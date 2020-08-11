@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 
   def index
     @parents = Category.where(ancestry: nil) 
-    @credit_information = Credit.where(user_id: current_user.id) 
+    @items = Item.includes(:images).order('created_at DESC').limit(5)
+    @credit_information = Credit.where(user_id: current_user.id)
   end
 
 

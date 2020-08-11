@@ -1,57 +1,114 @@
-.main-screen {
-  height: 400px;
+.Main-screen {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-​
-  &__name {
-    height: 50px;
-    width: 120px;
-    margin-top: 50px;
-    font-size: 50px;
-  }
-​
-  &__payment-privacy {
-    height: 400px;
-    margin-right: 500px;
-​
-    &__payment {
-      font-size: 20px;
-      text-decoration: underline;
-    }
-​
-    &__privacy {
-      font-size: 20px;
-      text-decoration: underline;
+  background-color: rgb(245, 245, 245);
+  overflow: scroll;
+  box-sizing: border-box;
+  &__profile {
+    height: 300px;
+    width: 700px;
+    margin: 40px auto;
+    background-image: url(pict/users-icon-background.jpg);
+    position: relative;
+    &__icon {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      margin: 0px auto;
+      left: 265px;
+      top: 45px;
+      font-size: 180px;
+      color: #3CCACE;
+      &__user-name {
+        font-size: 18px;
+        text-align: center;
+      }
     }
   }
-​
-  &__icon {
-    height: 200px;
-    width: 200px;
-    margin-bottom: 50px;
-  }
-​
-  &__evaluation-exhibition {
-    height: 15px;
-    width: 100px;
-    display: flex;
-    margin-bottom: 30px;
-    justify-content: space-between;
-​
-    &__evalustion {
-      height: 15px;
-      width: 40px;
-      font-size: 15px;
+  &__contents {
+    width: 700px;
+    background-color: #fff;
+    margin: auto;
+    &__media {
+      text-align: center;
+      font-size: 45px;
+      text-decoration: none;
+      padding-top: 15px;
     }
-​
-    &__exhibition {
-      height: 15px;
-      width: 60px;
-      font-size: 15px;
-      margin-left: 20px;
+    &__details{
+      display: flex;
+      justify-content: space-around;
+      font-size: 14px;
+      &__credit {
+        width: 350px;
+        text-align: center;
+        &--registration {
+          padding: 16px;
+        }
+        &--delete {
+          border-top: 1px solid #eee;
+          padding: 16px;
+        }
+      }
+      &__account {
+        width: 350px;
+        text-align: center;
+        &--parsonal-info {
+          padding: 16px;
+        }
+        &--logout {
+          border-top: 1px solid #eee;
+          padding: 16px;
+        }
+      }
+    }
+    &__items-box {
+      &__head {
+        font-size: 22px;
+        font-weight: bold;
+        padding: 24px 0 8px;
+      }
     }
   }
+}
+
+.Facebook-btn {
+  color: #4949be;
+  text-decoration: none;
+}
+
+.Twitter-btn {
+  text-decoration: none;
+}
+
+.Line-btn {
+  color: rgb(66, 204, 66);
+}
+
+.card-regis {
+  text-decoration: none;
+  color: #333;
+}
+
+.card-delete {
+  text-decoration: none;
+  color: #333;
+}
+
+.info-change {
+  text-decoration: none;
+  color: #333;
+}
+
+.logout-btn {
+  text-decoration: none;
+  color: #333;
+}
+
+.User-icon {
+  font-size: 40px;
+}
+
+.User-nickname {
+  color: #333;
+  text-decoration: none;
 }
