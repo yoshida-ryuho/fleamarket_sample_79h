@@ -5,7 +5,7 @@
     .Main-screen__profile__icon
       = icon('fas', 'circle')
       .Main-screen__profile__icon__user-name
-        = link_to "ユーザ名","#", class:"User-nickname" do
+        = link_to "ユーザ名", root_path, class:"User-nickname" do
           = @item.seller.nickname
   .Main-screen__contents 
     .Main-screen__contents__media
