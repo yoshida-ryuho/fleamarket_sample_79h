@@ -6,12 +6,12 @@ class UsersController < ApplicationController
   
 
 
-  def index
+  def show
     @parents = Category.where(ancestry: nil) 
-    @items = Item.includes(:images).order('created_at DESC').limit(5)
+    @items = Item.where(seller_id: params[:id]).includes(:images).order('created_at DESC')
     @credit_information = Credit.where(user_id: current_user.id)
+    @item = Item.find(params[:id])
   end
-
 
   def edit
 
@@ -61,6 +61,6 @@ class UsersController < ApplicationController
   end
 
   def set_item
-    @item = @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 end

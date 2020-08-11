@@ -44,7 +44,7 @@
             = link_to   destroy_user_session_path,class:"HeaderInner__Right--first", method: :delete do
               ログアウト
             %li.HeaderInner__List--Right
-              = link_to   users_path,class:"HeaderInner__Right--second" do
+              = link_to   user_path(current_user.id),class:"HeaderInner__Right--second" do
                 .HeaderInner__List--icon
                   = image_tag "icon/member_photo_noimage_thumb.png",size:'30x30'
                 .HeaderInner__List--Mypage
