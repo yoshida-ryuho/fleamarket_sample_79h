@@ -21,8 +21,6 @@ class ItemsController < ApplicationController
     # 以下全て、formatはjsonのみ
     # 親カテゴリーが選択された後に動くアクション
   def get_category_children
-    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    # ここでfind_byを使うことでレディーしか取れてなかった
     @category_children = Category.find(params[:parent_id]).children
   end
 
@@ -63,8 +61,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
- 
-    
+
+
   end
 
   def update

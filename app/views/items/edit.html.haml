@@ -44,8 +44,8 @@
         %label カテゴリー
         %span.required 必須 
         .exhibitionPage__main__contents__detail__category__choose
-          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category',required: "true"}
-        .instruction 選択してください  
+          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,  { include_blank: "---", selected:'---'}, {id: 'parent_category',required: "true"}
+        .instruction ここを選択し直してください  
       %label ブランド
       %span.any 任意
       = f.text_field :brand, placeholder:  "例：シャネル",class:  "smallform",autocomplete:"off"
