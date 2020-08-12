@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function(){
                               </div>`;
       $('.exhibitionPage__main__contents__detail__category__choose').append(grandchildSelectHtml);
     }
-
+    
     // 親カテゴリー選択後のイベント
     $('#parent_category').on('change', function(){
       var parent_category_id = document.getElementById
