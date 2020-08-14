@@ -44,10 +44,6 @@
         &--registration {
           padding: 16px;
         }
-        &--delete {
-          border-top: 1px solid #eee;
-          padding: 16px;
-        }
       }
       &__account {
         width: 350px;
@@ -108,4 +104,71 @@
 .User-nickname {
   color: #333;
   text-decoration: none;
+}
+
+
+.Pictures-list {
+  margin: 26px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  &__items {
+    width: 220px;
+    display: inline-block;
+    position: relative;
+    &__status {
+      width: 0;
+      height: 0;
+      border-top: 60px solid #ea352d;
+      border-right: 60px solid transparent;
+      border-bottom: 60px solid transparent;
+      border-left: 60px solid #ea352d;
+      position: absolute;
+      &__inner {
+        transform: rotate(-45deg);
+        font-size: 28px;
+        margin: -35px 0px 0px -55px;
+        color: #fff;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+    }
+    &__link {
+      background-color: #fff;
+      display: inline-block;
+      text-decoration: none;
+
+      &__picture {
+        width: 220px;
+        height: 220px;
+        margin: 0;
+
+        img {
+          width: 220px;
+          height: 220px;
+          object-fit: cover;
+        }
+      }
+      &__texts {
+        background-color: white;
+        color: #333;
+        padding: 16px;
+        .pict-name {
+          line-height: 1.5;
+          font-size: 16px;
+          text-align: left;
+        }
+        .pict-detail {
+          font-size: 16px;
+          ul {
+            justify-content: space-between;
+          }
+          p {
+            font-size: 10px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
 }

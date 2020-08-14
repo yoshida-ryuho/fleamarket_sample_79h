@@ -57,7 +57,7 @@
     .Around__contents__buy-botton
       -# = form_with model: @item do |form|
       -# = form_with model: [:admin, @user], local: true do |f| 
-      = form_tag(action: :buy, method: :post,id: @item.id,user_id: current_user.id) do
+      = form_tag(action: :buy, method: :post, id: @item.id, user_id: current_user.id) do
         %button.buy-btn 購入する
         
   .Around__footer-logo
