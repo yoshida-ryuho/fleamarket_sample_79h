@@ -1,15 +1,15 @@
-.post-list
+.Pictures-list
   - if @items.present?
     - @items.each do |item|
-      .post-list__items
+      .Pictures-list__items
         - if item.buyer.present?
-          .post-list__items__status
-            .post-list__items__status__inner
+          .Pictures-list__items__status
+            .Pictures-list__items__status__inner
               Sold
-        = link_to item_path(item.id), class:"post-list__items__link" do
-          %figure.post-list__items__link__picture
+        = link_to item_path(item.id), class:".Pictures-list__items__link" do
+          %figure.Pictures-list__items__link__picture
             = image_tag item.images.first.url.url
-          .post-list__items__link__texts
+          .Pictures-list__items__link__texts
             %h3.pict-name
               = item.name
             .pict-detail
