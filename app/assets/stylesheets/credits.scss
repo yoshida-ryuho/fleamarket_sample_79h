@@ -1,200 +1,137 @@
-.top-bar {
-  height: 80px;
+.Credit-background {
+  height: 100vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &__font {
-    font-size: 25px;
-  }
+  background-color: rgb(245, 245, 245);
 }
 
-.second-bar {
-  height: calc(100% - 80px);
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.Credit-header {
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
 
-  &__one {
-    height: 160px;
-    width: 600px;
-
-    &__number {
-      height: 100px;
-      width: 600px;
-
-      &__text-required {
-        height: 20px;
-        display: flex;
-
-        &__text {
-          height: 20px;
-          margin-left: 100px;
-        }
-
-        &__required {
-          height: 20px;
-          margin-left: 10px;
-          background-color: red;
-
-          &__text {
-            color: white;
-          }
-        }
-      }
-
-      &__number-room {
-        height: 80px;
-        width: 400px;
-        border: solid 1px;
-        margin: 5px 100px 5px 100px;
-
-        &__text {
-          margin: 24px 0 20px 0;
-        }
-      }
-    }
-
-    &__icon {
-      height: 60px;
-      display: flex;
-      margin-left: 100px;
-      justify-content: start;
-
-      &__one {
-        height: 60px;
-        width: 60px;
-        background-color: red;
-      }
-
-      &__two {
-        height: 60px;
-        width: 60px;
-        background-color: violet;
-      }
-
-      &__three {
-        height: 60px;
-        width: 60px;
-        background-color: wheat;
-      }
-    }
-  }
-
-  &__two {
-    height: 100px;
-    width: 600px;
-    margin-top: 20px;
-
-    &__text-required {
-      height: 20px;
-      display: flex;
-
-      &__text {
-        height: 20px;
-        margin-left: 100px;
-      }
-
-      &__required {
-        height: 20px;
-        margin-left: 10px;
-        background-color: red;
-
-        &__text {
-          color: white;
-        }
-      }
-    }
-
-    &__month-year {
-      height: 80px;
-      width: 400px;
-      display: flex;
-      align-items: center;
-      margin: 5px 100px 5px 100px;
-
-      &__month {
-        height: 80px;
-        width: 180px;
-        border: solid 1px;
-      }
-
-      &__text {
-        height: 80px;
-        width: 16px;
-        margin: 0 2px 0 2px;
-      }
-
-      &__year {
-        height: 80px;
-        width: 180px;
-        border: solid 1px;
-      }
-
-      &__texts {
-        height: 80px;
-        width: 16px;
-        margin: 54px 2px 0 2px;
-      }
-    }
-  }
-
-  &__three {
-    height: 100px;
-    width: 600px;
-    margin-top: 20px;
-
-    &__text-required {
-      height: 20px;
-      display: flex;
-
-      &__text {
-        height: 20px;
-        margin-left: 100px;
-      }
-
-      &__required {
-        height: 20px;
-        margin-left: 10px;
-        background-color: red;
-
-        &__text {
-          color: white;
-        }
-      }
-    }
-
-    &__security {
-      height: 80px;
-      width: 400px;
-      border: solid 1px;
-      margin: 5px 100px 5px 100px;
-
-      &__text {
-        margin: 24px 0 20px 0;
-      }
-    }
-  }
-
-  &__register {
-    height: 80px;
-    width: 400px;
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: skyblue;
-
-    &__text {
-      color: snow;
-    }
+.Credit-contents {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  max-width: 700px;
+  margin: 0px auto;
+  &__integer {
+    padding: 32px 16px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(245, 245, 245);
   }
 }
 
 .number {
-  width: 200px;
+  width: 400px;
+  height: 48px;
+  text-align: left;
+  padding: 0 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.select-default {
+  width: 160px;
+  height: 48px;
+  text-align: left;
+  padding: 0 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.select-default2 {
+  width: 160px;
+  height: 48px;
+  text-align: left;
+  padding: 0 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.cvc {
+  width: 400px;
+  height: 48px;
+  text-align: left;
+  padding: 0 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-group_label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.essential {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 8px;
+  background-color: #ff0211;
+  color: #fff;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.birth-group {
+  width: 400px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.birth-group__month-string {
+  margin: 5px;
+}
+
+.birth-group__year-string {
+  margin: 5px;
+}
+
+.registration-btn {
+  background-color: #ea352d;
+  color: #fff;
+  width: 400px;
+  height: 48px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.form-group.form-group_text {
+  margin-top: 28px;
+}
+
+
+// ここからはクレジット削除のcss
+.card-group {
+  background-color: rgb(255, 255, 255);
   text-align: center;
+  max-width: 700px;
+  margin: 0px auto;
+  &__title {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 32px 16px;
+    border-bottom: 1px solid rgb(245, 245, 245);
+  }
+  &__contents {
+    width: 300px;
+    margin: 0px auto;
+    padding: 32px 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.btn_delate {
+  background-color: initial;
+  border: 1px solid rgb(234, 53, 45);
+  border-radius: 4px;
+  color: rgb(234, 53, 45);
+  font-weight: bold;
+  padding: 6px 12px;
 }
